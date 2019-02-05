@@ -2,11 +2,19 @@
 - almost **pure JavaScript**, the only native dependency is [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 - **easy to use** - a [ThemeContext](#theme-context) is all you need to begin
 - **customizable**
+- **lightweight**
+
+[![npm version](https://img.shields.io/npm/v/react-native-simple-ui.svg)](https://www.npmjs.com/package/react-native-simple-ui)
+![Size](https://img.shields.io/github/size/janziemba/react-native-simple-ui/dist.svg)
+[![Downloads](https://img.shields.io/npm/dm/react-native-simple-ui.svg)](https://img.shields.io/npm/dm/react-native-simple-ui.svg)
+[![Dependencies](https://img.shields.io/librariesio/github/janziemba/react-native-simple-ui.svg)](https://www.npmjs.com/package/react-native-simple-ui)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/janziemba/react-native-simple-ui/master/LICENSE)
 
 # Installation
 ```sh
 yarn add react-native-simple-ui
 ```
+[react-native-vector-icons installation](https://github.com/oblador/react-native-vector-icons#installation)
 
 # Usage
 [Documentation](/docs/)
