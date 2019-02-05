@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "airbnb"
+  ],
+  "globals": {
+    "__DEV__": false,
+  },
+  "rules": {
+    "class-methods-use-this": 0,
+    "global-require": 0,
+    "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
+    "jsx-a11y/href-no-hash": 0,
+    "lines-between-class-members": 0,
+    "no-class-assign": 0,
+    "no-shadow": 0,
+    "object-curly-newline": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-indent": [2, 4],
+    "react/jsx-indent-props": [2, 4],
+    "react/jsx-max-props-per-line": ["error", { "when": "always" }],
+    "react/jsx-sort-props": "error",
+    "react/prefer-stateless-function": 0,
+    "sort-keys": ["error", "asc"]
+  }
+}
