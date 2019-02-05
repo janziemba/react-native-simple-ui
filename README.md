@@ -4,11 +4,11 @@
 - **customizable**
 - **lightweight**
 
-[![npm version](https://img.shields.io/npm/v/react-native-simple-ui.svg)](https://www.npmjs.com/package/react-native-simple-ui)
-![Size](https://img.shields.io/github/size/janziemba/react-native-simple-ui/dist.svg)
-[![Downloads](https://img.shields.io/npm/dm/react-native-simple-ui.svg)](https://img.shields.io/npm/dm/react-native-simple-ui.svg)
-[![Dependencies](https://img.shields.io/librariesio/github/janziemba/react-native-simple-ui.svg)](https://www.npmjs.com/package/react-native-simple-ui)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/janziemba/react-native-simple-ui/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/react-native-simple-ui.svg?style=flat-square)](https://www.npmjs.com/package/react-native-simple-ui)
+![Size](https://img.shields.io/github/size/janziemba/react-native-simple-ui/dist.svg?style=flat-square)
+[![Downloads](https://img.shields.io/npm/dm/react-native-simple-ui.svg?style=flat-square)](https://img.shields.io/npm/dm/react-native-simple-ui.svg)
+[![Dependencies](https://img.shields.io/librariesio/github/janziemba/react-native-simple-ui.svg?style=flat-square)](https://www.npmjs.com/package/react-native-simple-ui)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/janziemba/react-native-simple-ui/master/LICENSE)
 
 # Installation
 ```sh
@@ -26,16 +26,13 @@ You have to define a theme context in your app's root component:
 import { ThemeContext } from 'react-native-simple-ui';
 
 const customTheme = {
-    showWarnings: true,
-    theme: {
-        // you can set custom styles here and overwrite default styles,
-        // for example:
-        heading: { h1: { fontSize: 50 } }
-        // or
-        toolbar: { container: { backgroundColor: 'red' } }
-        // or you can also set your own primitives:
-        colors: { primaryColor: 'green' }
-    },
+    // you can set custom styles here and overwrite default styles,
+    // for example:
+    heading: { h1: { fontSize: 50 } },
+    // or
+    toolbar: { container: { backgroundColor: 'red' } },
+    // or you can also set your own primitives:
+    colors: { primaryColor: 'green' },
 };
 
 class App extends PureComponent {
