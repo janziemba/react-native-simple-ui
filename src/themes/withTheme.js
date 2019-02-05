@@ -26,15 +26,13 @@ const withTheme = (customStyles, componentName) => (Component) => {
         render() {
             return (
                 <ThemeContext.Consumer>
-                    {(configuration) => {
-                        if (configuration.showWarnings) {
-                            checkErrors(this.props, componentName);
-                        }
+                    {(customTheme) => {
+                        checkErrors(this.props, componentName);
 
                         const theme = merge(
                             {},
                             baseTheme,
-                            configuration.theme || {},
+                            customTheme || {},
                         );
 
                         const styles = merge(
