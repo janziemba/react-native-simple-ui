@@ -1,7 +1,7 @@
 # Text
 
 ## Props
-Extends React Native's `Text` props
+Extend React Native's [Text](https://facebook.github.io/react-native/docs/text#props) props
 - `color` (_string_, default null)
 - `size` (_string_, default normal)
 

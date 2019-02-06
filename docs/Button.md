@@ -1,7 +1,7 @@
 # Button
 
 ## Props
-Extends React Native's `TouchableOpacity` props
+Extend React Native's [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity#props) props
 - `color` (_string_, default primary) - one of theme colors, [base theme colors](../src/themes/base/colors.js) by default
 - `icon` (_object_, default null)
     - `color` (_string_, default null)

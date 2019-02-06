@@ -8,7 +8,7 @@ import { DIRECTIONS } from './constants';
 import styles from './styles';
 
 export const propTypes = {
-    children: PropTypes.node,
+    ...View.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
     direction: PropTypes.oneOf(Object.keys(DIRECTIONS)),
     fromColor: PropTypes.string.isRequired,
     height: PropTypes.number.isRequired,
@@ -18,7 +18,7 @@ export const propTypes = {
 };
 
 const defaultProps = {
-    children: null,
+    ...View.defaultProps,
     direction: DIRECTIONS.horizontal,
 };
 
@@ -61,6 +61,7 @@ class LinearGradient extends PureComponent {
 
         return (
             <View
+                {...this.props}
                 style={[
                     styles.container,
                     { height, width },

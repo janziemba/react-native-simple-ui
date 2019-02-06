@@ -1,8 +1,8 @@
 # React Native Simple UI
-- almost **pure JavaScript**, the only native dependency is [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+- almost **pure JavaScript** - the only native dependency is [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 - **easy to use** - a [ThemeContext](#theme-context) is all you need to begin
-- **customizable**
-- **lightweight**
+- **customizable** - you can set custom styles of everything
+- **lightweight** - just a few lines of code
 
 [![npm version](https://img.shields.io/npm/v/react-native-simple-ui.svg?style=flat-square)](https://www.npmjs.com/package/react-native-simple-ui)
 ![Size](https://img.shields.io/github/size/janziemba/react-native-simple-ui/dist.svg?style=flat-square)
@@ -14,10 +14,10 @@
 ```sh
 yarn add react-native-simple-ui
 ```
-[react-native-vector-icons installation](https://github.com/oblador/react-native-vector-icons#installation)
+Also, complete [react-native-vector-icons installation](https://github.com/oblador/react-native-vector-icons#installation).
 
 # Usage
-[Documentation](/docs/)
+See the [documentation](/docs/) of all components.
 
 ## Theme context
 You have to define a theme context in your app's root component:
@@ -28,11 +28,27 @@ import { ThemeContext } from 'react-native-simple-ui';
 const customTheme = {
     // you can set custom styles here and overwrite default styles,
     // for example:
-    heading: { h1: { fontSize: 50 } },
+    text: {
+        sizes: {
+            h1: {
+                fontSize: 50,
+            },
+        },
+    },
     // or
-    toolbar: { container: { backgroundColor: 'red' } },
+    toolbar: {
+        base: {
+            container: {
+                backgroundColor: 'red',
+            },
+        },
+    },
     // or you can also set your own primitives:
-    colors: { primaryColor: 'green' },
+    colors: {
+        palette: {
+            primary: 'green',
+        },
+    },
 };
 
 class App extends PureComponent {
@@ -111,8 +127,9 @@ class ExampleComponent extends PureComponent {
     ...
     render() {
         const { isError, theme } = this.props;
+        const { danger, primary } = theme.colors.palette;
         
-        const color = isError ? theme.colors.danger : theme.colors.primary;
+        const color = isError ? danger : primary;
 
         return (
             <Text style={{ color }}>
