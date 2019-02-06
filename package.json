@@ -1,6 +1,9 @@
 {
   "name": "react-native-simple-ui",
   "version": "0.0.1",
+  "scripts": {
+    "test": "eslint ."
+  },
   "dependencies": {
     "color": "^3.1.0",
     "lodash": "^4.17.11",
