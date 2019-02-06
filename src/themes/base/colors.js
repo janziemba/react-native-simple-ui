@@ -1,16 +1,16 @@
 export default {
     layout: {
-        backgroundColor: '#c6eaf8',
+        backgroundColor: '#ffffff',
     },
     palette: {
-        danger: '#ba1515',
-        dark: '#3d3d3d',
-        disabled: '#bdbdbd',
+        danger: '#ff4136',
+        dark: '#484848',
+        disabled: '#999999',
         info: '#75caeb',
-        light: '#e2e4e6',
+        light: '#f6f6f6',
         primary: '#158cba',
-        success: '#15ba47',
-        warning: '#ba7215',
+        success: '#28b62c',
+        warning: '#ff851b',
     },
     social: {
         facebook: '#3b5998',
@@ -21,7 +21,7 @@ export default {
         vk: '#dc4e41',
     },
     text: {
-        disabled: '#bdbdbd',
+        disabled: '#999999',
         placeholder: '#e2e4e6',
         primary: '#3d3d3d',
         secondary: '#9e9e9e',
