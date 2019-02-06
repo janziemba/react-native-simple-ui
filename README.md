@@ -144,7 +144,7 @@ Yes, you can, however the whole app would be re-rendered.
 # Showcase
 - [Res Publica](https://play.google.com/store/apps/details?id=cz.janziemba.respublica) (_Czech only_) - a quiz game about Czech politicians
 
-[Hit me up](jan.ziemba@gmail.com) to add your app here!
+[Hit me up](mailto:jan.ziemba@gmail.com) to add your app here!
 
 # License
 [MIT](LICENSE), © 2019 - present Jan Ziemba
