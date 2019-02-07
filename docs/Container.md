@@ -3,7 +3,6 @@
 ## Props
 Extend React Native's [View](https://facebook.github.io/react-native/docs/view#props) props
 - `alignment` (_string_, default null)
-- `children` (_node_, **required**)
 - `margin` (_string_, default null)
 - `padding` (_string_, default null)
 

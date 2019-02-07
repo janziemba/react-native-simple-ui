@@ -23,6 +23,13 @@ Extend React Native's [TouchableOpacity](https://facebook.github.io/react-native
 - `text` (_string_, **required**)
 - `variant` (_string_, default default)
 
+## How do styles work
+The styles are merged in this order: base, rounding, size, color, variant and iconPosition. It means basic styles
+are applied, then rounded borders, then then the button is resized, then the button gets its colors - the color is
+applied for both background and text. Then variant decides if the color should be applied for background only
+(default variant), for text only (flat variant) or for text and border (outlined variant). Then iconPosition decides
+which flexDirection and padding should be applied to container and iconContainer.
+
 ## Examples
 
 ### Default

@@ -22,7 +22,6 @@ const getStyles = (props) => {
 const propTypes = {
     ...View.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
     alignment: PropTypes.string,
-    children: PropTypes.node.isRequired,
     margin: PropTypes.oneOf([...Object.keys(spacing)]),
     padding: PropTypes.oneOf([...Object.keys(spacing)]),
     styles: PropTypes.objectOf(PropTypes.object).isRequired,

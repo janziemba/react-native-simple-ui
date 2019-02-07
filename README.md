@@ -92,7 +92,7 @@ import { withTheme } from 'react-native-simple-ui';
 
 const styles = ({ colors, radiuses, spacing }) => ({
     container: {
-        backgroundColor: colors.primaryColor,
+        backgroundColor: colors.palette.primary,
         borderRadius: radiuses.medium,
         borderTopColor: 'white',
         marginBottom: spacing.small,
