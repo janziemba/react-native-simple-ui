@@ -8,7 +8,6 @@ const propTypes = {
     ...Text.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
     disabled: PropTypes.bool,
     onPress: PropTypes.func,
-    text: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -19,7 +18,7 @@ const defaultProps = {
 
 class TextLink extends PureComponent {
     render() {
-        const { disabled, onPress, text } = this.props;
+        const { children, disabled, onPress } = this.props;
 
         return (
             <TouchableOpacity
@@ -31,7 +30,7 @@ class TextLink extends PureComponent {
                     <Text
                         {...this.props}
                     >
-                        {text}
+                        {children}
                     </Text>
                 </View>
             </TouchableOpacity>
