@@ -1,6 +1,10 @@
+// @flow
+
 import Color from 'color';
 
-export default ({ colors }) => {
+import { themeType } from '../../types';
+
+export default ({ colors }: themeType): {} => {
     const imageBackgroundColor = Color(colors.layout.backgroundColor).alpha(0.96).rgb().toString();
 
     return {

@@ -1,6 +1,8 @@
+// @flow
+
 import { StyleSheet } from 'react-native';
 
-export default () => ({
+export default (): {} => ({
     container: {
         overflow: 'hidden',
     },

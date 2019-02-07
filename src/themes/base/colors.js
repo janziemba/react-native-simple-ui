@@ -1,4 +1,8 @@
-export default {
+// @flow
+
+import { themeType } from '../../types';
+
+const colors: themeType.colors = {
     layout: {
         backgroundColor: '#ffffff',
     },
@@ -27,3 +31,5 @@ export default {
         secondary: '#9e9e9e',
     },
 };
+
+export default colors;

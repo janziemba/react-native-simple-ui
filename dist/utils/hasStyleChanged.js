@@ -1,0 +1,1 @@
+Object.defineProperty(exports,"__esModule",{value:true});exports.default=hasStyleChanged;function hasStyleChanged(propsOnWhichDependsTheStyle,nextProps,currentProps){var styleHasChanged=false;propsOnWhichDependsTheStyle.forEach(function(prop){if(nextProps[prop]!==currentProps[prop]){styleHasChanged=true;}});return styleHasChanged;}

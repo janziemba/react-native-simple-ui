@@ -1,5 +1,9 @@
+// @flow
+
+import { themeType } from '../../types';
+
 /* eslint-disable sort-keys */
-export default {
+const spacing: themeType.spacing = {
     tiny: 4,
     small: 8,
     medium: 12,
@@ -7,3 +11,5 @@ export default {
     huge: 20,
     gigantic: 24,
 };
+
+export default spacing;

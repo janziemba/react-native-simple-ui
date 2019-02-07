@@ -3,9 +3,11 @@ import radiuses from './radiuses';
 import spacing from './spacing';
 import typography from './typography';
 
-export default {
+const base = {
     colors,
     radiuses,
     spacing,
     typography,
 };
+
+export default base;

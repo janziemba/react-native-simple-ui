@@ -1,6 +1,10 @@
+// @flow
+
 import { Platform } from 'react-native';
 
-export default {
+import { themeType } from '../../types';
+
+const typography: themeType.typography = {
     fontFamily: Platform.select({
         android: 'Roboto',
         ios: 'System',
@@ -50,3 +54,5 @@ export default {
         },
     },
 };
+
+export default typography;

@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import merge from 'lodash/merge';
@@ -5,11 +7,11 @@ import merge from 'lodash/merge';
 import baseTheme from './base';
 import ThemeContext from './themeContext';
 
-const warnAboutReservedPropName = (propName, componentName) => {
+const warnAboutReservedPropName = (propName: string, componentName: string) => {
     console.warn(`In '${componentName}', you are using a reserved property '${propName}' which is being rewritten in withTheme HOC.`); // eslint-disable-line no-console
 };
 
-const checkErrors = (props, componentName) => {
+const checkErrors = (props: any, componentName: string) => {
     const { styles, theme } = props;
 
     if (styles) {
@@ -21,21 +23,24 @@ const checkErrors = (props, componentName) => {
     }
 };
 
-const withTheme = (customStyles, componentName) => (Component) => {
-    class ComponentWithTheme extends React.Component {
+const withTheme = (customStyles: Function, componentName: string) => (Component: any) => {
+    class ComponentWithTheme extends React.Component<{}> {
+        static originalComponentName: string = Component.displayName || Component.name;
+        static displayName: ?string = `WithTheme(${Component.displayName || Component.name})`;
+
         render() {
             return (
                 <ThemeContext.Consumer>
-                    {(customTheme) => {
+                    {(customTheme: {}) => {
                         checkErrors(this.props, componentName);
 
-                        const theme = merge(
+                        const theme: {} = merge(
                             {},
                             baseTheme,
                             customTheme || {},
                         );
 
-                        const styles = merge(
+                        const styles: {} = merge(
                             {},
                             customStyles ? customStyles(theme) : {},
                             theme[componentName] || {},
@@ -53,9 +58,6 @@ const withTheme = (customStyles, componentName) => (Component) => {
             );
         }
     }
-
-    ComponentWithTheme.originalComponentName = Component.displayName || Component.name;
-    ComponentWithTheme.displayName = `WithTheme(${ComponentWithTheme.originalComponentName})`;
 
     return ComponentWithTheme;
 };

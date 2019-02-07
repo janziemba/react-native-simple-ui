@@ -1,13 +1,16 @@
+// @flow
+
 import merge from 'lodash/merge';
 
+import { themeType } from '../../types';
 import { COLORS, SIZES } from './constants';
 
-export default ({ colors, spacing, typography }) => {
-    const allColors = merge({}, COLORS, colors.palette, colors.social);
-    const colorOptions = {};
+export default ({ colors, spacing, typography }: themeType): {} => {
+    const allColors: {} = merge({}, COLORS, colors.palette, colors.social);
+    const colorOptions: {} = {};
 
-    Object.keys(allColors).forEach((colorName) => {
-        const color = allColors[colorName];
+    Object.keys(allColors).forEach((colorName: string) => {
+        const color: string = allColors[colorName];
 
         colorOptions[colorName] = {
             color,

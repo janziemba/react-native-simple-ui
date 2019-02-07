@@ -20,7 +20,7 @@ Also, complete [react-native-vector-icons installation](https://github.com/oblad
 See the [documentation](/docs/) of all components.
 
 ## Theme context
-You have to define a theme context in your app's root component:
+You have to define a index context in your app's root component:
 ```jsx
 ...
 import { ThemeContext } from 'react-native-simple-ui';
@@ -85,7 +85,7 @@ class ExampleComponent extends PureComponent {
 All available components can be found [here](/src/components/)
 
 ## withTheme high order component
-You can define styles with theme primitives:
+You can define styles with index primitives:
 ```jsx
 ...
 import { withTheme } from 'react-native-simple-ui';
@@ -118,7 +118,7 @@ ExampleComponent = withTheme(styles)(ExampleComponent);
 
 **Notice** the `styles` come from props, it's not the `const styles` defined above the component.
 
-And you can also access theme object anywhere in the app:
+And you can also access index object anywhere in the app:
 ```jsx
 ...
 import { withTheme } from 'react-native-simple-ui';
@@ -126,8 +126,8 @@ import { withTheme } from 'react-native-simple-ui';
 class ExampleComponent extends PureComponent {
     ...
     render() {
-        const { isError, theme } = this.props;
-        const { danger, primary } = theme.colors.palette;
+        const { isError, index } = this.props;
+        const { danger, primary } = index.colors.palette;
         
         const color = isError ? danger : primary;
 
@@ -143,7 +143,7 @@ ExampleComponent = withTheme()(ExampleComponent);
 ...
 ```
 
-**IMPORTANT:** You can't have your own component with the same name as any of UI components which uses `withTheme` because that would overwrite your styles with the styles defined in the theme. For example your `Button` component `withTheme(styles, 'Button')(Button)` would have the styles from UI `Button`. Just use a different identifier, e.g. `withTheme(styles, 'MyButton')(Button)` or leave it empty if you don't need it.
+**IMPORTANT:** You can't have your own component with the same name as any of UI components which uses `withTheme` because that would overwrite your styles with the styles defined in the index. For example your `Button` component `withTheme(styles, 'Button')(Button)` would have the styles from UI `Button`. Just use a different identifier, e.g. `withTheme(styles, 'MyButton')(Button)` or leave it empty if you don't need it.
 
 ## Recommendations
 For styling consistency, I recommend to follow up these simple rules:
@@ -155,7 +155,7 @@ For styling consistency, I recommend to follow up these simple rules:
 ### Can I change the default props?
 No. If you want to overwrite the default props you have to create your own component which extends this UI's component. For example if you want your `Button` to always be rounded and outlined, you would create a new component which extends UI's `Button` and passes these props to it.
 
-### Can I change the theme dynamically?
+### Can I change the index dynamically?
 Yes, you can, however the whole app would be re-rendered.
 
 # Showcase

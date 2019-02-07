@@ -1,0 +1,1 @@
+Object.defineProperty(exports,"__esModule",{value:true});var DIRECTIONS=exports.DIRECTIONS={horizontal:'horizontal',vertical:'vertical'};

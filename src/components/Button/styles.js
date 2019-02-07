@@ -1,13 +1,16 @@
+// @flow
+
 import merge from 'lodash/merge';
 
+import { themeType } from '../../types';
 import darkenOrLighten from '../../utils/darkenOrLighten';
 import { COLORS, ICON_POSITIONS, ROUNDING, SIZES, STATES, VARIANTS } from './constants';
 
-export default ({ colors, radiuses, spacing, typography }) => {
-    const allColors = merge({}, COLORS, colors.palette, colors.social);
-    const colorOptions = {};
+export default ({ colors, radiuses, spacing, typography }: themeType) => {
+    const allColors: {} = merge({}, COLORS, colors.palette, colors.social);
+    const colorOptions: {} = {};
 
-    Object.keys(allColors).forEach((colorName) => {
+    Object.keys(allColors).forEach((colorName: string) => {
         const color = colors.palette[colorName] || colors.social[colorName] || colorName;
 
         colorOptions[colorName] = {

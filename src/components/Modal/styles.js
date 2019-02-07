@@ -1,6 +1,10 @@
+// @flow
+
 import { StyleSheet } from 'react-native';
 
-export default ({ radiuses }) => ({
+import { themeType } from '../../types';
+
+export default ({ radiuses }: themeType): {} => ({
     container: {
         backgroundColor: 'white',
         borderRadius: radiuses.small,

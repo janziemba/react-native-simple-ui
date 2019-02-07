@@ -3,8 +3,9 @@
     "airbnb"
   ],
   "globals": {
-    "__DEV__": false,
+    "__DEV__": false
   },
+  "parser": "babel-eslint",
   "rules": {
     "class-methods-use-this": 0,
     "global-require": 0,

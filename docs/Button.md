@@ -2,11 +2,11 @@
 
 ## Props
 Extend React Native's [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity#props) props
-- `color` (_string_, default primary) - one of theme colors, [base theme colors](../src/themes/base/colors.js) by default
+- `color` (_string_, default primary) - one of index colors, [base index colors](../src/themes/base/colors.js) by default
 - `icon` (_object_, default null)
     - `color` (_string_, default null)
     - `colorName` (_string_, default null)
-    - `iconSet` (_string_, default `theme.typography.iconSet` which is MaterialIcons by default)
+    - `iconSet` (_string_, default `index.typography.iconSet` which is MaterialIcons by default)
     - `name` (_string_, **required**)
     - `position` (_string_, default left)
     - `size` (_number_, default 24)

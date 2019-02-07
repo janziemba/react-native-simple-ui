@@ -1,4 +1,6 @@
-export default () => ({
+// @flow
+
+export default (): {} => ({
     base: {
         flexDirection: 'column',
     },

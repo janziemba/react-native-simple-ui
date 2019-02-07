@@ -1,8 +1,12 @@
-export default ({ spacing }) => {
-    const marginOptions = {};
-    const paddingOptions = {};
+// @flow
 
-    Object.keys(spacing).forEach((name) => {
+import { themeType } from '../../types';
+
+export default ({ spacing }: themeType): {} => {
+    const marginOptions: {} = {};
+    const paddingOptions: {} = {};
+
+    Object.keys(spacing).forEach((name: string) => {
         marginOptions[name] = {
             margin: spacing[name],
         };
