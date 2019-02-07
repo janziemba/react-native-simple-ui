@@ -25,7 +25,7 @@
     "url" : "https://github.com/janziemba/react-native-simple-ui.git"
   },
   "scripts": {
-    "build": "rm -rf dist/* && babel src/ -d dist/",
+    "build": "rm -rf dist/* && babel src/ -d dist/ && git add dist",
     "prepublish": "yarn run build",
     "test": "eslint . && yarn flow"
   },

@@ -1,1 +1,1 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.default={tiny:4,small:8,medium:12,large:16,huge:20,gigantic:24};
+Object.defineProperty(exports,"__esModule",{value:true});var _types=require('../../types');var spacing={tiny:4,small:8,medium:12,large:16,huge:20,gigantic:24};exports.default=spacing;
