@@ -1,6 +1,16 @@
 // @flow
 
-export default (): {} => ({
+import { StyleSheet } from 'react-native';
+
+export type StylesType = {
+    base: StyleSheet.Styles,
+    directions: {
+        column: StyleSheet.Styles,
+        row: StyleSheet.Styles,
+    },
+};
+
+export default (): StylesType => ({
     base: {
         flexShrink: 1,
     },

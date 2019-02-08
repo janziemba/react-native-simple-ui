@@ -1,9 +1,17 @@
-export type themeType = {
+// @flow
+
+import { StyleSheet } from 'react-native';
+
+export type ObjectOfStringsType = {
+    [name: string]: string,
+};
+
+export type ThemeType = {
     colors: {
-        layout: {},
-        palette: {},
-        theme: {},
-        typography: {},
+        layout: ObjectOfStringsType,
+        palette: ObjectOfStringsType,
+        social: ObjectOfStringsType,
+        text: ObjectOfStringsType,
     },
     radiuses: {
         tiny: number,
@@ -35,14 +43,22 @@ export type themeType = {
         },
         iconSet: string,
         sizes: {
-            h1: {},
-            h2: {},
-            h3: {},
-            h4: {},
-            h5: {},
-            h6: {},
-            normal: {},
-            small: {},
+            h1: StyleSheet.Styles,
+            h2: StyleSheet.Styles,
+            h3: StyleSheet.Styles,
+            h4: StyleSheet.Styles,
+            h5: StyleSheet.Styles,
+            h6: StyleSheet.Styles,
+            normal: StyleSheet.Styles,
+            small: StyleSheet.Styles,
         },
     },
 };
+
+export type ThemeShapeType = $Shape<{
+    ...ThemeType,
+    colors: $Shape<$PropertyType<ThemeType, 'colors'>>,
+    radiuses: $Shape<$PropertyType<ThemeType, 'radiuses'>>,
+    spacing: $Shape<$PropertyType<ThemeType, 'spacing'>>,
+    typography: $Shape<$PropertyType<ThemeType, 'typography'>>,
+}>;

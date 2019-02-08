@@ -1,8 +1,11 @@
+// @flow
+
 import colors from '../../themes/base/colors';
+import type { ObjectOfStringsType } from '../../types';
 
 /* eslint-disable import/prefer-default-export */
 
-export const COLORS = {
+export const COLORS: ObjectOfStringsType = {
     ...colors.palette,
     transparent: 'transparent',
     white: 'white',

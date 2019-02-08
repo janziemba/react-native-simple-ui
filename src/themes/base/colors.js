@@ -1,8 +1,8 @@
 // @flow
 
-import { themeType } from '../../types';
+import type { ThemeShapeType } from '../../types';
 
-const colors: themeType.colors = {
+const colors: $PropertyType<ThemeShapeType, 'colors'> = {
     layout: {
         backgroundColor: '#ffffff',
     },

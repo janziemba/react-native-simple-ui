@@ -1,10 +1,20 @@
 // @flow
 
 import Color from 'color';
+import { StyleSheet } from 'react-native';
 
-import { themeType } from '../../types';
+import type { ThemeShapeType } from '../../types';
 
-export default ({ colors }: themeType): {} => {
+export type StylesType = {
+    bottomSafeArea: StyleSheet.Styles,
+    content: StyleSheet.Styles,
+    imageBackground: StyleSheet.Styles,
+    imageBackgroundContent: StyleSheet.Styles,
+    topSafeArea: StyleSheet.Styles,
+    wrapper: StyleSheet.Styles,
+};
+
+export default ({ colors }: ThemeShapeType): StylesType => {
     const imageBackgroundColor = Color(colors.layout.backgroundColor).alpha(0.96).rgb().toString();
 
     return {

@@ -1,8 +1,23 @@
 // @flow
 
-import { themeType } from '../../types';
+import { StyleSheet } from 'react-native';
 
-export default ({ spacing }: themeType): {} => {
+import type { ThemeShapeType } from '../../types';
+
+export type StylesType = {
+    alignment: {
+        center: StyleSheet.Styles,
+    },
+    base: StyleSheet.Styles,
+    margin: {
+        [name: string]: StyleSheet.Styles,
+    },
+    padding: {
+        [name: string]: StyleSheet.Styles,
+    },
+};
+
+export default ({ spacing }: ThemeShapeType): {} => {
     const marginOptions: {} = {};
     const paddingOptions: {} = {};
 

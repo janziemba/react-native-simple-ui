@@ -2,9 +2,9 @@
 
 import { Platform } from 'react-native';
 
-import { themeType } from '../../types';
+import type { ThemeShapeType } from '../../types';
 
-const typography: themeType.typography = {
+const typography: $PropertyType<ThemeShapeType, 'typography'> = {
     fontFamily: Platform.select({
         android: 'Roboto',
         ios: 'System',

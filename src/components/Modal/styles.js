@@ -2,9 +2,14 @@
 
 import { StyleSheet } from 'react-native';
 
-import { themeType } from '../../types';
+import type { ThemeShapeType } from '../../types';
 
-export default ({ radiuses }: themeType): {} => ({
+export type StylesType = {
+    container: StyleSheet.Styles,
+    overlay: StyleSheet.Styles,
+};
+
+export default ({ radiuses }: ThemeShapeType): StylesType => ({
     container: {
         backgroundColor: 'white',
         borderRadius: radiuses.small,

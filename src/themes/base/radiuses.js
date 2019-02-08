@@ -1,9 +1,9 @@
 // @flow
 
-import { themeType } from '../../types';
+import type { ThemeShapeType } from '../../types';
 
 /* eslint-disable sort-keys */
-const radiuses: themeType.radiuses = {
+const radiuses: $PropertyType<ThemeShapeType, 'spacing'> = {
     tiny: 2,
     small: 4,
     medium: 6,

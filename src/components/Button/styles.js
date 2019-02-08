@@ -1,12 +1,37 @@
 // @flow
 
+import { StyleSheet } from 'react-native';
+
 import merge from 'lodash/merge';
 
-import { themeType } from '../../types';
+import type { ThemeShapeType } from '../../types';
 import darkenOrLighten from '../../utils/darkenOrLighten';
 import { COLORS, ICON_POSITIONS, ROUNDING, SIZES, STATES, VARIANTS } from './constants';
 
-export default ({ colors, radiuses, spacing, typography }: themeType) => {
+export type StylesType = {
+    base: {
+        container: StyleSheet.Styles,
+        text: StyleSheet.Styles,
+        touchable: StyleSheet.Styles,
+    },
+    colors: {
+        [name: string]: {},
+    },
+    iconPositions: {
+        [name: string]: {},
+    },
+    rounding: {
+        [name: string]: {},
+    },
+    sizes: {
+        [name: string]: {},
+    },
+    variants: {
+        [name: string]: {},
+    },
+};
+
+export default ({ colors, radiuses, spacing, typography }: ThemeShapeType): StylesType => {
     const allColors: {} = merge({}, COLORS, colors.palette, colors.social);
     const colorOptions: {} = {};
 

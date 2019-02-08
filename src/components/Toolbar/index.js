@@ -1,13 +1,28 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import Column from '../Grid/Column';
 import Grid from '../Grid/Grid';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-const getStyles = (props) => {
+type Props = {
+    centerElement: Node,
+    color: string, // eslint-disable-line react/no-unused-prop-types
+    leftElement: Node,
+    rightElement: Node,
+    styles: StylesType, // eslint-disable-line react/no-unused-prop-types
+};
+
+type State = {
+    styles: Array<{}>,
+};
+
+const getStyles = (props: Props) => {
     const { color, styles } = props;
 
     return [
@@ -16,30 +31,17 @@ const getStyles = (props) => {
     ];
 };
 
-const propTypes = {
-    centerElement: PropTypes.node,
-    color: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    leftElement: PropTypes.node,
-    rightElement: PropTypes.node,
-    styles: PropTypes.objectOf(PropTypes.object).isRequired, // eslint-disable-line react/no-unused-prop-types, max-len
-};
-
-const defaultProps = {
-    centerElement: null,
-    color: 'primary',
-    leftElement: null,
-    rightElement: null,
-};
-
-class Toolbar extends PureComponent {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            styles: getStyles(props),
-        };
-    }
-    componentWillReceiveProps(nextProps) {
+class Toolbar extends PureComponent<Props, State> {
+    static defaultProps = {
+        centerElement: null,
+        color: 'primary',
+        leftElement: null,
+        rightElement: null,
+    };
+    state = {
+        styles: getStyles(this.props),
+    };
+    componentWillReceiveProps(nextProps: Props) {
         const propsOnWhichDependsTheStyle = ['color'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
@@ -65,9 +67,6 @@ class Toolbar extends PureComponent {
         );
     }
 }
-
-Toolbar.propTypes = propTypes;
-Toolbar.defaultProps = defaultProps;
 
 Toolbar = withTheme(styles, 'Toolbar')(Toolbar);
 

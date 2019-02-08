@@ -1,4 +1,7 @@
+// @flow
+
 import colors from '../../themes/base/colors';
+import type { ObjectOfStringsType } from '../../types';
 
 export const COLORS = {
     ...colors.palette,
@@ -6,32 +9,32 @@ export const COLORS = {
     white: 'white',
 };
 
-export const ICON_POSITIONS = {
+export const ICON_POSITIONS: ObjectOfStringsType = {
     bottom: 'bottom',
     left: 'left',
     right: 'right',
     top: 'top',
 };
 
-export const ROUNDING = {
+export const ROUNDING: ObjectOfStringsType = {
     normal: 'normal',
     rounded: 'rounded',
     sharp: 'sharp',
 };
 
-export const SIZES = {
+export const SIZES: ObjectOfStringsType = {
     large: 'large',
     medium: 'medium',
     small: 'small',
 };
 
-export const STATES = {
+export const STATES: ObjectOfStringsType = {
     active: 'active',
     disabled: 'disabled',
     inactive: 'inactive',
 };
 
-export const VARIANTS = {
+export const VARIANTS: ObjectOfStringsType = {
     default: 'default',
     flat: 'flat',
     outlined: 'outlined',

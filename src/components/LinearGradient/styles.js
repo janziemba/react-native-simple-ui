@@ -2,7 +2,13 @@
 
 import { StyleSheet } from 'react-native';
 
-export default (): {} => ({
+export type StylesType = {
+    container: StyleSheet.Styles,
+    content: StyleSheet.Styles,
+    gradient: StyleSheet.Styles,
+};
+
+export default (): StylesType => ({
     container: {
         overflow: 'hidden',
     },

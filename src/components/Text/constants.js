@@ -1,4 +1,7 @@
+// @flow
+
 import colors from '../../themes/base/colors';
+import type { ObjectOfStringsType } from '../../types';
 
 export const COLORS = {
     ...colors.palette,
@@ -7,7 +10,7 @@ export const COLORS = {
     white: 'white',
 };
 
-export const SIZES = {
+export const SIZES: ObjectOfStringsType = {
     h1: 'h1',
     h2: 'h2',
     h3: 'h3',

@@ -1,9 +1,14 @@
 // @flow
 
-import { themeType } from '../../types';
+import { StyleSheet } from 'react-native';
 
-/* eslint-disable sort-keys */
-export default ({ spacing }: themeType): {} => {
+import type { ThemeShapeType } from '../../types';
+
+export type StylesType = {
+    [name: string]: StyleSheet.Styles,
+};
+
+export default ({ spacing }: ThemeShapeType): StylesType => {
     const options: {} = {};
 
     Object.keys(spacing).forEach((spacingName: string) => {
