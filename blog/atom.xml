@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://janziemba.github.io/react-native-simple-ui/blog</id>
+    <title>react-native-simple-ui Blog</title>
+    <updated>2019-02-11T06:00:00Z</updated>
+    <generator>Feed for Node.js</generator>
+    <link rel="alternate" href="http://janziemba.github.io/react-native-simple-ui/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest react-native-simple-ui news and events.</subtitle>
+    <logo>http://janziemba.github.io/react-native-simple-ui/img/docusaurus.svg</logo>
+    <rights>Copyright © 2019 Jan Ziemba</rights>
+    <entry>
+        <title type="html"><![CDATA[New docs]]></title>
+        <id>http://janziemba.github.io/react-native-simple-ui/blog/2019/02/11/new-docs.html</id>
+        <link href="http://janziemba.github.io/react-native-simple-ui/blog/2019/02/11/new-docs.html">
+        </link>
+        <updated>2019-02-11T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>The new docs are out!</p> ]]></summary>
+        <author>
+            <name>Jan Ziemba</name>
+            <uri>http://twitter.com/ZiembaJan</uri>
+        </author>
+    </entry>
+</feed>
