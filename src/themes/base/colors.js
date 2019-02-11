@@ -20,9 +20,9 @@ const colors: $PropertyType<ThemeShapeType, 'colors'> = {
         facebook: '#3b5998',
         google: '#dc4e41',
         instagram: '#c32aa3',
-        linkedIn: '#0077b5',
+        linkedin: '#0077b5',
         twitter: '#55acee',
-        vk: '#dc4e41',
+        vk: '#4c75a3',
     },
     text: {
         disabled: '#999999',
