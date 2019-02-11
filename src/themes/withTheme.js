@@ -1,9 +1,10 @@
 // @flow
 
-import React from 'react';
+import React, { PureComponent } from 'react';
 
 import merge from 'lodash/merge';
 
+import type { ThemeType } from '../types';
 import baseTheme from './base';
 import ThemeContext from './themeContext';
 
@@ -24,17 +25,17 @@ const checkErrors = (props: any, componentName: string) => {
 };
 
 const withTheme = (customStyles: Function, componentName: string) => (Component: any) => {
-    class ComponentWithTheme extends React.Component<{}> {
+    class ComponentWithTheme extends PureComponent<{}> {
         static originalComponentName: string = Component.displayName || Component.name;
         static displayName: ?string = `WithTheme(${Component.displayName || Component.name})`;
 
         render() {
             return (
                 <ThemeContext.Consumer>
-                    {(customTheme: {}) => {
+                    {(customTheme: ThemeType) => {
                         checkErrors(this.props, componentName);
 
-                        const theme: {} = merge(
+                        const theme: ThemeType = merge(
                             {},
                             baseTheme,
                             customTheme || {},
@@ -43,7 +44,7 @@ const withTheme = (customStyles: Function, componentName: string) => (Component:
                         const styles: {} = merge(
                             {},
                             customStyles ? customStyles(theme) : {},
-                            theme[componentName] || {},
+                            theme.components[componentName] || {},
                         );
 
                         return (

@@ -15,7 +15,8 @@ export type StylesType = {
 };
 
 export default ({ colors }: ThemeShapeType): StylesType => {
-    const imageBackgroundColor = Color(colors.layout.backgroundColor).alpha(0.96).rgb().toString();
+    const imageBackgroundColor: string = Color(colors.layout.backgroundColor)
+        .alpha(0.96).rgb().toString();
 
     return {
         bottomSafeArea: {

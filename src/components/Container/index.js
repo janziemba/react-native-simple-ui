@@ -1,13 +1,34 @@
-import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+// @flow
 
-import spacing from '../../themes/base/spacing';
+import React, { PureComponent } from 'react';
+import { StyleSheet, View } from 'react-native';
+
+import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
+
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-const getStyles = (props) => {
+type Props = ViewProps & {
+    alignment: string,
+    margin: string,
+    padding: string,
+    styles: StylesType,
+};
+
+const defaultProps = {
+    ...View.defaultProps,
+    alignment: null,
+    margin: null,
+    padding: null,
+};
+
+type State = {
+    styles: Array<StyleSheet.Styles>,
+};
+
+const getStyles = (props: Props): Array<StyleSheet.Styles> => {
     const { alignment, margin, padding, style, styles } = props;
 
     return [
@@ -19,31 +40,13 @@ const getStyles = (props) => {
     ];
 };
 
-const propTypes = {
-    ...View.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
-    alignment: PropTypes.string,
-    margin: PropTypes.oneOf([...Object.keys(spacing)]),
-    padding: PropTypes.oneOf([...Object.keys(spacing)]),
-    styles: PropTypes.objectOf(PropTypes.object).isRequired,
-};
-
-const defaultProps = {
-    ...View.defaultProps,
-    alignment: null,
-    margin: null,
-    padding: null,
-};
-
-class Container extends PureComponent {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            styles: getStyles(props),
-        };
-    }
+class Container extends PureComponent<Props, State> {
+    static defaultProps = defaultProps;
+    state = {
+        styles: getStyles(this.props),
+    };
     componentWillReceiveProps(nextProps) {
-        const propsOnWhichDependsTheStyle = ['align', 'margin', 'padding', 'style'];
+        const propsOnWhichDependsTheStyle: Array<string> = ['align', 'margin', 'padding', 'style'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
@@ -63,9 +66,6 @@ class Container extends PureComponent {
         );
     }
 }
-
-Container.propTypes = propTypes;
-Container.defaultProps = defaultProps;
 
 Container = withTheme(styles, 'Container')(Container);
 

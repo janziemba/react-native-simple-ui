@@ -1,12 +1,8 @@
 // @flow
 
-import { StyleSheet } from 'react-native';
+import type { ObjectOfStyleSheetsType, ThemeShapeType } from '../../types';
 
-import type { ThemeShapeType } from '../../types';
-
-export type StylesType = {
-    [name: string]: StyleSheet.Styles,
-};
+export type StylesType = ObjectOfStyleSheetsType;
 
 export default ({ spacing }: ThemeShapeType): StylesType => {
     const options: {} = {};

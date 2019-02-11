@@ -1,20 +1,24 @@
+// @flow
+
 import Color from 'color';
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import type { Element } from 'react';
 import { View } from 'react-native';
+
+import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
 
 import withTheme from '../../themes/withTheme';
 import { DIRECTIONS } from './constants';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-export const propTypes = {
-    ...View.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
-    direction: PropTypes.oneOf(Object.keys(DIRECTIONS)),
-    fromColor: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-    styles: PropTypes.objectOf(PropTypes.object).isRequired,
-    toColor: PropTypes.string.isRequired,
-    width: PropTypes.number.isRequired,
+export type Props = ViewProps & {
+    direction: string,
+    fromColor: string,
+    height: number,
+    styles: StylesType,
+    toColor: string,
+    width: number,
 };
 
 const defaultProps = {
@@ -22,26 +26,27 @@ const defaultProps = {
     direction: DIRECTIONS.horizontal,
 };
 
-class LinearGradient extends PureComponent {
-    constructor(props) {
+class LinearGradient extends PureComponent<Props> {
+    static defaultProps = defaultProps;
+    constructor(props: Props) {
         super(props);
 
-        this.renderGradient = this.renderGradient.bind(this);
+        (this: any).renderGradient = this.renderGradient.bind(this);
     }
     renderGradient() {
         const { direction, fromColor, height, toColor, width } = this.props;
 
-        const lines = [];
+        const lines: Array<Element<typeof View>> = [];
 
-        const point = 1 / (direction === DIRECTIONS.horizontal ? width : height);
-        const roundedPoint = Math.round(point * 1000000) / 1000000;
+        const point: number = 1 / (direction === DIRECTIONS.horizontal ? width : height);
+        const roundedPoint: number = Math.round(point * 1000000) / 1000000;
 
-        const fromC = Color(fromColor);
-        const toC = Color(toColor);
-        const lineHeight = direction === DIRECTIONS.vertical ? 1 : height;
-        const lineWidth = direction === DIRECTIONS.horizontal ? 1 : width;
+        const fromC: typeof Color = Color(fromColor);
+        const toC: typeof Color = Color(toColor);
+        const lineHeight: number = direction === DIRECTIONS.vertical ? 1 : height;
+        const lineWidth: number = direction === DIRECTIONS.horizontal ? 1 : width;
 
-        for (let i = 0; i <= 1; i += roundedPoint) {
+        for (let i: number = 0; i <= 1; i += roundedPoint) {
             lines.push(
                 <View
                     key={`i_${i}`}
@@ -77,9 +82,6 @@ class LinearGradient extends PureComponent {
         );
     }
 }
-
-LinearGradient.propTypes = propTypes;
-LinearGradient.defaultProps = defaultProps;
 
 LinearGradient = withTheme(styles, 'LinearGradient')(LinearGradient);
 

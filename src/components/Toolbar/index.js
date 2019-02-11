@@ -2,6 +2,7 @@
 
 import React, { PureComponent } from 'react';
 import type { Node } from 'react';
+import { StyleSheet } from 'react-native';
 
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
@@ -19,10 +20,10 @@ type Props = {
 };
 
 type State = {
-    styles: Array<{}>,
+    styles: Array<StyleSheet.Styles>,
 };
 
-const getStyles = (props: Props) => {
+const getStyles = (props: Props): Array<StyleSheet.Styles> => {
     const { color, styles } = props;
 
     return [
@@ -42,7 +43,7 @@ class Toolbar extends PureComponent<Props, State> {
         styles: getStyles(this.props),
     };
     componentWillReceiveProps(nextProps: Props) {
-        const propsOnWhichDependsTheStyle = ['color'];
+        const propsOnWhichDependsTheStyle: Array<string> = ['color'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });

@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 
 import merge from 'lodash/merge';
 
-import type { ThemeShapeType } from '../../types';
+import type { ObjectOfStringsType, ObjectOfObjectsType, ThemeShapeType } from '../../types';
 import darkenOrLighten from '../../utils/darkenOrLighten';
 import { COLORS, ICON_POSITIONS, ROUNDING, SIZES, STATES, VARIANTS } from './constants';
 
@@ -14,26 +14,16 @@ export type StylesType = {
         text: StyleSheet.Styles,
         touchable: StyleSheet.Styles,
     },
-    colors: {
-        [name: string]: {},
-    },
-    iconPositions: {
-        [name: string]: {},
-    },
-    rounding: {
-        [name: string]: {},
-    },
-    sizes: {
-        [name: string]: {},
-    },
-    variants: {
-        [name: string]: {},
-    },
+    colors: ObjectOfObjectsType,
+    iconPositions: ObjectOfObjectsType,
+    rounding: ObjectOfObjectsType,
+    sizes: ObjectOfObjectsType,
+    variants: ObjectOfObjectsType,
 };
 
 export default ({ colors, radiuses, spacing, typography }: ThemeShapeType): StylesType => {
-    const allColors: {} = merge({}, COLORS, colors.palette, colors.social);
-    const colorOptions: {} = {};
+    const allColors: ObjectOfStringsType = merge({}, COLORS, colors.palette, colors.social);
+    const colorOptions: ObjectOfObjectsType = {};
 
     Object.keys(allColors).forEach((colorName: string) => {
         const color = colors.palette[colorName] || colors.social[colorName] || colorName;

@@ -1,21 +1,22 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { PureComponent } from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 
 import withTheme from '../../themes/withTheme';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-const propTypes = {
-    children: PropTypes.node.isRequired,
-    onOverlayPress: PropTypes.func,
-    styles: PropTypes.objectOf(PropTypes.object).isRequired,
+type Props = {
+    children: Node,
+    onOverlayPress: Function,
+    styles: StylesType,
 };
 
-const defaultProps = {
-    onOverlayPress: null,
-};
-
-class Modal extends PureComponent {
+class Modal extends PureComponent<Props> {
+    static defaultProps = {
+        onOverlayPress: null,
+    };
     render() {
         const { children, onOverlayPress, styles } = this.props;
 
@@ -30,9 +31,6 @@ class Modal extends PureComponent {
         );
     }
 }
-
-Modal.propTypes = propTypes;
-Modal.defaultProps = defaultProps;
 
 Modal = withTheme(styles, 'Modal')(Modal);
 

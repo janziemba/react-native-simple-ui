@@ -1,29 +1,65 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { PureComponent } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import omit from 'lodash/omit';
+import type { Props as TouchableWithoutFeedbackProps } from 'react-native/Libraries/Components/Touchable/TouchableWithoutFeedback';
 
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
-import Icon, { propTypes as iconPropTypes } from '../Icon';
-import { propTypes as linearGradientPropTypes } from '../LinearGradient';
+import Icon from '../Icon';
+import type { Props as IconProps } from '../Icon';
+import type { Props as LinearGradientProps } from '../LinearGradient';
 import { ICON_POSITIONS, ROUNDING, SIZES, STATES, VARIANTS } from './constants';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-const getStyles = (props, state) => {
+type Props = TouchableWithoutFeedbackProps & {
+    color: string,
+    icon: IconProps,
+    linearGradient: LinearGradientProps,
+    rounding: string, // eslint-disable-line react/no-unused-prop-types, max-len
+    size: string, // eslint-disable-line react/no-unused-prop-types
+    styles: StylesType, // eslint-disable-line react/no-unused-prop-types, max-len
+    text: string,
+    variant: string, // eslint-disable-line react/no-unused-prop-types, max-len
+};
+
+const defaultProps = {
+    ...TouchableOpacity.defaultProps,
+    color: 'primary',
+    icon: null,
+    linearGradient: null,
+    rounding: ROUNDING.normal,
+    size: SIZES.medium,
+    variant: VARIANTS.default,
+};
+
+type MergedStylesType = {
+    container: Array<StyleSheet.Styles>,
+    iconColor: string,
+    iconContainer: StyleSheet.Styles,
+    text: StyleSheet.Styles,
+    touchable: StyleSheet.Styles,
+};
+
+type State = {
+    active: boolean,
+    styles: MergedStylesType,
+};
+
+const getStyles = (props: Props, state?: State): MergedStylesType => {
     const { color, disabled, icon, rounding, size, styles, variant } = props;
-    const { active } = state;
 
-    let colorState = STATES.inactive;
+    let colorState: string = STATES.inactive;
     if (disabled) {
         colorState = STATES.disabled;
-    } else if (active) {
+    } else if (state && state.active) {
         colorState = STATES.active;
     }
 
     return {
-        ...styles,
         container: [
             styles.base.container,
             styles.rounding[rounding],
@@ -45,57 +81,27 @@ const getStyles = (props, state) => {
             styles.colors[color][colorState].text,
             styles.variants[variant].text,
         ],
+        touchable: styles.touchable,
     };
 };
 
-const propTypes = {
-    ...TouchableOpacity.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
-    color: PropTypes.string,
-    icon: PropTypes.shape({
-        ...omit(iconPropTypes, ['styles', 'theme']),
-        position: PropTypes.oneOf(Object.keys(ICON_POSITIONS)),
-    }),
-    linearGradient: PropTypes.shape({
-        ...omit(linearGradientPropTypes, ['styles', 'theme']),
-    }),
-    rounding: PropTypes.oneOf(Object.keys(ROUNDING)), // eslint-disable-line react/no-unused-prop-types, max-len
-    size: PropTypes.oneOf(Object.keys(SIZES)), // eslint-disable-line react/no-unused-prop-types
-    styles: PropTypes.objectOf(PropTypes.object).isRequired, // eslint-disable-line react/no-unused-prop-types, max-len
-    text: PropTypes.string.isRequired,
-    variant: PropTypes.oneOf(Object.keys(VARIANTS)), // eslint-disable-line react/no-unused-prop-types, max-len
-};
-
-const defaultProps = {
-    ...TouchableOpacity.defaultProps,
-    color: 'primary',
-    icon: null,
-    linearGradient: null,
-    rounding: ROUNDING.normal,
-    size: SIZES.medium,
-    variant: VARIANTS.default,
-};
-
-class Button extends PureComponent {
-    constructor(props) {
+class Button extends PureComponent<Props, State> {
+    static defaultProps = defaultProps;
+    state = {
+        active: false, // eslint-disable-line react/no-unused-state
+        styles: getStyles(this.props),
+    };
+    constructor(props: Props) {
         super(props);
 
-        this.onPressIn = this.onPressIn.bind(this);
-        this.onPressOut = this.onPressOut.bind(this);
-        this.renderIcon = this.renderIcon.bind(this);
-        this.renderIconAfterText = this.renderIconAfterText.bind(this);
-        this.renderIconBeforeText = this.renderIconBeforeText.bind(this);
-
-        const state = {
-            active: false,
-        };
-
-        this.state = {
-            ...state,
-            styles: getStyles(props, state),
-        };
+        (this: any).onPressIn = this.onPressIn.bind(this);
+        (this: any).onPressOut = this.onPressOut.bind(this);
+        (this: any).renderIcon = this.renderIcon.bind(this);
+        (this: any).renderIconAfterText = this.renderIconAfterText.bind(this);
+        (this: any).renderIconBeforeText = this.renderIconBeforeText.bind(this);
     }
-    componentWillReceiveProps(nextProps) {
-        const propsOnWhichDependsTheStyle = ['color', 'disabled', 'icon', 'rounding', 'size', 'variant'];
+    componentWillReceiveProps(nextProps: Props) {
+        const propsOnWhichDependsTheStyle: Array<string> = ['color', 'disabled', 'icon', 'rounding', 'size', 'variant'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState(prevState => ({ styles: getStyles(nextProps, prevState) }));
@@ -167,7 +173,7 @@ class Button extends PureComponent {
                 disabled={disabled || !onPress}
                 onPressIn={this.onPressIn}
                 onPressOut={this.onPressOut}
-                style={styles.base.touchable}
+                style={styles.touchable}
             >
                 <View style={styles.container}>
                     {this.renderIconBeforeText()}
@@ -180,9 +186,6 @@ class Button extends PureComponent {
         );
     }
 }
-
-Button.propTypes = propTypes;
-Button.defaultProps = defaultProps;
 
 Button = withTheme(styles, 'Button')(Button);
 

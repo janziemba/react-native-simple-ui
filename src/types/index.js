@@ -2,8 +2,16 @@
 
 import { StyleSheet } from 'react-native';
 
+export type ObjectOfObjectsType = {
+    [name: string]: {},
+};
+
 export type ObjectOfStringsType = {
     [name: string]: string,
+};
+
+export type ObjectOfStyleSheetsType = {
+    [name: string]: StyleSheet.Styles,
 };
 
 export type ThemeType = {
@@ -13,6 +21,7 @@ export type ThemeType = {
         social: ObjectOfStringsType,
         text: ObjectOfStringsType,
     },
+    components: {},
     radiuses: {
         tiny: number,
         small: number,

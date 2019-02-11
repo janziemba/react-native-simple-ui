@@ -1,12 +1,33 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+import type { Node } from 'react';
+import { StyleSheet, View } from 'react-native';
+
+import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
 
 import withTheme from '../../../themes/withTheme';
 import hasStyleChanged from '../../../utils/hasStyleChanged';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-const getStyles = (props) => {
+type Props = ViewProps & {
+    children: Node,
+    size: number,
+    styles: StylesType,
+};
+
+const defaultProps = {
+    ...View.defaultProps,
+    children: null,
+    size: null,
+};
+
+type State = {
+    styles: Array<StyleSheet.Styles>,
+};
+
+const getStyles = (props: Props): Array<StyleSheet.Styles> => {
     const { size, style, styles } = props;
 
     let flex = 1;
@@ -24,29 +45,13 @@ const getStyles = (props) => {
     ];
 };
 
-const propTypes = {
-    ...View.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
-    children: PropTypes.node,
-    size: PropTypes.number,
-    styles: PropTypes.objectOf(PropTypes.object).isRequired,
-};
-
-const defaultProps = {
-    ...View.defaultProps,
-    children: null,
-    size: null,
-};
-
-class Row extends PureComponent {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            styles: getStyles(props),
-        };
-    }
-    componentWillReceiveProps(nextProps) {
-        const propsOnWhichDependsTheStyle = ['size', 'style'];
+class Row extends PureComponent<Props, State> {
+    static defaultProps = defaultProps;
+    state = {
+        styles: getStyles(this.props),
+    };
+    componentWillReceiveProps(nextProps: Props) {
+        const propsOnWhichDependsTheStyle: Array<string> = ['size', 'style'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
@@ -66,9 +71,6 @@ class Row extends PureComponent {
         );
     }
 }
-
-Row.propTypes = propTypes;
-Row.defaultProps = defaultProps;
 
 Row = withTheme(styles, 'Row')(Row);
 

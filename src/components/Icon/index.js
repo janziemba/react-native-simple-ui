@@ -1,33 +1,36 @@
+// @flow
+
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 
 import withTheme from '../../themes/withTheme';
+import type { ThemeShapeType } from '../../types';
 import { ICON_SETS } from './constants';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-export const propTypes = {
-    color: PropTypes.string,
-    colorName: PropTypes.string,
-    iconSet: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    size: PropTypes.number,
-    styles: PropTypes.objectOf(PropTypes.object).isRequired,
-    theme: PropTypes.objectOf(PropTypes.object).isRequired,
-};
-const defaultProps = {
-    color: null,
-    colorName: null,
-    iconSet: null,
-    size: 24,
+export type Props = {
+    color: string,
+    colorName: string,
+    iconSet: string,
+    name: string,
+    size: number,
+    styles: StylesType,
+    theme: ThemeShapeType,
 };
 
-class Icon extends PureComponent {
+class Icon extends PureComponent<Props> {
+    static defaultProps = {
+        color: null,
+        colorName: null,
+        iconSet: null,
+        size: 24,
+    };
     render() {
         const { color, colorName, iconSet, name, size, styles, theme } = this.props;
 
         const VectorIcon = ICON_SETS[iconSet || theme.typography.iconSet];
 
-        let iconColor = color;
+        let iconColor: string = color;
 
         if (colorName) {
             iconColor = styles.colors[colorName].color;
@@ -42,9 +45,6 @@ class Icon extends PureComponent {
         );
     }
 }
-
-Icon.propTypes = propTypes;
-Icon.defaultProps = defaultProps;
 
 Icon = withTheme(styles, 'Icon')(Icon);
 

@@ -3,7 +3,7 @@
 import colors from '../../themes/base/colors';
 import type { ObjectOfStringsType } from '../../types';
 
-export const COLORS = {
+export const COLORS: ObjectOfStringsType = {
     ...colors.palette,
     ...colors.social,
     black: 'black',

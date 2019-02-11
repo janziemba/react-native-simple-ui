@@ -4,21 +4,19 @@ import { StyleSheet } from 'react-native';
 
 import merge from 'lodash/merge';
 
-import type { ThemeShapeType } from '../../types';
+import type { ObjectOfStringsType, ObjectOfStyleSheetsType, ThemeShapeType } from '../../types';
 import { COLORS } from './constants';
 
 export type StylesType = {
     base: {
         container: StyleSheet.Styles,
     },
-    colors: {
-        [name: string]: StyleSheet.Styles,
-    },
+    colors: ObjectOfStyleSheetsType,
 };
 
 export default ({ colors, spacing }: ThemeShapeType): StylesType => {
-    const allColors: {} = merge({}, COLORS, colors.palette);
-    const colorOptions: {} = {};
+    const allColors: ObjectOfStringsType = merge({}, COLORS, colors.palette);
+    const colorOptions: ObjectOfStyleSheetsType = {};
 
     Object.keys(allColors).forEach((colorName: string) => {
         const color: string = colors.palette[colorName] || colorName;

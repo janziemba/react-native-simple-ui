@@ -26,27 +26,29 @@ You have to define a index context in your app's root component:
 import { ThemeContext } from 'react-native-simple-ui';
 
 const customTheme = {
-    // you can set custom styles here and overwrite default styles,
-    // for example:
-    text: {
-        sizes: {
-            h1: {
-                fontSize: 50,
-            },
-        },
-    },
-    // or
-    toolbar: {
-        base: {
-            container: {
-                backgroundColor: 'red',
-            },
-        },
-    },
-    // or you can also set your own primitives:
+    // you can set your own primitives:
     colors: {
         palette: {
             primary: 'green',
+        },
+    },
+    // or you can also set custom styles here and overwrite default styles:
+    components: {
+        // for example:
+        text: {
+            sizes: {
+                h1: {
+                    fontSize: 50,
+                },
+            },
+        },
+        // or
+        toolbar: {
+            base: {
+                container: {
+                    backgroundColor: 'red',
+                },
+            },
         },
     },
 };

@@ -2,24 +2,20 @@
 
 import { StyleSheet } from 'react-native';
 
-import type { ThemeShapeType } from '../../types';
+import type { ObjectOfObjectsType, ObjectOfStyleSheetsType, ThemeShapeType } from '../../types';
 
 export type StylesType = {
     alignment: {
         center: StyleSheet.Styles,
     },
     base: StyleSheet.Styles,
-    margin: {
-        [name: string]: StyleSheet.Styles,
-    },
-    padding: {
-        [name: string]: StyleSheet.Styles,
-    },
+    margin: ObjectOfStyleSheetsType,
+    padding: ObjectOfStyleSheetsType,
 };
 
-export default ({ spacing }: ThemeShapeType): {} => {
-    const marginOptions: {} = {};
-    const paddingOptions: {} = {};
+export default ({ spacing }: ThemeShapeType): StylesType => {
+    const marginOptions: ObjectOfObjectsType = {};
+    const paddingOptions: ObjectOfObjectsType = {};
 
     Object.keys(spacing).forEach((name: string) => {
         marginOptions[name] = {

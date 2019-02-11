@@ -1,26 +1,28 @@
+// @flow
+
 import Color from 'color';
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 import { ImageBackground, SafeAreaView, StatusBar, View } from 'react-native';
 
 import withTheme from '../../themes/withTheme';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-const propTypes = {
-    backgroundImage: PropTypes.node,
-    children: PropTypes.node.isRequired,
-    styles: PropTypes.objectOf(PropTypes.object).isRequired,
+type Props = {
+    backgroundImage: Node,
+    children: Node,
+    styles: StylesType,
 };
 
-const defaultProps = {
-    backgroundImage: null,
-};
-
-class AppContainer extends PureComponent {
-    constructor(props) {
+class AppContainer extends PureComponent<Props> {
+    static defaultProps = {
+        backgroundImage: null,
+    };
+    constructor(props: Props) {
         super(props);
 
-        this.renderContent = this.renderContent.bind(this);
+        (this: any).renderContent = this.renderContent.bind(this);
     }
     renderContent() {
         const { backgroundImage, children, styles } = this.props;
@@ -43,7 +45,7 @@ class AppContainer extends PureComponent {
     render() {
         const { styles } = this.props;
 
-        const topSafeAreaIsLight = Color(styles.topSafeArea.backgroundColor).isLight();
+        const topSafeAreaIsLight: boolean = Color(styles.topSafeArea.backgroundColor).isLight();
 
         return (
             <View style={styles.wrapper}>
@@ -60,9 +62,6 @@ class AppContainer extends PureComponent {
         );
     }
 }
-
-AppContainer.propTypes = propTypes;
-AppContainer.defaultProps = defaultProps;
 
 AppContainer = withTheme(styles, 'AppContainer')(AppContainer);
 

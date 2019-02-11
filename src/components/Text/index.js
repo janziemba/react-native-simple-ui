@@ -1,13 +1,33 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { PureComponent } from 'react';
-import { Text as RNText } from 'react-native';
+import { StyleSheet, Text as RNText } from 'react-native';
+
+import type { TextProps } from 'react-native/Libraries/Text/TextProps';
 
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import { SIZES } from './constants';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-const getStyles = (props) => {
+export type Props = TextProps & {
+    color: string,
+    size: string,
+    styles: StylesType,
+};
+
+export const defaultProps = {
+    ...RNText.defaultProps,
+    color: null,
+    size: SIZES.normal,
+};
+
+type State = {
+    styles: Array<StyleSheet.Styles>,
+};
+
+const getStyles = (props: Props): Array<StyleSheet.Styles> => {
     const { color, size, styles } = props;
 
     return [
@@ -17,29 +37,13 @@ const getStyles = (props) => {
     ];
 };
 
-const propTypes = {
-    ...RNText.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
-    color: PropTypes.string,
-    size: PropTypes.oneOf(Object.keys(SIZES)),
-    styles: PropTypes.objectOf(PropTypes.object).isRequired,
-};
-
-const defaultProps = {
-    ...RNText.defaultProps,
-    color: null,
-    size: SIZES.normal,
-};
-
-class Text extends PureComponent {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            styles: getStyles(props),
-        };
-    }
-    componentWillReceiveProps(nextProps) {
-        const propsOnWhichDependsTheStyle = ['color', 'size'];
+class Text extends PureComponent<Props, State> {
+    static defaultProps = defaultProps;
+    state = {
+        styles: getStyles(this.props),
+    };
+    componentWillReceiveProps(nextProps: Props) {
+        const propsOnWhichDependsTheStyle: Array<string> = ['color', 'size'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
@@ -60,7 +64,6 @@ class Text extends PureComponent {
     }
 }
 
-Text.propTypes = propTypes;
-Text.defaultProps = defaultProps;
+Text = withTheme(styles, 'Text')(Text);
 
-export default withTheme(styles, 'Text')(Text);
+export default Text;

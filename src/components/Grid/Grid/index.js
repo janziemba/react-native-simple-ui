@@ -1,15 +1,33 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
+import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
 
 import withTheme from '../../../themes/withTheme';
 import hasStyleChanged from '../../../utils/hasStyleChanged';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-const getStyles = (props) => {
+type Props = ViewProps & {
+    children: Node,
+    styles: StylesType,
+};
+
+const defaultProps = {
+    ...View.defaultProps,
+    children: null,
+};
+
+type State = {
+    styles: Array<StyleSheet.Styles>,
+};
+
+const getStyles = (props: Props): Array<StyleSheet.Styles> => {
     const { children, style, styles } = props;
 
-    const isDirectionRow = children.find(child => child.type.originalComponentName === 'Row');
+    const isDirectionRow: boolean = children.find(child => child.type.originalComponentName === 'Row');
 
     return [
         style,
@@ -18,26 +36,13 @@ const getStyles = (props) => {
     ];
 };
 
-const propTypes = {
-    ...View.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
-    children: PropTypes.node.isRequired,
-    styles: PropTypes.objectOf(PropTypes.object).isRequired,
-};
-
-const defaultProps = {
-    ...View.defaultProps,
-};
-
-class Grid extends PureComponent {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            styles: getStyles(props),
-        };
-    }
+class Grid extends PureComponent<Props, State> {
+    static defaultProps = defaultProps;
+    state = {
+        styles: getStyles(this.props),
+    };
     componentWillReceiveProps(nextProps) {
-        const propsOnWhichDependsTheStyle = ['children'];
+        const propsOnWhichDependsTheStyle: Array<string> = ['children'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
@@ -57,9 +62,6 @@ class Grid extends PureComponent {
         );
     }
 }
-
-Grid.propTypes = propTypes;
-Grid.defaultProps = defaultProps;
 
 Grid = withTheme(styles, 'Grid')(Grid);
 

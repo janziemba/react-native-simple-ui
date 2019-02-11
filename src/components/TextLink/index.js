@@ -1,22 +1,24 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { PureComponent } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
-import Text from '../Text';
+import merge from 'lodash/merge';
 
-const propTypes = {
-    ...Text.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
-    disabled: PropTypes.bool,
-    onPress: PropTypes.func,
+import Text, { defaultProps as TextDefaultProps } from '../Text';
+import type { Props as TextProps } from '../Text';
+
+type Props = {
+    ...TextProps,
+    disabled: boolean,
+    onPress: Function,
 };
 
-const defaultProps = {
-    ...Text.defaultProps,
-    disabled: false,
-    onPress: null,
-};
-
-class TextLink extends PureComponent {
+class TextLink extends PureComponent<Props> {
+    static defaultProps = merge({}, TextDefaultProps, {
+        disabled: false,
+        onPress: null,
+    });
     render() {
         const { children, disabled, onPress } = this.props;
 
@@ -37,8 +39,5 @@ class TextLink extends PureComponent {
         );
     }
 }
-
-TextLink.propTypes = propTypes;
-TextLink.defaultProps = defaultProps;
 
 export default TextLink;

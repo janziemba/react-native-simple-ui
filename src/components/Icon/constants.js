@@ -1,3 +1,5 @@
+// @flow
+
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
@@ -12,8 +14,9 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Zocial from 'react-native-vector-icons/Zocial';
 
 import colors from '../../themes/base/colors';
+import type { ObjectOfStringsType } from '../../types';
 
-export const COLORS = {
+export const COLORS: ObjectOfStringsType = {
     ...colors.palette,
     ...colors.social,
     black: 'black',

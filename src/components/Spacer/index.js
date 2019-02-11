@@ -1,12 +1,24 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import styles from './styles';
+import type { StylesType } from './styles';
 
-const getStyles = (props) => {
+type Props = {
+    multiplier: number, // eslint-disable-line react/no-unused-prop-types
+    size: string, // eslint-disable-line react/no-unused-prop-types
+    styles: StylesType, // eslint-disable-line react/no-unused-prop-types
+};
+
+type State = {
+    styles: {},
+};
+
+const getStyles = (props: Props): {} => {
     const { multiplier, size, styles } = props;
 
     return {
@@ -14,27 +26,16 @@ const getStyles = (props) => {
     };
 };
 
-const propTypes = {
-    multiplier: PropTypes.number, // eslint-disable-line react/no-unused-prop-types
-    size: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    styles: PropTypes.objectOf(PropTypes.object).isRequired, // eslint-disable-line react/no-unused-prop-types, max-len
-};
-
-const defaultProps = {
-    multiplier: 1,
-    size: 'medium',
-};
-
-class Spacer extends PureComponent {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            styles: getStyles(props),
-        };
-    }
-    componentWillReceiveProps(nextProps) {
-        const propsOnWhichDependsTheStyle = ['multiplier', 'size'];
+class Spacer extends PureComponent<Props, State> {
+    static defaultProps = {
+        multiplier: 1,
+        size: 'medium',
+    };
+    state = {
+        styles: getStyles(this.props),
+    };
+    componentWillReceiveProps(nextProps: Props) {
+        const propsOnWhichDependsTheStyle: Array<string> = ['multiplier', 'size'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
@@ -49,7 +50,6 @@ class Spacer extends PureComponent {
     }
 }
 
-Spacer.propTypes = propTypes;
-Spacer.defaultProps = defaultProps;
+Spacer = withTheme(styles, 'Spacer')(Spacer);
 
-export default withTheme(styles, 'Spacer')(Spacer);
+export default Spacer;
