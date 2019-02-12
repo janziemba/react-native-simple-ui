@@ -7,7 +7,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import omit from 'lodash/omit';
 import type { Props as TouchableWithoutFeedbackProps } from 'react-native/Libraries/Components/Touchable/TouchableWithoutFeedback';
 
-import withTheme from '../../themes/withTheme';
+import injectTheme from '../../themes/injectTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import Icon from '../Icon';
 import type { Props as IconProps } from '../Icon';
@@ -188,6 +188,6 @@ class Button extends PureComponent<Props, State> {
     }
 }
 
-Button = withTheme(styles, 'Button')(Button);
+Button = injectTheme(styles, 'Button')(Button);
 
 export default Button;

@@ -47,8 +47,8 @@
       "theme": {
         "title": "Theme"
       },
-      "withtheme": {
-        "title": "withTheme HOC"
+      "themeinjection": {
+        "title": "injectTheme HOC"
       }
     },
     "links": {

@@ -6,7 +6,7 @@ import { StyleSheet, View } from 'react-native';
 
 import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
 
-import withTheme from '../../../themes/withTheme';
+import injectTheme from '../../../themes/injectTheme';
 import hasStyleChanged from '../../../utils/hasStyleChanged';
 import styles from './styles';
 import type { StylesType } from './styles';
@@ -64,6 +64,6 @@ class Grid extends PureComponent<Props, State> {
     }
 }
 
-Grid = withTheme(styles, 'Grid')(Grid);
+Grid = injectTheme(styles, 'Grid')(Grid);
 
 export default Grid;

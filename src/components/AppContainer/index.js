@@ -5,7 +5,7 @@ import React, { PureComponent } from 'react';
 import type { Node } from 'react';
 import { ImageBackground, SafeAreaView, StatusBar, View } from 'react-native';
 
-import withTheme from '../../themes/withTheme';
+import injectTheme from '../../themes/injectTheme';
 import styles from './styles';
 import type { StylesType } from './styles';
 
@@ -63,6 +63,6 @@ class AppContainer extends PureComponent<Props> {
     }
 }
 
-AppContainer = withTheme(styles, 'AppContainer')(AppContainer);
+AppContainer = injectTheme(styles, 'AppContainer')(AppContainer);
 
 export default AppContainer;

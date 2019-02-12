@@ -7,7 +7,7 @@ import { View } from 'react-native';
 
 import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
 
-import withTheme from '../../themes/withTheme';
+import injectTheme from '../../themes/injectTheme';
 import { DIRECTIONS } from './constants';
 import styles from './styles';
 import type { StylesType } from './styles';
@@ -83,6 +83,6 @@ class LinearGradient extends PureComponent<Props> {
     }
 }
 
-LinearGradient = withTheme(styles, 'LinearGradient')(LinearGradient);
+LinearGradient = injectTheme(styles, 'LinearGradient')(LinearGradient);
 
 export default LinearGradient;

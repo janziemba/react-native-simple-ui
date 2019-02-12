@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react';
 import type { Node } from 'react';
 import { View } from 'react-native';
 
-import withTheme from '../../themes/withTheme';
+import injectTheme from '../../themes/injectTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import styles from './styles';
 import type { StylesType } from './styles';
@@ -51,6 +51,6 @@ class Spacer extends PureComponent<Props, State> {
     }
 }
 
-Spacer = withTheme(styles, 'Spacer')(Spacer);
+Spacer = injectTheme(styles, 'Spacer')(Spacer);
 
 export default Spacer;

@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react';
 import type { Node } from 'react';
 import { StyleSheet } from 'react-native';
 
-import withTheme from '../../themes/withTheme';
+import injectTheme from '../../themes/injectTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import Column from '../Grid/Column';
 import Grid from '../Grid/Grid';
@@ -69,6 +69,6 @@ class Toolbar extends PureComponent<Props, State> {
     }
 }
 
-Toolbar = withTheme(styles, 'Toolbar')(Toolbar);
+Toolbar = injectTheme(styles, 'Toolbar')(Toolbar);
 
 export default Toolbar;
