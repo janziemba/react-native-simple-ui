@@ -3,7 +3,7 @@
 import React, { PureComponent } from 'react';
 import type { Node } from 'react';
 
-import injectTheme from '../../themes/injectTheme';
+import withTheme from '../../themes/withTheme';
 import type { ThemeShapeType } from '../../types';
 import { ICON_SETS } from './constants';
 import styles from './styles';
@@ -47,6 +47,6 @@ class Icon extends PureComponent<Props> {
     }
 }
 
-Icon = injectTheme(styles, 'Icon')(Icon);
+Icon = withTheme(styles, 'Icon')(Icon);
 
 export default Icon;

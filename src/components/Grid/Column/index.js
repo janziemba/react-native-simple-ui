@@ -6,7 +6,7 @@ import { StyleSheet, View } from 'react-native';
 
 import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
 
-import injectTheme from '../../../themes/injectTheme';
+import withTheme from '../../../themes/withTheme';
 import hasStyleChanged from '../../../utils/hasStyleChanged';
 import styles from './styles';
 import type { StylesType } from './styles';
@@ -72,6 +72,6 @@ class Column extends PureComponent<Props, State> {
     }
 }
 
-Column = injectTheme(styles, 'Column')(Column);
+Column = withTheme(styles, 'Column')(Column);
 
 export default Column;

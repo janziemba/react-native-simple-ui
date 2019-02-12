@@ -1,11 +1,11 @@
 ---
-id: themeinjection
-title: injectTheme HOC
+id: withtheme
+title: withTheme HOC
 ---
-To use the theme in your own components, you can use `injectTheme` high order component. You can define styles while using theme primitives:
+To use the theme in your own components, you can use `withTheme` high order component. You can define styles while using theme primitives:
 ```jsx
 ...
-import { injectTheme } from 'react-native-simple-ui';
+import { withTheme } from 'react-native-simple-ui';
 
 const styles = ({ colors, radiuses, spacing }) => ({
     container: {
@@ -29,7 +29,7 @@ class ExampleComponent extends PureComponent {
     }
 }
 
-ExampleComponent = injectTheme(styles)(ExampleComponent);
+ExampleComponent = withTheme(styles)(ExampleComponent);
 ...
 ```
 
@@ -38,7 +38,7 @@ ExampleComponent = injectTheme(styles)(ExampleComponent);
 And you can also access theme object anywhere in the app:
 ```jsx
 ...
-import { injectTheme } from 'react-native-simple-ui';
+import { withTheme } from 'react-native-simple-ui';
 
 class ExampleComponent extends PureComponent {
     ...
@@ -56,8 +56,8 @@ class ExampleComponent extends PureComponent {
     }
 }
 
-ExampleComponent = injectTheme()(ExampleComponent);
+ExampleComponent = withTheme()(ExampleComponent);
 ...
 ```
 
-**IMPORTANT:** You can't have your own component with the same name as any of UI components which uses `injectTheme` because that would overwrite your styles with the styles defined in the theme. For example your `Button` component `injectTheme(styles, 'Button')(Button)` would have the styles from [`Button`](components/Button.md). Just use a different identifier, e.g. `injectTheme(styles, 'MyButton')(Button)` or leave it empty if you don't need it.
+**IMPORTANT:** You can't have your own component with the same name as any of UI components which uses `withTheme` because that would overwrite your styles with the styles defined in the theme. For example your `Button` component `withTheme(styles, 'Button')(Button)` would have the styles from [`Button`](components/Button.md). Just use a different identifier, e.g. `withTheme(styles, 'MyButton')(Button)` or leave it empty if you don't need it.

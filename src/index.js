@@ -11,4 +11,4 @@ export { default as TextLink } from './components/TextLink';
 export { default as Toolbar } from './components/Toolbar';
 export { default as baseTheme } from './themes/base';
 export { default as ThemeContext } from './themes/themeContext';
-export { default as injectTheme } from './themes/injectTheme';
+export { default as withTheme } from './themes/withTheme';

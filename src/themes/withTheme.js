@@ -10,7 +10,7 @@ import baseTheme from './base';
 import ThemeContext from './themeContext';
 
 const warnAboutReservedPropName = (propName: string, componentName: string) => {
-    console.warn(`In '${componentName}', you are using a reserved property '${propName}' which is being rewritten in injectTheme HOC.`); // eslint-disable-line no-console
+    console.warn(`In '${componentName}', you are using a reserved property '${propName}' which is being rewritten in withTheme HOC.`); // eslint-disable-line no-console
 };
 
 const checkErrors = (props: any, componentName: string) => {
@@ -25,10 +25,10 @@ const checkErrors = (props: any, componentName: string) => {
     }
 };
 
-const injectTheme = (customStyles: Function, componentName: string) => (Component: any) => {
-    class ComponentWithInjectedTheme extends PureComponent<{}> {
+const withTheme = (customStyles: Function, componentName: string) => (Component: any) => {
+    class ComponentWithTheme extends PureComponent<{}> {
         static originalComponentName: string = Component.displayName || Component.name;
-        static displayName: ?string = `injectTheme(${Component.displayName || Component.name})`;
+        static displayName: ?string = `WithTheme(${Component.displayName || Component.name})`;
 
         render(): Node {
             return (
@@ -61,7 +61,7 @@ const injectTheme = (customStyles: Function, componentName: string) => (Componen
         }
     }
 
-    return ComponentWithInjectedTheme;
+    return ComponentWithTheme;
 };
 
-export default injectTheme;
+export default withTheme;

@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Getting started": ["installation","theme", "components", "themeinjection"],
+    "Getting started": ["installation","theme", "components", "withtheme"],
     "Components": ["components/appcontainer", "components/button", "components/container", "components/grid", "components/icon", "components/lineargradient", "components/modal", "components/spacer", "components/text", "components/textlink", "components/toolbar"]
   }
 }

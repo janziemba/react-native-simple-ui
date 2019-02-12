@@ -6,7 +6,7 @@ import { StyleSheet, Text as RNText } from 'react-native';
 
 import type { TextProps } from 'react-native/Libraries/Text/TextProps';
 
-import injectTheme from '../../themes/injectTheme';
+import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import { SIZES } from './constants';
 import styles from './styles';
@@ -65,6 +65,6 @@ class Text extends PureComponent<Props, State> {
     }
 }
 
-Text = injectTheme(styles, 'Text')(Text);
+Text = withTheme(styles, 'Text')(Text);
 
 export default Text;

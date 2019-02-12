@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react';
 import type { Node } from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 
-import injectTheme from '../../themes/injectTheme';
+import withTheme from '../../themes/withTheme';
 import styles from './styles';
 import type { StylesType } from './styles';
 
@@ -33,6 +33,6 @@ class Modal extends PureComponent<Props> {
     }
 }
 
-Modal = injectTheme(styles, 'Modal')(Modal);
+Modal = withTheme(styles, 'Modal')(Modal);
 
 export default Modal;

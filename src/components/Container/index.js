@@ -6,7 +6,7 @@ import { StyleSheet, View } from 'react-native';
 
 import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
 
-import injectTheme from '../../themes/injectTheme';
+import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import styles from './styles';
 import type { StylesType } from './styles';
@@ -68,6 +68,6 @@ class Container extends PureComponent<Props, State> {
     }
 }
 
-Container = injectTheme(styles, 'Container')(Container);
+Container = withTheme(styles, 'Container')(Container);
 
 export default Container;
