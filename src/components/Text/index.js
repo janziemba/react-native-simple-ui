@@ -13,8 +13,8 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 export type Props = TextProps & {
-    color: string,
-    size: string,
+    color?: string,
+    size?: string,
     styles: StylesType,
 };
 

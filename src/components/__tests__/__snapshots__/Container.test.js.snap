@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  alignment={null}
+  margin={null}
+  padding={null}
+  style={
+    Array [
+      undefined,
+      Object {
+        "flex": 1,
+      },
+      Object {},
+      Object {},
+      Object {},
+    ]
+  }
+  styles={
+    Object {
+      "alignment": Object {
+        "center": Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+      },
+      "base": Object {
+        "flex": 1,
+      },
+      "margin": Object {
+        "gigantic": Object {
+          "margin": 24,
+        },
+        "huge": Object {
+          "margin": 20,
+        },
+        "large": Object {
+          "margin": 16,
+        },
+        "medium": Object {
+          "margin": 12,
+        },
+        "small": Object {
+          "margin": 8,
+        },
+        "tiny": Object {
+          "margin": 4,
+        },
+      },
+      "padding": Object {
+        "gigantic": Object {
+          "padding": 24,
+        },
+        "huge": Object {
+          "padding": 20,
+        },
+        "large": Object {
+          "padding": 16,
+        },
+        "medium": Object {
+          "padding": 12,
+        },
+        "small": Object {
+          "padding": 8,
+        },
+        "tiny": Object {
+          "padding": 4,
+        },
+      },
+    }
+  }
+  theme={
+    Object {
+      "colors": Object {
+        "layout": Object {
+          "backgroundColor": "#ffffff",
+        },
+        "palette": Object {
+          "danger": "#ff4136",
+          "dark": "#484848",
+          "disabled": "#999999",
+          "info": "#75caeb",
+          "light": "#f6f6f6",
+          "primary": "#158cba",
+          "success": "#28b62c",
+          "warning": "#ff851b",
+        },
+        "social": Object {
+          "facebook": "#3b5998",
+          "google": "#dc4e41",
+          "instagram": "#c32aa3",
+          "linkedin": "#0077b5",
+          "twitter": "#55acee",
+          "vk": "#4c75a3",
+        },
+        "text": Object {
+          "disabled": "#999999",
+          "placeholder": "#e2e4e6",
+          "primary": "#3d3d3d",
+          "secondary": "#9e9e9e",
+        },
+      },
+      "components": Object {},
+      "radiuses": Object {
+        "gigantic": 16,
+        "huge": 12,
+        "large": 8,
+        "medium": 6,
+        "small": 4,
+        "tiny": 2,
+      },
+      "spacing": Object {
+        "gigantic": 24,
+        "huge": 20,
+        "large": 16,
+        "medium": 12,
+        "small": 8,
+        "tiny": 4,
+      },
+      "typography": Object {
+        "fontFamily": "System",
+        "fontSizes": Object {
+          "large": 16,
+          "medium": 14,
+          "small": 12,
+        },
+        "fontWeights": Object {
+          "bold": "900",
+          "medium": "800",
+          "normal": "600",
+        },
+        "iconSet": "MaterialIcons",
+        "sizes": Object {
+          "h1": Object {
+            "fontSize": 31,
+            "fontWeight": "900",
+          },
+          "h2": Object {
+            "fontSize": 25,
+            "fontWeight": "900",
+          },
+          "h3": Object {
+            "fontSize": 19,
+            "fontWeight": "800",
+          },
+          "h4": Object {
+            "fontSize": 17,
+            "fontWeight": "800",
+          },
+          "h5": Object {
+            "fontSize": 16,
+            "fontWeight": "800",
+          },
+          "h6": Object {
+            "fontSize": 15,
+            "fontWeight": "700",
+          },
+          "normal": Object {
+            "fontSize": 14,
+            "fontWeight": "700",
+          },
+          "small": Object {
+            "fontSize": 12,
+          },
+        },
+      },
+    }
+  }
+/>
+`;

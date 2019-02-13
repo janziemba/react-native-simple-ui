@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "flex": 1,
+    }
+  }
+>
+  <RCTSafeAreaView
+    style={
+      Object {
+        "backgroundColor": "#158cba",
+        "flex": 0,
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      Object {
+        "backgroundColor": "#158cba",
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View />
+    </View>
+  </RCTSafeAreaView>
+</View>
+`;

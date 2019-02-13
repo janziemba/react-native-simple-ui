@@ -12,14 +12,12 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 type Props = ViewProps & {
-    children: Node,
-    size: number,
+    size?: number,
     styles: StylesType,
 };
 
 const defaultProps = {
     ...View.defaultProps,
-    children: null,
     size: null,
 };
 

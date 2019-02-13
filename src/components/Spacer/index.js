@@ -10,8 +10,8 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 type Props = {
-    multiplier: number, // eslint-disable-line react/no-unused-prop-types
-    size: string, // eslint-disable-line react/no-unused-prop-types
+    multiplier?: number, // eslint-disable-line react/no-unused-prop-types
+    size?: string, // eslint-disable-line react/no-unused-prop-types
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types
 };
 
@@ -23,7 +23,7 @@ const getStyles = (props: Props): {} => {
     const { multiplier, size, styles } = props;
 
     return {
-        height: styles[size].height * multiplier,
+        height: styles[size || 'medium'].height * (multiplier || 1),
     };
 };
 

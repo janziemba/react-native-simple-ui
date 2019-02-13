@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  accessibilityRole="link"
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View>
+    <Text
+      color={null}
+      disabled={false}
+      onPress={null}
+      size="normal"
+      style={
+        Array [
+          Object {
+            "color": "#3d3d3d",
+            "fontFamily": "System",
+            "textAlign": "center",
+          },
+          Object {
+            "fontSize": 14,
+            "fontWeight": "700",
+          },
+          Object {},
+        ]
+      }
+      styles={
+        Object {
+          "base": Object {
+            "color": "#3d3d3d",
+            "fontFamily": "System",
+            "textAlign": "center",
+          },
+          "colors": Object {
+            "black": Object {
+              "color": "black",
+            },
+            "danger": Object {
+              "color": "#ff4136",
+            },
+            "dark": Object {
+              "color": "#484848",
+            },
+            "disabled": Object {
+              "color": "#999999",
+            },
+            "facebook": Object {
+              "color": "#3b5998",
+            },
+            "google": Object {
+              "color": "#dc4e41",
+            },
+            "info": Object {
+              "color": "#75caeb",
+            },
+            "instagram": Object {
+              "color": "#c32aa3",
+            },
+            "light": Object {
+              "color": "#f6f6f6",
+            },
+            "linkedin": Object {
+              "color": "#0077b5",
+            },
+            "primary": Object {
+              "color": "#158cba",
+            },
+            "success": Object {
+              "color": "#28b62c",
+            },
+            "twitter": Object {
+              "color": "#55acee",
+            },
+            "vk": Object {
+              "color": "#4c75a3",
+            },
+            "warning": Object {
+              "color": "#ff851b",
+            },
+            "white": Object {
+              "color": "white",
+            },
+          },
+          "sizes": Object {
+            "h1": Object {
+              "fontSize": 31,
+              "fontWeight": "900",
+              "marginBottom": 12,
+            },
+            "h2": Object {
+              "fontSize": 25,
+              "fontWeight": "900",
+              "marginBottom": 12,
+            },
+            "h3": Object {
+              "fontSize": 19,
+              "fontWeight": "800",
+              "marginBottom": 12,
+            },
+            "h4": Object {
+              "fontSize": 17,
+              "fontWeight": "800",
+              "marginBottom": 12,
+            },
+            "h5": Object {
+              "fontSize": 16,
+              "fontWeight": "800",
+              "marginBottom": 8,
+            },
+            "h6": Object {
+              "fontSize": 15,
+              "fontWeight": "700",
+              "marginBottom": 8,
+            },
+            "normal": Object {
+              "fontSize": 14,
+              "fontWeight": "700",
+            },
+            "small": Object {
+              "fontSize": 12,
+            },
+          },
+        }
+      }
+      theme={
+        Object {
+          "colors": Object {
+            "layout": Object {
+              "backgroundColor": "#ffffff",
+            },
+            "palette": Object {
+              "danger": "#ff4136",
+              "dark": "#484848",
+              "disabled": "#999999",
+              "info": "#75caeb",
+              "light": "#f6f6f6",
+              "primary": "#158cba",
+              "success": "#28b62c",
+              "warning": "#ff851b",
+            },
+            "social": Object {
+              "facebook": "#3b5998",
+              "google": "#dc4e41",
+              "instagram": "#c32aa3",
+              "linkedin": "#0077b5",
+              "twitter": "#55acee",
+              "vk": "#4c75a3",
+            },
+            "text": Object {
+              "disabled": "#999999",
+              "placeholder": "#e2e4e6",
+              "primary": "#3d3d3d",
+              "secondary": "#9e9e9e",
+            },
+          },
+          "components": Object {},
+          "radiuses": Object {
+            "gigantic": 16,
+            "huge": 12,
+            "large": 8,
+            "medium": 6,
+            "small": 4,
+            "tiny": 2,
+          },
+          "spacing": Object {
+            "gigantic": 24,
+            "huge": 20,
+            "large": 16,
+            "medium": 12,
+            "small": 8,
+            "tiny": 4,
+          },
+          "typography": Object {
+            "fontFamily": "System",
+            "fontSizes": Object {
+              "large": 16,
+              "medium": 14,
+              "small": 12,
+            },
+            "fontWeights": Object {
+              "bold": "900",
+              "medium": "800",
+              "normal": "600",
+            },
+            "iconSet": "MaterialIcons",
+            "sizes": Object {
+              "h1": Object {
+                "fontSize": 31,
+                "fontWeight": "900",
+              },
+              "h2": Object {
+                "fontSize": 25,
+                "fontWeight": "900",
+              },
+              "h3": Object {
+                "fontSize": 19,
+                "fontWeight": "800",
+              },
+              "h4": Object {
+                "fontSize": 17,
+                "fontWeight": "800",
+              },
+              "h5": Object {
+                "fontSize": 16,
+                "fontWeight": "800",
+              },
+              "h6": Object {
+                "fontSize": 15,
+                "fontWeight": "700",
+              },
+              "normal": Object {
+                "fontSize": 14,
+                "fontWeight": "700",
+              },
+              "small": Object {
+                "fontSize": 12,
+              },
+            },
+          },
+        }
+      }
+    >
+      Lorem ipsum
+    </Text>
+  </View>
+</View>
+`;

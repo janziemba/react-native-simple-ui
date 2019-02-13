@@ -18,7 +18,6 @@ type Props = ViewProps & {
 
 const defaultProps = {
     ...View.defaultProps,
-    children: null,
 };
 
 type State = {
@@ -28,7 +27,9 @@ type State = {
 const getStyles = (props: Props): Array<StyleSheet.Styles> => {
     const { children, style, styles } = props;
 
-    const isDirectionRow: boolean = children.find(child => child.type.originalComponentName === 'Row');
+    const components = children.length > 1 ? children : [children];
+
+    const isDirectionRow: boolean = components.find(child => child.type.originalComponentName === 'Row') !== undefined;
 
     return [
         style,

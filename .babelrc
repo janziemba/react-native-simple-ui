@@ -1,4 +1,11 @@
 {
-  "presets": ["react-native", "flow"],
-  "plugins": ["flow-react-proptypes"]
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "babel-plugin-flow-react-proptypes"
+    ],
+    "presets": [
+        "@babel/preset-flow",
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
 }

@@ -10,7 +10,7 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 type Props = {
-    backgroundImage: Node,
+    backgroundImage?: Node,
     children: Node,
     styles: StylesType,
 };

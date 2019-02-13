@@ -17,14 +17,14 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 type Props = TouchableWithoutFeedbackProps & {
-    color: string,
-    icon: IconProps,
-    linearGradient: LinearGradientProps,
-    rounding: string, // eslint-disable-line react/no-unused-prop-types, max-len
-    size: string, // eslint-disable-line react/no-unused-prop-types
+    color?: string,
+    icon?: IconProps,
+    linearGradient?: LinearGradientProps,
+    rounding?: string, // eslint-disable-line react/no-unused-prop-types, max-len
+    size?: string, // eslint-disable-line react/no-unused-prop-types
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types, max-len
     text: string,
-    variant: string, // eslint-disable-line react/no-unused-prop-types, max-len
+    variant?: string, // eslint-disable-line react/no-unused-prop-types, max-len
 };
 
 const defaultProps = {

@@ -1,1 +1,89 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='src/components/Modal/index.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require('react');var _react2=_interopRequireDefault(_react);var _reactNative=require('react-native');var _withTheme=require('../../themes/withTheme');var _withTheme2=_interopRequireDefault(_withTheme);var _styles=require('./styles');var _styles2=_interopRequireDefault(_styles);var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Modal=function(_PureComponent){_inherits(Modal,_PureComponent);function Modal(){_classCallCheck(this,Modal);return _possibleConstructorReturn(this,(Modal.__proto__||Object.getPrototypeOf(Modal)).apply(this,arguments));}_createClass(Modal,[{key:'render',value:function render(){var _props=this.props,children=_props.children,onOverlayPress=_props.onOverlayPress,styles=_props.styles;return _react2.default.createElement(_reactNative.TouchableWithoutFeedback,{onPress:onOverlayPress,__source:{fileName:_jsxFileName,lineNumber:25}},_react2.default.createElement(_reactNative.View,{style:styles.overlay,__source:{fileName:_jsxFileName,lineNumber:26}},_react2.default.createElement(_reactNative.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:27}},children)));}}]);return Modal;}(_react.PureComponent);Modal.defaultProps={onOverlayPress:null};Modal.propTypes={children:function children(){return(typeof _propTypes2.default.node==='function'?_propTypes2.default.node.isRequired?_propTypes2.default.node.isRequired:_propTypes2.default.node:_propTypes2.default.shape(_propTypes2.default.node).isRequired).apply(this,arguments);},onOverlayPress:_propTypes2.default.func,styles:function styles(){return(typeof _styles.bpfrpt_proptype_StylesType==='function'?_styles.bpfrpt_proptype_StylesType.isRequired?_styles.bpfrpt_proptype_StylesType.isRequired:_styles.bpfrpt_proptype_StylesType:_propTypes2.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this,arguments);}};Modal=(0,_withTheme2.default)(_styles2.default,'Modal')(Modal);exports.default=Modal;
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactNative = require("react-native");
+
+var _withTheme = _interopRequireDefault(require("../../themes/withTheme"));
+
+var _styles = _interopRequireWildcard(require("./styles"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _class, _temp;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Modal = (_temp = _class =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inherits(Modal, _PureComponent);
+
+  function Modal() {
+    _classCallCheck(this, Modal);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Modal).apply(this, arguments));
+  }
+
+  _createClass(Modal, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          children = _this$props.children,
+          onOverlayPress = _this$props.onOverlayPress,
+          styles = _this$props.styles;
+      return _react.default.createElement(_reactNative.TouchableWithoutFeedback, {
+        onPress: onOverlayPress
+      }, _react.default.createElement(_reactNative.View, {
+        style: styles.overlay
+      }, _react.default.createElement(_reactNative.View, {
+        style: styles.container
+      }, children)));
+    }
+  }]);
+
+  return Modal;
+}(_react.PureComponent), _defineProperty(_class, "propTypes", {
+  children: function children() {
+    return (typeof _propTypes.default.node === "function" ? _propTypes.default.node.isRequired ? _propTypes.default.node.isRequired : _propTypes.default.node : _propTypes.default.shape(_propTypes.default.node).isRequired).apply(this, arguments);
+  },
+  onOverlayPress: _propTypes.default.func,
+  styles: function styles() {
+    return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
+  }
+}), _temp);
+
+_defineProperty(Modal, "defaultProps", {
+  onOverlayPress: null
+});
+
+Modal = (0, _withTheme.default)(_styles.default, 'Modal')(Modal);
+var _default = Modal;
+exports.default = _default;

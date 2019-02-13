@@ -11,8 +11,8 @@ import type { Props as TextProps } from '../Text';
 
 type Props = {
     ...TextProps,
-    disabled: boolean,
-    onPress: Function,
+    disabled?: boolean, // eslint-disable-line react/require-default-props
+    onPress?: Function, // eslint-disable-line react/require-default-props
 };
 
 class TextLink extends PureComponent<Props> {

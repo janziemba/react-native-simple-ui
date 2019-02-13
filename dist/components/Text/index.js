@@ -1,1 +1,135 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.bpfrpt_proptype_Props=exports.defaultProps=undefined;var _jsxFileName='src/components/Text/index.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _react=require('react');var _react2=_interopRequireDefault(_react);var _reactNative=require('react-native');var _withTheme=require('../../themes/withTheme');var _withTheme2=_interopRequireDefault(_withTheme);var _hasStyleChanged=require('../../utils/hasStyleChanged');var _hasStyleChanged2=_interopRequireDefault(_hasStyleChanged);var _constants=require('./constants');var _styles=require('./styles');var _styles2=_interopRequireDefault(_styles);var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var bpfrpt_proptype_Props={color:_propTypes2.default.string.isRequired,size:_propTypes2.default.string.isRequired,styles:function styles(){return(typeof _styles.bpfrpt_proptype_StylesType==='function'?_styles.bpfrpt_proptype_StylesType.isRequired?_styles.bpfrpt_proptype_StylesType.isRequired:_styles.bpfrpt_proptype_StylesType:_propTypes2.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this,arguments);}};var defaultProps=exports.defaultProps=_extends({},_reactNative.Text.defaultProps,{color:null,size:_constants.SIZES.normal});var getStyles=function getStyles(props){var color=props.color,size=props.size,styles=props.styles;return[styles.base,styles.sizes[size],color?styles.colors[color]:{}];};var Text=function(_PureComponent){_inherits(Text,_PureComponent);function Text(){var _ref;var _temp,_this,_ret;_classCallCheck(this,Text);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}return _ret=(_temp=(_this=_possibleConstructorReturn(this,(_ref=Text.__proto__||Object.getPrototypeOf(Text)).call.apply(_ref,[this].concat(args))),_this),_this.state={styles:getStyles(_this.props)},_temp),_possibleConstructorReturn(_this,_ret);}_createClass(Text,[{key:'componentWillReceiveProps',value:function componentWillReceiveProps(nextProps){var propsOnWhichDependsTheStyle=['color','size'];if((0,_hasStyleChanged2.default)(propsOnWhichDependsTheStyle,nextProps,this.props)){this.setState({styles:getStyles(nextProps)});}}},{key:'render',value:function render(){var children=this.props.children;var styles=this.state.styles;return _react2.default.createElement(_reactNative.Text,_extends({},this.props,{style:styles,__source:{fileName:_jsxFileName,lineNumber:58}}),children);}}]);return Text;}(_react.PureComponent);Text.defaultProps=defaultProps;Text.propTypes={color:_propTypes2.default.string.isRequired,size:_propTypes2.default.string.isRequired,styles:function styles(){return(typeof _styles.bpfrpt_proptype_StylesType==='function'?_styles.bpfrpt_proptype_StylesType.isRequired?_styles.bpfrpt_proptype_StylesType.isRequired:_styles.bpfrpt_proptype_StylesType:_propTypes2.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this,arguments);}};Text=(0,_withTheme2.default)(_styles2.default,'Text')(Text);exports.default=Text;exports.bpfrpt_proptype_Props=bpfrpt_proptype_Props;
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.bpfrpt_proptype_Props = exports.default = exports.defaultProps = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactNative = require("react-native");
+
+var _withTheme = _interopRequireDefault(require("../../themes/withTheme"));
+
+var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChanged"));
+
+var _constants = require("./constants");
+
+var _styles = _interopRequireWildcard(require("./styles"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _class, _temp;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var bpfrpt_proptype_Props = {
+  color: _propTypes.default.string,
+  size: _propTypes.default.string,
+  styles: function styles() {
+    return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
+  }
+};
+exports.bpfrpt_proptype_Props = bpfrpt_proptype_Props;
+
+var defaultProps = _objectSpread({}, _reactNative.Text.defaultProps, {
+  color: null,
+  size: _constants.SIZES.normal
+});
+
+exports.defaultProps = defaultProps;
+
+var getStyles = function getStyles(props) {
+  var color = props.color,
+      size = props.size,
+      styles = props.styles;
+  return [styles.base, styles.sizes[size], color ? styles.colors[color] : {}];
+};
+
+var Text = (_temp = _class =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inherits(Text, _PureComponent);
+
+  function Text() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Text);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Text)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      styles: getStyles(_this.props)
+    });
+
+    return _this;
+  }
+
+  _createClass(Text, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      var propsOnWhichDependsTheStyle = ['color', 'size'];
+
+      if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
+        this.setState({
+          styles: getStyles(nextProps)
+        });
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var children = this.props.children;
+      var styles = this.state.styles;
+      return _react.default.createElement(_reactNative.Text, _extends({}, this.props, {
+        style: styles
+      }), children);
+    }
+  }]);
+
+  return Text;
+}(_react.PureComponent), _defineProperty(_class, "propTypes", {
+  color: _propTypes.default.string,
+  size: _propTypes.default.string,
+  styles: function styles() {
+    return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
+  }
+}), _temp);
+
+_defineProperty(Text, "defaultProps", defaultProps);
+
+Text = (0, _withTheme.default)(_styles.default, 'Text')(Text);
+var _default = Text;
+exports.default = _default;

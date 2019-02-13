@@ -12,10 +12,10 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 type Props = {
-    centerElement: Node,
-    color: string, // eslint-disable-line react/no-unused-prop-types
-    leftElement: Node,
-    rightElement: Node,
+    centerElement?: Node,
+    color?: string, // eslint-disable-line react/no-unused-prop-types
+    leftElement?: Node,
+    rightElement?: Node,
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types
 };
 
@@ -28,7 +28,7 @@ const getStyles = (props: Props): Array<StyleSheet.Styles> => {
 
     return [
         styles.base.container,
-        styles.colors[color].container,
+        styles.colors[color || 'primary'].container,
     ];
 };
 

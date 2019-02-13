@@ -10,7 +10,7 @@ import type { StylesType } from './styles';
 
 type Props = {
     children: Node,
-    onOverlayPress: Function,
+    onOverlayPress?: Function,
     styles: StylesType,
 };
 

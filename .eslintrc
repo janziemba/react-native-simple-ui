@@ -1,33 +1,35 @@
 {
-  "extends": [
-    "airbnb",
-    "plugin:flowtype/recommended"
-  ],
-  "globals": {
-    "__DEV__": false
-  },
-  "parser": "babel-eslint",
-  "plugins": [
-    "flowtype"
-  ],
-  "rules": {
-    "class-methods-use-this": 0,
-    "global-require": 0,
-    "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
-    "jsx-a11y/href-no-hash": 0,
-    "lines-between-class-members": 0,
-    "no-class-assign": 0,
-    "no-shadow": 0,
-    "no-warning-comments": 2,
-    "object-curly-newline": 0,
-    "react/default-props-match-prop-types": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-indent": [2, 4],
-    "react/jsx-indent-props": [2, 4],
-    "react/jsx-max-props-per-line": ["error", { "when": "always" }],
-    "react/jsx-sort-props": "error",
-    "react/prefer-stateless-function": 0,
-    "react/require-default-props": [2, { "forbidDefaultForRequired": false }],
-    "sort-keys": ["error", "asc"]
-  }
+    "extends": [
+        "airbnb",
+        "plugin:flowtype/recommended",
+        "plugin:jest/recommended"
+    ],
+    "globals": {
+        "__DEV__": false
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "flowtype",
+        "jest"
+    ],
+    "rules": {
+        "class-methods-use-this": 0,
+        "global-require": 0,
+        "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
+        "jsx-a11y/href-no-hash": 0,
+        "lines-between-class-members": 0,
+        "no-class-assign": 0,
+        "no-shadow": 0,
+        "no-warning-comments": 2,
+        "object-curly-newline": 0,
+        "react/default-props-match-prop-types": 0,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-indent": [2, 4],
+        "react/jsx-indent-props": [2, 4],
+        "react/jsx-max-props-per-line": ["error", { "when": "always" }],
+        "react/jsx-sort-props": "error",
+        "react/prefer-stateless-function": 0,
+        "react/require-default-props": [2, { "forbidDefaultForRequired": false }],
+        "sort-keys": ["error", "asc"]
+    }
 }

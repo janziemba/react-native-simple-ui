@@ -10,11 +10,11 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 export type Props = {
-    color: string,
-    colorName: string,
-    iconSet: string,
+    color?: string,
+    colorName?: string,
+    iconSet?: string,
     name: string,
-    size: number,
+    size?: number,
     styles: StylesType,
     theme: ThemeShapeType,
 };
@@ -31,7 +31,7 @@ class Icon extends PureComponent<Props> {
 
         const VectorIcon = ICON_SETS[iconSet || theme.typography.iconSet];
 
-        let iconColor: string = color;
+        let iconColor: ?string = color;
 
         if (colorName) {
             iconColor = styles.colors[colorName].color;

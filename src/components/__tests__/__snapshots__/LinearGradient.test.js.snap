@@ -1,0 +1,1060 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  direction="horizontal"
+  fromColor="white"
+  height={100}
+  style={
+    Array [
+      Object {
+        "overflow": "hidden",
+      },
+      Object {
+        "height": 100,
+        "width": 100,
+      },
+    ]
+  }
+  styles={
+    Object {
+      "container": Object {
+        "overflow": "hidden",
+      },
+      "content": Object {
+        "zIndex": 2,
+      },
+      "gradient": Object {
+        "bottom": 0,
+        "flexWrap": "wrap",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 1,
+      },
+    }
+  }
+  theme={
+    Object {
+      "colors": Object {
+        "layout": Object {
+          "backgroundColor": "#ffffff",
+        },
+        "palette": Object {
+          "danger": "#ff4136",
+          "dark": "#484848",
+          "disabled": "#999999",
+          "info": "#75caeb",
+          "light": "#f6f6f6",
+          "primary": "#158cba",
+          "success": "#28b62c",
+          "warning": "#ff851b",
+        },
+        "social": Object {
+          "facebook": "#3b5998",
+          "google": "#dc4e41",
+          "instagram": "#c32aa3",
+          "linkedin": "#0077b5",
+          "twitter": "#55acee",
+          "vk": "#4c75a3",
+        },
+        "text": Object {
+          "disabled": "#999999",
+          "placeholder": "#e2e4e6",
+          "primary": "#3d3d3d",
+          "secondary": "#9e9e9e",
+        },
+      },
+      "components": Object {},
+      "radiuses": Object {
+        "gigantic": 16,
+        "huge": 12,
+        "large": 8,
+        "medium": 6,
+        "small": 4,
+        "tiny": 2,
+      },
+      "spacing": Object {
+        "gigantic": 24,
+        "huge": 20,
+        "large": 16,
+        "medium": 12,
+        "small": 8,
+        "tiny": 4,
+      },
+      "typography": Object {
+        "fontFamily": "System",
+        "fontSizes": Object {
+          "large": 16,
+          "medium": 14,
+          "small": 12,
+        },
+        "fontWeights": Object {
+          "bold": "900",
+          "medium": "800",
+          "normal": "600",
+        },
+        "iconSet": "MaterialIcons",
+        "sizes": Object {
+          "h1": Object {
+            "fontSize": 31,
+            "fontWeight": "900",
+          },
+          "h2": Object {
+            "fontSize": 25,
+            "fontWeight": "900",
+          },
+          "h3": Object {
+            "fontSize": 19,
+            "fontWeight": "800",
+          },
+          "h4": Object {
+            "fontSize": 17,
+            "fontWeight": "800",
+          },
+          "h5": Object {
+            "fontSize": 16,
+            "fontWeight": "800",
+          },
+          "h6": Object {
+            "fontSize": 15,
+            "fontWeight": "700",
+          },
+          "normal": Object {
+            "fontSize": 14,
+            "fontWeight": "700",
+          },
+          "small": Object {
+            "fontSize": 12,
+          },
+        },
+      },
+    }
+  }
+  toColor="black"
+  width={100}
+>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "flexWrap": "wrap",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(252, 252, 252)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(250, 250, 250)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(247, 247, 247)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(245, 245, 245)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(242, 242, 242)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(240, 240, 240)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(237, 237, 237)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(235, 235, 235)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(232, 232, 232)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(230, 230, 230)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(227, 227, 227)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(224, 224, 224)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(222, 222, 222)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(219, 219, 219)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(217, 217, 217)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(214, 214, 214)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(212, 212, 212)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(209, 209, 209)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(207, 207, 207)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(204, 204, 204)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(201, 201, 201)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(199, 199, 199)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(196, 196, 196)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(194, 194, 194)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(191, 191, 191)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(189, 189, 189)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(186, 186, 186)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(184, 184, 184)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(181, 181, 181)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(179, 179, 179)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(176, 176, 176)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(173, 173, 173)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(171, 171, 171)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(168, 168, 168)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(166, 166, 166)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(163, 163, 163)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(161, 161, 161)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(158, 158, 158)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(156, 156, 156)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(153, 153, 153)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(150, 150, 150)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(148, 148, 148)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(145, 145, 145)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(143, 143, 143)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(140, 140, 140)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(138, 138, 138)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(135, 135, 135)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(133, 133, 133)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(130, 130, 130)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(128, 128, 128)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(125, 125, 125)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(122, 122, 122)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(120, 120, 120)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(117, 117, 117)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(115, 115, 115)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(112, 112, 112)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(110, 110, 110)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(107, 107, 107)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(105, 105, 105)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(102, 102, 102)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(99, 99, 99)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(97, 97, 97)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(94, 94, 94)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(92, 92, 92)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(89, 89, 89)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(87, 87, 87)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(84, 84, 84)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(82, 82, 82)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(79, 79, 79)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(77, 77, 77)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(74, 74, 74)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(71, 71, 71)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(69, 69, 69)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(66, 66, 66)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(64, 64, 64)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(61, 61, 61)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(59, 59, 59)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(56, 56, 56)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(54, 54, 54)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(51, 51, 51)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(48, 48, 48)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(46, 46, 46)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(43, 43, 43)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(41, 41, 41)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(38, 38, 38)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(36, 36, 36)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(33, 33, 33)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(31, 31, 31)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(28, 28, 28)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(26, 26, 26)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(23, 23, 23)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(20, 20, 20)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(18, 18, 18)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(15, 15, 15)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(13, 13, 13)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(10, 10, 10)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(8, 8, 8)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(5, 5, 5)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(3, 3, 3)",
+          "height": 100,
+          "width": 1,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "zIndex": 2,
+      }
+    }
+  />
+</View>
+`;

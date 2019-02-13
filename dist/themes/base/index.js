@@ -1,1 +1,28 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _colors=require('./colors');var _colors2=_interopRequireDefault(_colors);var _radiuses=require('./radiuses');var _radiuses2=_interopRequireDefault(_radiuses);var _spacing=require('./spacing');var _spacing2=_interopRequireDefault(_spacing);var _typography=require('./typography');var _typography2=_interopRequireDefault(_typography);var _types=require('../../types');function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var base={colors:_colors2.default,components:{},radiuses:_radiuses2.default,spacing:_spacing2.default,typography:_typography2.default};exports.default=base;
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _colors = _interopRequireDefault(require("./colors"));
+
+var _radiuses = _interopRequireDefault(require("./radiuses"));
+
+var _spacing = _interopRequireDefault(require("./spacing"));
+
+var _typography = _interopRequireDefault(require("./typography"));
+
+var _types = require("../../types");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var base = {
+  colors: _colors.default,
+  components: {},
+  radiuses: _radiuses.default,
+  spacing: _spacing.default,
+  typography: _typography.default
+};
+var _default = base;
+exports.default = _default;

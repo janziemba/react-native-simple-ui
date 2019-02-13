@@ -12,9 +12,9 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 type Props = ViewProps & {
-    alignment: string,
-    margin: string,
-    padding: string,
+    alignment?: string,
+    margin?: string,
+    padding?: string,
     styles: StylesType,
 };
 

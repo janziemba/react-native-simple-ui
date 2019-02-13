@@ -13,7 +13,7 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 export type Props = ViewProps & {
-    direction: string,
+    direction?: string,
     fromColor: string,
     height: number,
     styles: StylesType,
