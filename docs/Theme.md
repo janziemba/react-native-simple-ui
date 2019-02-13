@@ -33,7 +33,7 @@ const customTheme = {
 ## Theme provider
 You have to define a theme context in your app's root component. `value` is not necessary if you want to use the default theme.
 ```jsx
-import { ThemeContext } from 'react-native-simple-ui';
+import { ThemeProvider } from 'react-native-simple-ui';
 
 const customTheme = {
     ...
@@ -43,9 +43,9 @@ class App extends PureComponent {
     ...
     render() {
         return (
-            <ThemeContext.Provider value={customTheme}>
+            <ThemeProvider value={customTheme}>
                 ...
-            </ThemeContext.Provider>
+            </ThemeProvider>
         );
     }
 }

@@ -87,10 +87,16 @@ Object.defineProperty(exports, "baseTheme", {
     return _base.default;
   }
 });
-Object.defineProperty(exports, "ThemeContext", {
+Object.defineProperty(exports, "ThemeConsumer", {
   enumerable: true,
   get: function get() {
-    return _themeContext.default;
+    return _themeContext.ThemeConsumer;
+  }
+});
+Object.defineProperty(exports, "ThemeProvider", {
+  enumerable: true,
+  get: function get() {
+    return _themeContext.ThemeProvider;
   }
 });
 Object.defineProperty(exports, "withTheme", {
@@ -124,7 +130,7 @@ var _Toolbar = _interopRequireDefault(require("./components/Toolbar"));
 
 var _base = _interopRequireDefault(require("./themes/base"));
 
-var _themeContext = _interopRequireDefault(require("./themes/themeContext"));
+var _themeContext = require("./themes/themeContext");
 
 var _withTheme = _interopRequireDefault(require("./themes/withTheme"));
 

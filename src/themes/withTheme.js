@@ -7,7 +7,7 @@ import merge from 'lodash/merge';
 
 import type { ThemeType } from '../types';
 import baseTheme from './base';
-import ThemeContext from './themeContext';
+import { ThemeConsumer } from './themeContext';
 
 const warnAboutReservedPropName = (propName: string, componentName: string) => {
     console.warn(`In '${componentName}', you are using a reserved property '${propName}' which is being rewritten in withTheme HOC.`); // eslint-disable-line no-console
@@ -32,7 +32,7 @@ const withTheme = (customStyles: Function, componentName: string) => (Component:
 
         render(): Node {
             return (
-                <ThemeContext.Consumer>
+                <ThemeConsumer>
                     {(customTheme: ThemeType) => {
                         checkErrors(this.props, componentName);
 
@@ -56,7 +56,7 @@ const withTheme = (customStyles: Function, componentName: string) => (Component:
                             />
                         );
                     }}
-                </ThemeContext.Consumer>
+                </ThemeConsumer>
             );
         }
     }

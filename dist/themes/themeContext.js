@@ -3,12 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.ThemeProvider = exports.ThemeConsumer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _default = _react.default.createContext({});
+var ThemeContext = _react.default.createContext({});
 
-exports.default = _default;
+var ThemeConsumer = ThemeContext.Consumer;
+exports.ThemeConsumer = ThemeConsumer;
+var ThemeProvider = ThemeContext.Provider;
+exports.ThemeProvider = ThemeProvider;

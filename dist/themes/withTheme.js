@@ -11,7 +11,7 @@ var _merge = _interopRequireDefault(require("lodash/merge"));
 
 var _base = _interopRequireDefault(require("./base"));
 
-var _themeContext = _interopRequireDefault(require("./themeContext"));
+var _themeContext = require("./themeContext");
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -80,7 +80,7 @@ var withTheme = function withTheme(customStyles, componentName) {
         value: function render() {
           var _this = this;
 
-          return _react.default.createElement(_themeContext.default.Consumer, null, function (customTheme) {
+          return _react.default.createElement(_themeContext.ThemeConsumer, null, function (customTheme) {
             checkErrors(_this.props, componentName);
             var theme = (0, _merge.default)({}, _base.default, customTheme || {});
             var styles = (0, _merge.default)({}, customStyles ? customStyles(theme) : {}, theme.components[componentName] || {});

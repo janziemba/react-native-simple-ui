@@ -10,5 +10,5 @@ export { default as Text } from './components/Text';
 export { default as TextLink } from './components/TextLink';
 export { default as Toolbar } from './components/Toolbar';
 export { default as baseTheme } from './themes/base';
-export { default as ThemeContext } from './themes/themeContext';
+export { ThemeConsumer, ThemeProvider } from './themes/themeContext';
 export { default as withTheme } from './themes/withTheme';
