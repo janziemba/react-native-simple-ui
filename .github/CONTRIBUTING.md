@@ -3,3 +3,5 @@
 - Try to keep everything stupid simple. (KISS)
 - Use as little dependencies as possible.
 - Do not use any native dependencies.
+- Do not leave any TODOs in your code.
+- Do not leave any commented-out lines in your code.
