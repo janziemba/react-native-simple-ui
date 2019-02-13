@@ -26,7 +26,8 @@
     },
     "scripts": {
         "build": "rm -rf dist/* && babel src/ -d dist/ --ignore **/*.test.js && git add dist",
-        "publish-docs": "cd website && GIT_USER=janziemba USE_SSH=true yarn run publish-gh-pages",
+        "generate-docs": "cd website && yarn run build",
+        "publish-docs": "cd website && GIT_USER=janziemba USE_SSH=true yarn publish-gh-pages",
         "test": "yarn eslint . && yarn flow && yarn jest && yarn codecov"
     },
     "dependencies": {

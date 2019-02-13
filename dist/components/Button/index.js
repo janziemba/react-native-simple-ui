@@ -59,6 +59,7 @@ var defaultProps = _objectSpread({}, _reactNative.TouchableOpacity.defaultProps,
   color: 'primary',
   icon: null,
   linearGradient: null,
+  loading: false,
   rounding: _constants.ROUNDING.normal,
   size: _constants.SIZES.medium,
   variant: _constants.VARIANTS.default
@@ -112,6 +113,7 @@ function (_PureComponent) {
     _assertThisInitialized(_assertThisInitialized(_this)).renderIcon = _this.renderIcon.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _assertThisInitialized(_assertThisInitialized(_this)).renderIconAfterText = _this.renderIconAfterText.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _assertThisInitialized(_assertThisInitialized(_this)).renderIconBeforeText = _this.renderIconBeforeText.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _assertThisInitialized(_assertThisInitialized(_this)).renderContent = _this.renderContent.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -202,12 +204,27 @@ function (_PureComponent) {
       return this.renderIcon();
     }
   }, {
+    key: "renderContent",
+    value: function renderContent() {
+      var _this$props = this.props,
+          loading = _this$props.loading,
+          styles = _this$props.styles,
+          text = _this$props.text;
+
+      if (loading) {
+        return _react.default.createElement(_reactNative.ActivityIndicator, null);
+      }
+
+      return _react.default.createElement(_react.Fragment, null, this.renderIconBeforeText(), _react.default.createElement(_reactNative.Text, {
+        style: styles.text
+      }, text), this.renderIconAfterText());
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          disabled = _this$props.disabled,
-          onPress = _this$props.onPress,
-          text = _this$props.text;
+      var _this$props2 = this.props,
+          disabled = _this$props2.disabled,
+          onPress = _this$props2.onPress;
       var styles = this.state.styles;
       return _react.default.createElement(_reactNative.TouchableOpacity, _extends({}, (0, _omit.default)(this.props, ['styles']), {
         accessibilityRole: "button",
@@ -220,9 +237,7 @@ function (_PureComponent) {
         style: styles.touchable
       }), _react.default.createElement(_reactNative.View, {
         style: styles.container
-      }, this.renderIconBeforeText(), _react.default.createElement(_reactNative.Text, {
-        style: styles.text
-      }, text), this.renderIconAfterText()));
+      }, this.renderContent()));
     }
   }]);
 
@@ -235,6 +250,7 @@ function (_PureComponent) {
   linearGradient: function linearGradient() {
     return (typeof _LinearGradient.bpfrpt_proptype_Props === "function" ? _LinearGradient.bpfrpt_proptype_Props : _propTypes.default.shape(_LinearGradient.bpfrpt_proptype_Props)).apply(this, arguments);
   },
+  loading: _propTypes.default.bool,
   rounding: _propTypes.default.string,
   // eslint-disable-line react/no-unused-prop-types, max-len
   size: _propTypes.default.string,

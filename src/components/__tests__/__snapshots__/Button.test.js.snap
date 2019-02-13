@@ -42,25 +42,7 @@ exports[`renders correctly 1`] = `
       ]
     }
   >
-    <Text
-      style={
-        Array [
-          Object {
-            "fontWeight": "800",
-            "textAlign": "center",
-          },
-          Object {
-            "fontSize": 14,
-          },
-          Object {
-            "color": "#158cba",
-          },
-          Object {
-            "color": "white",
-          },
-        ]
-      }
-    >
+    <Text>
       Lorem ipsum
     </Text>
   </View>

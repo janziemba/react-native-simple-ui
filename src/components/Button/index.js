@@ -1,8 +1,8 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import type { Node } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import omit from 'lodash/omit';
 import type { Props as TouchableWithoutFeedbackProps } from 'react-native/Libraries/Components/Touchable/TouchableWithoutFeedback';
@@ -20,6 +20,7 @@ type Props = TouchableWithoutFeedbackProps & {
     color?: string,
     icon?: IconProps,
     linearGradient?: LinearGradientProps,
+    loading?: boolean,
     rounding?: string, // eslint-disable-line react/no-unused-prop-types, max-len
     size?: string, // eslint-disable-line react/no-unused-prop-types
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types, max-len
@@ -32,6 +33,7 @@ const defaultProps = {
     color: 'primary',
     icon: null,
     linearGradient: null,
+    loading: false,
     rounding: ROUNDING.normal,
     size: SIZES.medium,
     variant: VARIANTS.default,
@@ -100,6 +102,7 @@ class Button extends PureComponent<Props, State> {
         (this: any).renderIcon = this.renderIcon.bind(this);
         (this: any).renderIconAfterText = this.renderIconAfterText.bind(this);
         (this: any).renderIconBeforeText = this.renderIconBeforeText.bind(this);
+        (this: any).renderContent = this.renderContent.bind(this);
     }
     componentWillReceiveProps(nextProps: Props): void {
         const propsOnWhichDependsTheStyle: Array<string> = ['color', 'disabled', 'icon', 'rounding', 'size', 'variant'];
@@ -161,8 +164,27 @@ class Button extends PureComponent<Props, State> {
 
         return this.renderIcon();
     }
+    renderContent(): Node {
+        const { loading, styles, text } = this.props;
+
+        if (loading) {
+            return (
+                <ActivityIndicator />
+            );
+        }
+
+        return (
+            <Fragment>
+                {this.renderIconBeforeText()}
+                <Text style={styles.text}>
+                    {text}
+                </Text>
+                {this.renderIconAfterText()}
+            </Fragment>
+        );
+    }
     render(): Node {
-        const { disabled, onPress, text } = this.props;
+        const { disabled, onPress } = this.props;
         const { styles } = this.state;
 
         return (
@@ -177,11 +199,7 @@ class Button extends PureComponent<Props, State> {
                 style={styles.touchable}
             >
                 <View style={styles.container}>
-                    {this.renderIconBeforeText()}
-                    <Text style={styles.text}>
-                        {text}
-                    </Text>
-                    {this.renderIconAfterText()}
+                    {this.renderContent()}
                 </View>
             </TouchableOpacity>
         );

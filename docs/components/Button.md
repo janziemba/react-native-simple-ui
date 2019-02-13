@@ -10,6 +10,7 @@ Extend React Native's [TouchableOpacity](https://facebook.github.io/react-native
     - `position` (_string_, default left)
 - `linearGradient` (_object_, default null)
     - [`LinearGradient` props](LinearGradient.md#props)
+- `loading` (_boolean_, default false)
 - `rounding` (_string_, default normal)
 - `size` (_string_, default medium) - one of theme spacing, [base theme spacing](../Theme.md#spacing) by default
 - `state` (_string_, default inactive)
@@ -60,6 +61,15 @@ which flexDirection and padding should be applied to container and iconContainer
         position: 'right',
     }}
     text="With icon on right"
+/>
+```
+
+### Loading
+
+```jsx
+<Button
+    loading
+    text="Loading"
 />
 ```
 
