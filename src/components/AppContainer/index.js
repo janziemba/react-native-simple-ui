@@ -19,12 +19,12 @@ class AppContainer extends PureComponent<Props> {
     static defaultProps = {
         backgroundImage: null,
     };
-    constructor(props: Props) {
+    constructor(props: Props): void {
         super(props);
 
         (this: any).renderContent = this.renderContent.bind(this);
     }
-    renderContent() {
+    renderContent(): Node {
         const { backgroundImage, children, styles } = this.props;
 
         if (!backgroundImage) {
@@ -42,7 +42,7 @@ class AppContainer extends PureComponent<Props> {
             </ImageBackground>
         );
     }
-    render() {
+    render(): Node {
         const { styles } = this.props;
 
         const topSafeAreaIsLight: boolean = Color(styles.topSafeArea.backgroundColor).isLight();

@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import merge from 'lodash/merge';
@@ -19,7 +20,7 @@ class TextLink extends PureComponent<Props> {
         disabled: false,
         onPress: null,
     });
-    render() {
+    render(): Node {
         const { children, disabled, onPress } = this.props;
 
         return (

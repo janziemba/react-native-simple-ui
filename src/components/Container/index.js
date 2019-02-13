@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
@@ -45,14 +46,14 @@ class Container extends PureComponent<Props, State> {
     state = {
         styles: getStyles(this.props),
     };
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps): void {
         const propsOnWhichDependsTheStyle: Array<string> = ['align', 'margin', 'padding', 'style'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
         }
     }
-    render() {
+    render(): Node {
         const { children } = this.props;
         const { styles } = this.state;
 

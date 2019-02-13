@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import omit from 'lodash/omit';
@@ -91,7 +92,7 @@ class Button extends PureComponent<Props, State> {
         active: false, // eslint-disable-line react/no-unused-state
         styles: getStyles(this.props),
     };
-    constructor(props: Props) {
+    constructor(props: Props): void {
         super(props);
 
         (this: any).onPressIn = this.onPressIn.bind(this);
@@ -100,28 +101,28 @@ class Button extends PureComponent<Props, State> {
         (this: any).renderIconAfterText = this.renderIconAfterText.bind(this);
         (this: any).renderIconBeforeText = this.renderIconBeforeText.bind(this);
     }
-    componentWillReceiveProps(nextProps: Props) {
+    componentWillReceiveProps(nextProps: Props): void {
         const propsOnWhichDependsTheStyle: Array<string> = ['color', 'disabled', 'icon', 'rounding', 'size', 'variant'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState(prevState => ({ styles: getStyles(nextProps, prevState) }));
         }
     }
-    onPressIn() {
+    onPressIn(): void {
         this.setState(
             // eslint-disable-next-line react/no-unused-state
             { active: true },
             () => this.setState(prevState => ({ styles: getStyles(this.props, prevState) })),
         );
     }
-    onPressOut() {
+    onPressOut(): void {
         this.setState(
             // eslint-disable-next-line react/no-unused-state
             { active: false },
             () => this.setState(prevState => ({ styles: getStyles(this.props, prevState) })),
         );
     }
-    renderIcon() {
+    renderIcon(): Node {
         const { icon } = this.props;
         const { styles } = this.state;
 
@@ -140,7 +141,7 @@ class Button extends PureComponent<Props, State> {
             </View>
         );
     }
-    renderIconAfterText() {
+    renderIconAfterText(): Node {
         const { icon } = this.props;
 
         if (!icon || !icon.position
@@ -150,7 +151,7 @@ class Button extends PureComponent<Props, State> {
 
         return this.renderIcon();
     }
-    renderIconBeforeText() {
+    renderIconBeforeText(): Node {
         const { icon } = this.props;
 
         if (!icon
@@ -160,7 +161,7 @@ class Button extends PureComponent<Props, State> {
 
         return this.renderIcon();
     }
-    render() {
+    render(): Node {
         const { disabled, onPress, text } = this.props;
         const { styles } = this.state;
 

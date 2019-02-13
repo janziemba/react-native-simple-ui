@@ -50,14 +50,14 @@ class Row extends PureComponent<Props, State> {
     state = {
         styles: getStyles(this.props),
     };
-    componentWillReceiveProps(nextProps: Props) {
+    componentWillReceiveProps(nextProps: Props): void {
         const propsOnWhichDependsTheStyle: Array<string> = ['size', 'style'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
         }
     }
-    render() {
+    render(): Node {
         const { children } = this.props;
         const { styles } = this.state;
 

@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 import { StyleSheet, Text as RNText } from 'react-native';
 
 import type { TextProps } from 'react-native/Libraries/Text/TextProps';
@@ -42,14 +43,14 @@ class Text extends PureComponent<Props, State> {
     state = {
         styles: getStyles(this.props),
     };
-    componentWillReceiveProps(nextProps: Props) {
+    componentWillReceiveProps(nextProps: Props): void {
         const propsOnWhichDependsTheStyle: Array<string> = ['color', 'size'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
         }
     }
-    render() {
+    render(): Node {
         const { children } = this.props;
         const { styles } = this.state;
 

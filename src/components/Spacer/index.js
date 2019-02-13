@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 import { View } from 'react-native';
 
 import withTheme from '../../themes/withTheme';
@@ -34,14 +35,14 @@ class Spacer extends PureComponent<Props, State> {
     state = {
         styles: getStyles(this.props),
     };
-    componentWillReceiveProps(nextProps: Props) {
+    componentWillReceiveProps(nextProps: Props): void {
         const propsOnWhichDependsTheStyle: Array<string> = ['multiplier', 'size'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
         }
     }
-    render() {
+    render(): Node {
         const { styles } = this.state;
 
         return (

@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 
 import withTheme from '../../themes/withTheme';
 import type { ThemeShapeType } from '../../types';
@@ -25,7 +26,7 @@ class Icon extends PureComponent<Props> {
         iconSet: null,
         size: 24,
     };
-    render() {
+    render(): Node {
         const { color, colorName, iconSet, name, size, styles, theme } = this.props;
 
         const VectorIcon = ICON_SETS[iconSet || theme.typography.iconSet];

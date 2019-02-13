@@ -2,7 +2,7 @@
 
 import Color from 'color';
 import React, { PureComponent } from 'react';
-import type { Element } from 'react';
+import type { Element, Node } from 'react';
 import { View } from 'react-native';
 
 import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
@@ -28,12 +28,12 @@ const defaultProps = {
 
 class LinearGradient extends PureComponent<Props> {
     static defaultProps = defaultProps;
-    constructor(props: Props) {
+    constructor(props: Props): void {
         super(props);
 
         (this: any).renderGradient = this.renderGradient.bind(this);
     }
-    renderGradient() {
+    renderGradient(): Array<Element<typeof View>> {
         const { direction, fromColor, height, toColor, width } = this.props;
 
         const lines: Array<Element<typeof View>> = [];
@@ -61,7 +61,7 @@ class LinearGradient extends PureComponent<Props> {
 
         return lines;
     }
-    render() {
+    render(): Node {
         const { children, height, styles, width } = this.props;
 
         return (

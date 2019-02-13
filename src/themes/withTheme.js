@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 
 import merge from 'lodash/merge';
 
@@ -29,7 +30,7 @@ const withTheme = (customStyles: Function, componentName: string) => (Component:
         static originalComponentName: string = Component.displayName || Component.name;
         static displayName: ?string = `WithTheme(${Component.displayName || Component.name})`;
 
-        render() {
+        render(): Node {
             return (
                 <ThemeContext.Consumer>
                     {(customTheme: ThemeType) => {

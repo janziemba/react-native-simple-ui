@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import type { Node } from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 
 import withTheme from '../../themes/withTheme';
@@ -17,7 +18,7 @@ class Modal extends PureComponent<Props> {
     static defaultProps = {
         onOverlayPress: null,
     };
-    render() {
+    render(): Node {
         const { children, onOverlayPress, styles } = this.props;
 
         return (
