@@ -9,3 +9,13 @@ it('returns true if style changed', () => {
 
     expect(result).toBeTruthy();
 });
+
+it('returns false if style didn\'t changed', () => {
+    const propsOnWhichDependsTheStyle = ['color', 'size'];
+    const nextProps = { color: 'blue', size: 1 };
+    const currentProps = { color: 'blue', size: 1 };
+
+    const result = hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, currentProps);
+
+    expect(result).toBeFalsy();
+});
