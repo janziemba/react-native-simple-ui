@@ -66,14 +66,6 @@ class App extends PureComponent {
 - ![#28b62c](https://placehold.it/15/28b62c/000000?text=+) `#28b62c` - success
 - ![#ff851b](https://placehold.it/15/ff851b/000000?text=+) `#ff851b` - warning
 
-#### Social
-- ![#3b5998](https://placehold.it/15/3b5998/000000?text=+) `#3b5998` - facebook
-- ![#dc4e41](https://placehold.it/15/dc4e41/000000?text=+) `#dc4e41` - google
-- ![#c32aa3](https://placehold.it/15/c32aa3/000000?text=+) `#c32aa3` - instagram
-- ![#0077b5](https://placehold.it/15/0077b5/000000?text=+) `#0077b5` - linkedin
-- ![#55acee](https://placehold.it/15/55acee/000000?text=+) `#55acee` - twitter
-- ![#4c75a3](https://placehold.it/15/4c75a3/000000?text=+) `#4c75a3` - vk
-
 #### Text
 - ![#999999](https://placehold.it/15/999999/000000?text=+) `#999999` - disabled
 - ![#e2e4e6](https://placehold.it/15/e2e4e6/000000?text=+) `#e2e4e6` - placeholder
@@ -94,14 +86,6 @@ class App extends PureComponent {
         primary: '#158cba',
         success: '#28b62c',
         warning: '#ff851b',
-    },
-    social: {
-        facebook: '#3b5998',
-        google: '#dc4e41',
-        instagram: '#c32aa3',
-        linkedIn: '#0077b5',
-        twitter: '#55acee',
-        vk: '#4c75a3',
     },
     text: {
         disabled: '#999999',

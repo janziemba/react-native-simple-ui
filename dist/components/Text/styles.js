@@ -40,7 +40,7 @@ var _default = function _default(_ref) {
   var colors = _ref.colors,
       spacing = _ref.spacing,
       typography = _ref.typography;
-  var allColors = (0, _merge.default)({}, _constants.COLORS, colors.palette, colors.social);
+  var allColors = (0, _merge.default)({}, _constants.COLORS, colors.palette);
   var colorOptions = {};
   Object.keys(allColors).forEach(function (colorName) {
     var color = allColors[colorName];

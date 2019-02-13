@@ -10,7 +10,7 @@ export type StylesType = {
 };
 
 export default ({ colors }: ThemeShapeType): StylesType => {
-    const allColors: ObjectOfStringsType = merge({}, COLORS, colors.palette, colors.social);
+    const allColors: ObjectOfStringsType = merge({}, COLORS, colors.palette);
     const colorOptions: ObjectOfStyleSheetsType = {};
 
     Object.keys(allColors).forEach((colorName: string) => {

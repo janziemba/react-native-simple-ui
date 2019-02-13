@@ -37,14 +37,6 @@ exports[`Column renders correctly 1`] = `
           "success": "#28b62c",
           "warning": "#ff851b",
         },
-        "social": Object {
-          "facebook": "#3b5998",
-          "google": "#dc4e41",
-          "instagram": "#c32aa3",
-          "linkedin": "#0077b5",
-          "twitter": "#55acee",
-          "vk": "#4c75a3",
-        },
         "text": Object {
           "disabled": "#999999",
           "placeholder": "#e2e4e6",
@@ -165,14 +157,6 @@ exports[`Grid with Column renders correctly 1`] = `
           "success": "#28b62c",
           "warning": "#ff851b",
         },
-        "social": Object {
-          "facebook": "#3b5998",
-          "google": "#dc4e41",
-          "instagram": "#c32aa3",
-          "linkedin": "#0077b5",
-          "twitter": "#55acee",
-          "vk": "#4c75a3",
-        },
         "text": Object {
           "disabled": "#999999",
           "placeholder": "#e2e4e6",
@@ -282,14 +266,6 @@ exports[`Grid with Column renders correctly 1`] = `
             "primary": "#158cba",
             "success": "#28b62c",
             "warning": "#ff851b",
-          },
-          "social": Object {
-            "facebook": "#3b5998",
-            "google": "#dc4e41",
-            "instagram": "#c32aa3",
-            "linkedin": "#0077b5",
-            "twitter": "#55acee",
-            "vk": "#4c75a3",
           },
           "text": Object {
             "disabled": "#999999",
@@ -412,14 +388,6 @@ exports[`Grid with Row renders correctly 1`] = `
           "success": "#28b62c",
           "warning": "#ff851b",
         },
-        "social": Object {
-          "facebook": "#3b5998",
-          "google": "#dc4e41",
-          "instagram": "#c32aa3",
-          "linkedin": "#0077b5",
-          "twitter": "#55acee",
-          "vk": "#4c75a3",
-        },
         "text": Object {
           "disabled": "#999999",
           "placeholder": "#e2e4e6",
@@ -529,14 +497,6 @@ exports[`Grid with Row renders correctly 1`] = `
             "primary": "#158cba",
             "success": "#28b62c",
             "warning": "#ff851b",
-          },
-          "social": Object {
-            "facebook": "#3b5998",
-            "google": "#dc4e41",
-            "instagram": "#c32aa3",
-            "linkedin": "#0077b5",
-            "twitter": "#55acee",
-            "vk": "#4c75a3",
           },
           "text": Object {
             "disabled": "#999999",
@@ -651,14 +611,6 @@ exports[`Row renders correctly 1`] = `
           "primary": "#158cba",
           "success": "#28b62c",
           "warning": "#ff851b",
-        },
-        "social": Object {
-          "facebook": "#3b5998",
-          "google": "#dc4e41",
-          "instagram": "#c32aa3",
-          "linkedin": "#0077b5",
-          "twitter": "#55acee",
-          "vk": "#4c75a3",
         },
         "text": Object {
           "disabled": "#999999",

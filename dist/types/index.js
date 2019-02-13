@@ -28,7 +28,6 @@ var bpfrpt_proptype_ThemeType = {
   colors: _propTypes.default.shape({
     layout: _propTypes.default.objectOf(_propTypes.default.string.isRequired).isRequired,
     palette: _propTypes.default.objectOf(_propTypes.default.string.isRequired).isRequired,
-    social: _propTypes.default.objectOf(_propTypes.default.string.isRequired).isRequired,
     text: _propTypes.default.objectOf(_propTypes.default.string.isRequired).isRequired
   }).isRequired,
   components: _propTypes.default.shape({}).isRequired,

@@ -22,11 +22,11 @@ export type StylesType = {
 };
 
 export default ({ colors, radiuses, spacing, typography }: ThemeShapeType): StylesType => {
-    const allColors: ObjectOfStringsType = merge({}, COLORS, colors.palette, colors.social);
+    const allColors: ObjectOfStringsType = merge({}, COLORS, colors.palette);
     const colorOptions: ObjectOfObjectsType = {};
 
     Object.keys(allColors).forEach((colorName: string) => {
-        const color = colors.palette[colorName] || colors.social[colorName] || colorName;
+        const color = colors.palette[colorName] || colorName;
 
         colorOptions[colorName] = {
             [STATES.active]: {

@@ -38,35 +38,17 @@ exports[`renders correctly 1`] = `
         "disabled": Object {
           "color": "#999999",
         },
-        "facebook": Object {
-          "color": "#3b5998",
-        },
-        "google": Object {
-          "color": "#dc4e41",
-        },
         "info": Object {
           "color": "#75caeb",
         },
-        "instagram": Object {
-          "color": "#c32aa3",
-        },
         "light": Object {
           "color": "#f6f6f6",
-        },
-        "linkedin": Object {
-          "color": "#0077b5",
         },
         "primary": Object {
           "color": "#158cba",
         },
         "success": Object {
           "color": "#28b62c",
-        },
-        "twitter": Object {
-          "color": "#55acee",
-        },
-        "vk": Object {
-          "color": "#4c75a3",
         },
         "warning": Object {
           "color": "#ff851b",
@@ -131,14 +113,6 @@ exports[`renders correctly 1`] = `
           "primary": "#158cba",
           "success": "#28b62c",
           "warning": "#ff851b",
-        },
-        "social": Object {
-          "facebook": "#3b5998",
-          "google": "#dc4e41",
-          "instagram": "#c32aa3",
-          "linkedin": "#0077b5",
-          "twitter": "#55acee",
-          "vk": "#4c75a3",
         },
         "text": Object {
           "disabled": "#999999",

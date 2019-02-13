@@ -18,7 +18,6 @@ export type ThemeType = {
     colors: {
         layout: ObjectOfStringsType,
         palette: ObjectOfStringsType,
-        social: ObjectOfStringsType,
         text: ObjectOfStringsType,
     },
     components: {},

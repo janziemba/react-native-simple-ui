@@ -58,12 +58,12 @@ var _default = function _default(_ref) {
       radiuses = _ref.radiuses,
       spacing = _ref.spacing,
       typography = _ref.typography;
-  var allColors = (0, _merge.default)({}, _constants.COLORS, colors.palette, colors.social);
+  var allColors = (0, _merge.default)({}, _constants.COLORS, colors.palette);
   var colorOptions = {};
   Object.keys(allColors).forEach(function (colorName) {
     var _colorOptions$colorNa;
 
-    var color = colors.palette[colorName] || colors.social[colorName] || colorName;
+    var color = colors.palette[colorName] || colorName;
     colorOptions[colorName] = (_colorOptions$colorNa = {}, _defineProperty(_colorOptions$colorNa, _constants.STATES.active, {
       container: {
         backgroundColor: (0, _darkenOrLighten.default)(color),

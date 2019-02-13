@@ -21,14 +21,6 @@ var colors = {
     success: '#28b62c',
     warning: '#ff851b'
   },
-  social: {
-    facebook: '#3b5998',
-    google: '#dc4e41',
-    instagram: '#c32aa3',
-    linkedin: '#0077b5',
-    twitter: '#55acee',
-    vk: '#4c75a3'
-  },
   text: {
     disabled: '#999999',
     placeholder: '#e2e4e6',
