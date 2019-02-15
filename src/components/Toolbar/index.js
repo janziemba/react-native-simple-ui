@@ -8,6 +8,7 @@ import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import Column from '../Grid/Column';
 import Grid from '../Grid/Grid';
+import Padding from '../Padding';
 import styles from './styles';
 import type { StylesType } from './styles';
 
@@ -55,15 +56,17 @@ class Toolbar extends PureComponent<Props, State> {
 
         return (
             <Grid style={styles}>
-                <Column>
-                    {leftElement}
-                </Column>
-                <Column size={2}>
-                    {centerElement}
-                </Column>
-                <Column>
-                    {rightElement}
-                </Column>
+                <Padding size="small">
+                    <Column>
+                        {leftElement}
+                    </Column>
+                    <Column size={2}>
+                        {centerElement}
+                    </Column>
+                    <Column>
+                        {rightElement}
+                    </Column>
+                </Padding>
             </Grid>
         );
     }

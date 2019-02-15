@@ -13,10 +13,6 @@ var _withTheme = _interopRequireDefault(require("../../themes/withTheme"));
 
 var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChanged"));
 
-var _Margin = _interopRequireDefault(require("../Margin"));
-
-var _Padding = _interopRequireDefault(require("../Padding"));
-
 var _styles = _interopRequireWildcard(require("./styles"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -28,8 +24,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -47,40 +41,34 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var defaultProps = _objectSpread({}, _reactNative.View.defaultProps, {
-  alignment: null,
-  margin: null,
-  padding: null
-});
-
 var getStyles = function getStyles(props) {
-  var alignment = props.alignment,
-      style = props.style,
+  var multiplier = props.multiplier,
+      size = props.size,
       styles = props.styles;
-  return [style, styles.base, alignment ? styles.alignment[alignment] : {}];
+  return {
+    height: styles[size || 'medium'].height * (multiplier || 1)
+  };
 };
 
-var Container = (_temp = _class =
+var Margin = (_temp = _class =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(Container, _PureComponent);
+  _inherits(Margin, _PureComponent);
 
-  function Container() {
+  function Margin() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, Container);
+    _classCallCheck(this, Margin);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Container)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Margin)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       styles: getStyles(_this.props)
@@ -89,10 +77,10 @@ function (_PureComponent) {
     return _this;
   }
 
-  _createClass(Container, [{
+  _createClass(Margin, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['align', 'margin', 'padding', 'style'];
+      var propsOnWhichDependsTheStyle = ['multiplier', 'size'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -103,45 +91,29 @@ function (_PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          children = _this$props.children,
-          margin = _this$props.margin,
-          padding = _this$props.padding;
       var styles = this.state.styles;
-      var content = children;
-
-      if (padding) {
-        content = _react.default.createElement(_Padding.default, {
-          size: padding
-        }, children);
-      }
-
-      var result = _react.default.createElement(_reactNative.View, _extends({}, this.props, {
+      return _react.default.createElement(_reactNative.View, {
         style: styles
-      }), content);
-
-      if (margin) {
-        result = _react.default.createElement(_Margin.default, {
-          size: margin
-        }, result);
-      }
-
-      return result;
+      });
     }
   }]);
 
-  return Container;
+  return Margin;
 }(_react.PureComponent), _defineProperty(_class, "propTypes", {
-  alignment: _propTypes.default.string,
-  margin: _propTypes.default.string,
-  padding: _propTypes.default.string,
+  multiplier: _propTypes.default.number,
+  // eslint-disable-line react/no-unused-prop-types
+  size: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
   styles: function styles() {
     return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
   }
 }), _temp);
 
-_defineProperty(Container, "defaultProps", defaultProps);
+_defineProperty(Margin, "defaultProps", {
+  multiplier: 1,
+  size: 'medium'
+});
 
-Container = (0, _withTheme.default)(_styles.default, 'Container')(Container);
-var _default = Container;
+Margin = (0, _withTheme.default)(_styles.default, 'Margin')(Margin);
+var _default = Margin;
 exports.default = _default;

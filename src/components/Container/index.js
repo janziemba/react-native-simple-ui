@@ -8,6 +8,8 @@ import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropT
 
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
+import Margin from '../Margin';
+import Padding from '../Padding';
 import styles from './styles';
 import type { StylesType } from './styles';
 
@@ -30,14 +32,12 @@ type State = {
 };
 
 const getStyles = (props: Props): Array<StyleSheet.Styles> => {
-    const { alignment, margin, padding, style, styles } = props;
+    const { alignment, style, styles } = props;
 
     return [
         style,
         styles.base,
         alignment ? styles.alignment[alignment] : {},
-        margin ? styles.margin[margin] : {},
-        padding ? styles.padding[padding] : {},
     ];
 };
 
@@ -54,17 +54,37 @@ class Container extends PureComponent<Props, State> {
         }
     }
     render(): Node {
-        const { children } = this.props;
+        const { children, margin, padding } = this.props;
         const { styles } = this.state;
 
-        return (
+        let content = children;
+
+        if (padding) {
+            content = (
+                <Padding size={padding}>
+                    {children}
+                </Padding>
+            );
+        }
+
+        let result = (
             <View
                 {...this.props}
                 style={styles}
             >
-                {children}
+                {content}
             </View>
         );
+
+        if (margin) {
+            result = (
+                <Margin size={margin}>
+                    {result}
+                </Margin>
+            );
+        }
+
+        return result;
     }
 }
 

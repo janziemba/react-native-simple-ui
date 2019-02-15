@@ -5,6 +5,7 @@ import type { Node } from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 
 import withTheme from '../../themes/withTheme';
+import Padding from '../Padding';
 import styles from './styles';
 import type { StylesType } from './styles';
 
@@ -25,7 +26,9 @@ class Modal extends PureComponent<Props> {
             <TouchableWithoutFeedback onPress={onOverlayPress}>
                 <View style={styles.overlay}>
                     <View style={styles.container}>
-                        {children}
+                        <Padding size="huge">
+                            {children}
+                        </Padding>
                     </View>
                 </View>
             </TouchableWithoutFeedback>

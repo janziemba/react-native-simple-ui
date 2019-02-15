@@ -14,7 +14,7 @@ export type StylesType = {
     colors: ObjectOfStyleSheetsType,
 };
 
-export default ({ colors, spacing }: ThemeShapeType): StylesType => {
+export default ({ colors }: ThemeShapeType): StylesType => {
     const allColors: ObjectOfStringsType = merge({}, COLORS, colors.palette);
     const colorOptions: ObjectOfStyleSheetsType = {};
 
@@ -34,7 +34,6 @@ export default ({ colors, spacing }: ThemeShapeType): StylesType => {
             container: {
                 alignItems: 'center',
                 height: 56,
-                padding: spacing.small,
             },
         },
         colors: colorOptions,

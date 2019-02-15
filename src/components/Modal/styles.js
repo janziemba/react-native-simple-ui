@@ -13,7 +13,6 @@ export default ({ radiuses }: ThemeShapeType): StylesType => ({
     container: {
         backgroundColor: 'white',
         borderRadius: radiuses.small,
-        padding: 20,
         width: '75%',
     },
     overlay: {

@@ -12,8 +12,6 @@ exports[`renders correctly 1`] = `
         "flex": 1,
       },
       Object {},
-      Object {},
-      Object {},
     ]
   }
   styles={
@@ -26,46 +24,6 @@ exports[`renders correctly 1`] = `
       },
       "base": Object {
         "flex": 1,
-      },
-      "margin": Object {
-        "gigantic": Object {
-          "margin": 24,
-        },
-        "huge": Object {
-          "margin": 20,
-        },
-        "large": Object {
-          "margin": 16,
-        },
-        "medium": Object {
-          "margin": 12,
-        },
-        "small": Object {
-          "margin": 8,
-        },
-        "tiny": Object {
-          "margin": 4,
-        },
-      },
-      "padding": Object {
-        "gigantic": Object {
-          "padding": 24,
-        },
-        "huge": Object {
-          "padding": 20,
-        },
-        "large": Object {
-          "padding": 16,
-        },
-        "medium": Object {
-          "padding": 12,
-        },
-        "small": Object {
-          "padding": 8,
-        },
-        "tiny": Object {
-          "padding": 4,
-        },
       },
     }
   }

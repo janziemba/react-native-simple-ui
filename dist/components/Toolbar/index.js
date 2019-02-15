@@ -17,6 +17,8 @@ var _Column = _interopRequireDefault(require("../Grid/Column"));
 
 var _Grid = _interopRequireDefault(require("../Grid/Grid"));
 
+var _Padding = _interopRequireDefault(require("../Padding"));
+
 var _styles = _interopRequireWildcard(require("./styles"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -99,9 +101,11 @@ function (_PureComponent) {
       var styles = this.state.styles;
       return _react.default.createElement(_Grid.default, {
         style: styles
+      }, _react.default.createElement(_Padding.default, {
+        size: "small"
       }, _react.default.createElement(_Column.default, null, leftElement), _react.default.createElement(_Column.default, {
         size: 2
-      }, centerElement), _react.default.createElement(_Column.default, null, rightElement));
+      }, centerElement), _react.default.createElement(_Column.default, null, rightElement)));
     }
   }]);
 

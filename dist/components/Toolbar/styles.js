@@ -30,8 +30,7 @@ var bpfrpt_proptype_StylesType = {
 exports.bpfrpt_proptype_StylesType = bpfrpt_proptype_StylesType;
 
 var _default = function _default(_ref) {
-  var colors = _ref.colors,
-      spacing = _ref.spacing;
+  var colors = _ref.colors;
   var allColors = (0, _merge.default)({}, _constants.COLORS, colors.palette);
   var colorOptions = {};
   Object.keys(allColors).forEach(function (colorName) {
@@ -47,8 +46,7 @@ var _default = function _default(_ref) {
     base: {
       container: {
         alignItems: 'center',
-        height: 56,
-        padding: spacing.small
+        height: 56
       }
     },
     colors: colorOptions

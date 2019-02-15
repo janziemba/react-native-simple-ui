@@ -11,6 +11,8 @@ var _reactNative = require("react-native");
 
 var _withTheme = _interopRequireDefault(require("../../themes/withTheme"));
 
+var _Padding = _interopRequireDefault(require("../Padding"));
+
 var _styles = _interopRequireWildcard(require("./styles"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -65,7 +67,9 @@ function (_PureComponent) {
         style: styles.overlay
       }, _react.default.createElement(_reactNative.View, {
         style: styles.container
-      }, children)));
+      }, _react.default.createElement(_Padding.default, {
+        size: "huge"
+      }, children))));
     }
   }]);
 

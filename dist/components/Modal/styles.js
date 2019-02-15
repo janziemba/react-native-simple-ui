@@ -33,7 +33,6 @@ var _default = function _default(_ref) {
     container: {
       backgroundColor: 'white',
       borderRadius: radiuses.small,
-      padding: 20,
       width: '75%'
     },
     overlay: _objectSpread({}, _reactNative.StyleSheet.absoluteFillObject, {
