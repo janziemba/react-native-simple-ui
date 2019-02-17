@@ -130,7 +130,7 @@ exports[`renders correctly 1`] = `
   <View
     style={
       Object {
-        "height": NaN,
+        "padding": 8,
       }
     }
   />

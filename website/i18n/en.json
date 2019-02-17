@@ -26,8 +26,14 @@
       "components/lineargradient": {
         "title": "LinearGradient"
       },
+      "components/margin": {
+        "title": "Margin"
+      },
       "components/modal": {
         "title": "Modal"
+      },
+      "components/padding": {
+        "title": "Padding"
       },
       "components/spacer": {
         "title": "Spacer"

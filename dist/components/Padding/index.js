@@ -46,10 +46,42 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var getStyles = function getStyles(props) {
   var multiplier = props.multiplier,
       size = props.size,
+      sizeBottom = props.sizeBottom,
+      sizeHorizontal = props.sizeHorizontal,
+      sizeLeft = props.sizeLeft,
+      sizeRight = props.sizeRight,
+      sizeTop = props.sizeTop,
+      sizeVertical = props.sizeVertical,
       styles = props.styles;
-  return {
-    height: styles[size || 'medium'].height * (multiplier || 1)
+  var result = {
+    padding: styles[size || 'medium'].padding * (multiplier || 1)
   };
+
+  if (sizeHorizontal) {
+    result.paddingHorizontal = styles[sizeHorizontal].padding * (multiplier || 1);
+  }
+
+  if (sizeVertical) {
+    result.paddingVertical = styles[sizeVertical].padding * (multiplier || 1);
+  }
+
+  if (sizeBottom) {
+    result.paddingBottom = styles[sizeBottom].padding * (multiplier || 1);
+  }
+
+  if (sizeLeft) {
+    result.paddingLeft = styles[sizeLeft].padding * (multiplier || 1);
+  }
+
+  if (sizeRight) {
+    result.paddingRight = styles[sizeRight].padding * (multiplier || 1);
+  }
+
+  if (sizeTop) {
+    result.paddingTop = styles[sizeTop].padding * (multiplier || 1);
+  }
+
+  return result;
 };
 
 var Padding = (_temp = _class =
@@ -80,7 +112,7 @@ function (_PureComponent) {
   _createClass(Padding, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['multiplier', 'size'];
+      var propsOnWhichDependsTheStyle = ['multiplier', 'size', 'paddingBottom', 'sizeHorizontal', 'paddingLeft', 'paddingRight', 'paddingTop', 'sizeVertical'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -104,6 +136,18 @@ function (_PureComponent) {
   // eslint-disable-line react/no-unused-prop-types
   size: _propTypes.default.string,
   // eslint-disable-line react/no-unused-prop-types
+  sizeBottom: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
+  sizeHorizontal: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
+  sizeLeft: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
+  sizeRight: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
+  sizeTop: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
+  sizeVertical: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
   styles: function styles() {
     return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
   }
@@ -111,7 +155,13 @@ function (_PureComponent) {
 
 _defineProperty(Padding, "defaultProps", {
   multiplier: 1,
-  size: 'medium'
+  size: 'medium',
+  sizeBottom: null,
+  sizeHorizontal: null,
+  sizeLeft: null,
+  sizeRight: null,
+  sizeTop: null,
+  sizeVertical: null
 });
 
 Padding = (0, _withTheme.default)(_styles.default, 'Padding')(Padding);

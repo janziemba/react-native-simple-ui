@@ -2,7 +2,7 @@
 
 import React, { PureComponent } from 'react';
 import type { Node } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
@@ -16,10 +16,10 @@ type Props = {
 };
 
 type State = {
-    styles: {},
+    styles: StyleSheet.Styles,
 };
 
-const getStyles = (props: Props): {} => {
+const getStyles = (props: Props): StyleSheet.Styles => {
     const { multiplier, size, styles } = props;
 
     return {
