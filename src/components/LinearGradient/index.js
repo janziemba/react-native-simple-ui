@@ -16,9 +16,12 @@ export type Props = ViewProps & {
     direction?: string,
     fromColor: string,
     height: number,
-    styles: StylesType,
     toColor: string,
     width: number,
+};
+
+type PrivateProps = Props & {
+    styles: StylesType,
 };
 
 const defaultProps = {
@@ -26,7 +29,7 @@ const defaultProps = {
     direction: DIRECTIONS.horizontal,
 };
 
-class LinearGradient extends PureComponent<Props> {
+class LinearGradient extends PureComponent<PrivateProps> {
     static defaultProps = defaultProps;
     constructor(props: Props): void {
         super(props);

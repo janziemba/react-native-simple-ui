@@ -174,12 +174,10 @@ function (_PureComponent) {
 
       return _react.default.createElement(_reactNative.View, {
         style: styles.iconContainer
-      }, _react.default.createElement(_Icon.default, {
+      }, _react.default.createElement(_Icon.default, _extends({}, icon, {
         color: styles.iconColor,
-        iconSet: icon.iconSet,
-        name: icon.name,
         size: icon.size || 16
-      }));
+      })));
     }
   }, {
     key: "renderIconAfterText",

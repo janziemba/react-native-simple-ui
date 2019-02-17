@@ -15,11 +15,14 @@ export type Props = {
     iconSet?: string,
     name: string,
     size?: number,
+};
+
+type PrivateProps = Props & {
     styles: StylesType,
     theme: ThemeShapeType,
 };
 
-class Icon extends PureComponent<Props> {
+class Icon extends PureComponent<PrivateProps> {
     static defaultProps = {
         color: null,
         colorName: null,

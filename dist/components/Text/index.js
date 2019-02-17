@@ -51,10 +51,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var bpfrpt_proptype_Props = {
   color: _propTypes.default.string,
-  size: _propTypes.default.string,
-  styles: function styles() {
-    return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
-  }
+  size: _propTypes.default.string
 };
 exports.bpfrpt_proptype_Props = bpfrpt_proptype_Props;
 

@@ -35,6 +35,9 @@
       "components/padding": {
         "title": "Padding"
       },
+      "components/rating": {
+        "title": "Rating"
+      },
       "components/spacer": {
         "title": "Spacer"
       },

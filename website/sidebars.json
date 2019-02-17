@@ -1,6 +1,26 @@
 {
   "docs": {
-    "Getting started": ["installation","theme", "components", "withtheme"],
-    "Components": ["components/appcontainer", "components/button", "components/container", "components/grid", "components/icon", "components/lineargradient", "components/margin", "components/modal", "components/padding", "components/spacer", "components/text", "components/textlink", "components/toolbar"]
+    "Getting started": [
+        "installation",
+        "theme",
+        "components",
+        "withtheme"
+    ],
+    "Components": [
+        "components/appcontainer",
+        "components/button",
+        "components/container",
+        "components/grid",
+        "components/icon",
+        "components/lineargradient",
+        "components/margin",
+        "components/modal",
+        "components/padding",
+        "components/rating",
+        "components/spacer",
+        "components/text",
+        "components/textlink",
+        "components/toolbar"
+    ]
   }
 }

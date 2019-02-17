@@ -15,6 +15,9 @@ import type { StylesType } from './styles';
 export type Props = TextProps & {
     color?: string,
     size?: string,
+};
+
+type PrivateProps = Props & {
     styles: StylesType,
 };
 
@@ -28,7 +31,7 @@ type State = {
     styles: Array<StyleSheet.Styles>,
 };
 
-const getStyles = (props: Props): Array<StyleSheet.Styles> => {
+const getStyles = (props: PrivateProps): Array<StyleSheet.Styles> => {
     const { color, size, styles } = props;
 
     return [
@@ -38,12 +41,12 @@ const getStyles = (props: Props): Array<StyleSheet.Styles> => {
     ];
 };
 
-class Text extends PureComponent<Props, State> {
+class Text extends PureComponent<PrivateProps, State> {
     static defaultProps = defaultProps;
     state = {
         styles: getStyles(this.props),
     };
-    componentWillReceiveProps(nextProps: Props): void {
+    componentWillReceiveProps(nextProps: PrivateProps): void {
         const propsOnWhichDependsTheStyle: Array<string> = ['color', 'size'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {

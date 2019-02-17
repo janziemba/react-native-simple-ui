@@ -48,13 +48,7 @@ var bpfrpt_proptype_Props = {
   colorName: _propTypes.default.string,
   iconSet: _propTypes.default.string,
   name: _propTypes.default.string.isRequired,
-  size: _propTypes.default.number,
-  styles: function styles() {
-    return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
-  },
-  theme: function theme() {
-    return (typeof _types.bpfrpt_proptype_ThemeShapeType === "function" ? _types.bpfrpt_proptype_ThemeShapeType.isRequired ? _types.bpfrpt_proptype_ThemeShapeType.isRequired : _types.bpfrpt_proptype_ThemeShapeType : _propTypes.default.shape(_types.bpfrpt_proptype_ThemeShapeType).isRequired).apply(this, arguments);
-  }
+  size: _propTypes.default.number
 };
 exports.bpfrpt_proptype_Props = bpfrpt_proptype_Props;
 var Icon = (_temp = _class =

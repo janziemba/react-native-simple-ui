@@ -136,9 +136,8 @@ class Button extends PureComponent<Props, State> {
         return (
             <View style={styles.iconContainer}>
                 <Icon
+                    {...icon}
                     color={styles.iconColor}
-                    iconSet={icon.iconSet}
-                    name={icon.name}
                     size={icon.size || 16}
                 />
             </View>
