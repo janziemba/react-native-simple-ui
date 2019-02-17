@@ -11,6 +11,7 @@ export const COLORS: ObjectOfStringsType = {
 export const ICON_POSITIONS: ObjectOfStringsType = {
     bottom: 'bottom',
     left: 'left',
+    main: 'main',
     right: 'right',
     top: 'top',
 };

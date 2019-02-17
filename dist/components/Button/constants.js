@@ -23,6 +23,7 @@ exports.COLORS = COLORS;
 var ICON_POSITIONS = {
   bottom: 'bottom',
   left: 'left',
+  main: 'main',
   right: 'right',
   top: 'top'
 };

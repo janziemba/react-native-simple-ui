@@ -7,14 +7,14 @@ Extend React Native's [TouchableOpacity](https://facebook.github.io/react-native
 - `color` (_string_, default primary) - one of theme colors, [base theme colors](../Theme.md#colors) by default
 - `icon` (_object_, default null)
     - [`Icon` props](Icon.md#props)
-    - `position` (_string_, default left)
+    - `position` (_string_, default left, only matters if a `text` is set)
 - `linearGradient` (_object_, default null)
     - [`LinearGradient` props](LinearGradient.md#props)
 - `loading` (_boolean_, default false)
 - `rounding` (_string_, default normal)
 - `size` (_string_, default medium) - one of theme spacing, [base theme spacing](../Theme.md#spacing) by default
 - `state` (_string_, default inactive)
-- `text` (_string_, **required**)
+- `text` (_string_, default null)
 - `variant` (_string_, default default)
 
 ## How do styles work
@@ -30,7 +30,15 @@ which flexDirection and padding should be applied to container and iconContainer
 
 ```jsx
 <Button
-    text="Default"
+    text="With text"
+/>
+```
+
+```jsx
+<Button
+    icon={{
+        name: 'star',
+    }}
 />
 ```
 

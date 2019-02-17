@@ -24,7 +24,7 @@ type Props = TouchableWithoutFeedbackProps & {
     rounding?: string, // eslint-disable-line react/no-unused-prop-types, max-len
     size?: string, // eslint-disable-line react/no-unused-prop-types
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types, max-len
-    text: string,
+    text?: string,
     variant?: string, // eslint-disable-line react/no-unused-prop-types, max-len
 };
 
@@ -36,6 +36,7 @@ const defaultProps = {
     loading: false,
     rounding: ROUNDING.normal,
     size: SIZES.medium,
+    text: null,
     variant: VARIANTS.default,
 };
 
@@ -53,7 +54,7 @@ type State = {
 };
 
 const getStyles = (props: Props, state?: State): MergedStylesType => {
-    const { color, disabled, icon, rounding, size, styles, variant } = props;
+    const { color, disabled, icon, rounding, size, styles, text, variant } = props;
 
     let colorState: string = STATES.inactive;
     if (disabled) {
@@ -69,15 +70,14 @@ const getStyles = (props: Props, state?: State): MergedStylesType => {
             styles.sizes[size].container,
             styles.colors[color][colorState].container,
             styles.variants[variant].container,
-            icon ? styles.iconPositions[icon.position || ICON_POSITIONS.left].container : {},
+            icon && text
+                ? styles.iconPositions[icon.position || ICON_POSITIONS.left].container : {},
         ],
         iconColor: (styles.variants[variant].text && styles.variants[variant].text.color)
             || styles.colors[color][colorState].text.color
             || styles.base.text.color,
-        iconContainer: [
-            styles.base.iconContainer,
-            icon ? styles.iconPositions[icon.position || ICON_POSITIONS.left].iconContainer : {},
-        ],
+        iconContainer: icon && text
+            ? styles.iconPositions[icon.position || ICON_POSITIONS.left].iconContainer : {},
         text: [
             styles.base.text,
             styles.sizes[size].text,
@@ -170,6 +170,10 @@ class Button extends PureComponent<Props, State> {
             return (
                 <ActivityIndicator />
             );
+        }
+
+        if (!text) {
+            return this.renderIcon();
         }
 
         return (

@@ -62,6 +62,7 @@ var defaultProps = _objectSpread({}, _reactNative.TouchableOpacity.defaultProps,
   loading: false,
   rounding: _constants.ROUNDING.normal,
   size: _constants.SIZES.medium,
+  text: null,
   variant: _constants.VARIANTS.default
 });
 
@@ -72,6 +73,7 @@ var getStyles = function getStyles(props, state) {
       rounding = props.rounding,
       size = props.size,
       styles = props.styles,
+      text = props.text,
       variant = props.variant;
   var colorState = _constants.STATES.inactive;
 
@@ -82,9 +84,9 @@ var getStyles = function getStyles(props, state) {
   }
 
   return {
-    container: [styles.base.container, styles.rounding[rounding], styles.sizes[size].container, styles.colors[color][colorState].container, styles.variants[variant].container, icon ? styles.iconPositions[icon.position || _constants.ICON_POSITIONS.left].container : {}],
+    container: [styles.base.container, styles.rounding[rounding], styles.sizes[size].container, styles.colors[color][colorState].container, styles.variants[variant].container, icon && text ? styles.iconPositions[icon.position || _constants.ICON_POSITIONS.left].container : {}],
     iconColor: styles.variants[variant].text && styles.variants[variant].text.color || styles.colors[color][colorState].text.color || styles.base.text.color,
-    iconContainer: [styles.base.iconContainer, icon ? styles.iconPositions[icon.position || _constants.ICON_POSITIONS.left].iconContainer : {}],
+    iconContainer: icon && text ? styles.iconPositions[icon.position || _constants.ICON_POSITIONS.left].iconContainer : {},
     text: [styles.base.text, styles.sizes[size].text, styles.colors[color][colorState].text, styles.variants[variant].text],
     touchable: styles.touchable
   };
@@ -213,6 +215,10 @@ function (_PureComponent) {
         return _react.default.createElement(_reactNative.ActivityIndicator, null);
       }
 
+      if (!text) {
+        return this.renderIcon();
+      }
+
       return _react.default.createElement(_react.Fragment, null, this.renderIconBeforeText(), _react.default.createElement(_reactNative.Text, {
         style: styles.text
       }, text), this.renderIconAfterText());
@@ -257,7 +263,7 @@ function (_PureComponent) {
     return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
   },
   // eslint-disable-line react/no-unused-prop-types, max-len
-  text: _propTypes.default.string.isRequired,
+  text: _propTypes.default.string,
   variant: _propTypes.default.string
 }), _temp);
 
