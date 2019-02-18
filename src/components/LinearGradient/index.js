@@ -13,8 +13,8 @@ import styles from './styles';
 import type { StylesType } from './styles';
 
 export type Props = ViewProps & {
-    direction?: string,
     fromColor: string,
+    gradientDirection?: string,
     height: number,
     toColor: string,
     width: number,
@@ -26,7 +26,7 @@ type PrivateProps = Props & {
 
 const defaultProps = {
     ...View.defaultProps,
-    direction: DIRECTIONS.horizontal,
+    gradientDirection: DIRECTIONS.horizontal,
 };
 
 class LinearGradient extends PureComponent<PrivateProps> {
@@ -37,17 +37,17 @@ class LinearGradient extends PureComponent<PrivateProps> {
         (this: any).renderGradient = this.renderGradient.bind(this);
     }
     renderGradient(): Array<Element<typeof View>> {
-        const { direction, fromColor, height, toColor, width } = this.props;
+        const { fromColor, gradientDirection, height, toColor, width } = this.props;
 
         const lines: Array<Element<typeof View>> = [];
 
-        const point: number = 1 / (direction === DIRECTIONS.horizontal ? width : height);
+        const point: number = 1 / (gradientDirection === DIRECTIONS.horizontal ? width : height);
         const roundedPoint: number = Math.round(point * 1000000) / 1000000;
 
         const fromC: typeof Color = Color(fromColor);
         const toC: typeof Color = Color(toColor);
-        const lineHeight: number = direction === DIRECTIONS.vertical ? 1 : height;
-        const lineWidth: number = direction === DIRECTIONS.horizontal ? 1 : width;
+        const lineHeight: number = gradientDirection === DIRECTIONS.vertical ? 1 : height;
+        const lineWidth: number = gradientDirection === DIRECTIONS.horizontal ? 1 : width;
 
         for (let i: number = 0; i <= 1; i += roundedPoint) {
             lines.push(

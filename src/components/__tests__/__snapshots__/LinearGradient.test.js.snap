@@ -2,8 +2,8 @@
 
 exports[`renders correctly 1`] = `
 <View
-  direction="horizontal"
   fromColor="white"
+  gradientDirection="horizontal"
   height={100}
   style={
     Array [

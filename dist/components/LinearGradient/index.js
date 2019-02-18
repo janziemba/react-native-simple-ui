@@ -50,8 +50,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var bpfrpt_proptype_Props = {
-  direction: _propTypes.default.string,
   fromColor: _propTypes.default.string.isRequired,
+  gradientDirection: _propTypes.default.string,
   height: _propTypes.default.number.isRequired,
   toColor: _propTypes.default.string.isRequired,
   width: _propTypes.default.number.isRequired
@@ -59,7 +59,7 @@ var bpfrpt_proptype_Props = {
 exports.bpfrpt_proptype_Props = bpfrpt_proptype_Props;
 
 var defaultProps = _objectSpread({}, _reactNative.View.defaultProps, {
-  direction: _constants.DIRECTIONS.horizontal
+  gradientDirection: _constants.DIRECTIONS.horizontal
 });
 
 var LinearGradient = (_temp = _class =
@@ -81,18 +81,18 @@ function (_PureComponent) {
     key: "renderGradient",
     value: function renderGradient() {
       var _this$props = this.props,
-          direction = _this$props.direction,
           fromColor = _this$props.fromColor,
+          gradientDirection = _this$props.gradientDirection,
           height = _this$props.height,
           toColor = _this$props.toColor,
           width = _this$props.width;
       var lines = [];
-      var point = 1 / (direction === _constants.DIRECTIONS.horizontal ? width : height);
+      var point = 1 / (gradientDirection === _constants.DIRECTIONS.horizontal ? width : height);
       var roundedPoint = Math.round(point * 1000000) / 1000000;
       var fromC = (0, _color.default)(fromColor);
       var toC = (0, _color.default)(toColor);
-      var lineHeight = direction === _constants.DIRECTIONS.vertical ? 1 : height;
-      var lineWidth = direction === _constants.DIRECTIONS.horizontal ? 1 : width;
+      var lineHeight = gradientDirection === _constants.DIRECTIONS.vertical ? 1 : height;
+      var lineWidth = gradientDirection === _constants.DIRECTIONS.horizontal ? 1 : width;
 
       for (var i = 0; i <= 1; i += roundedPoint) {
         lines.push(_react.default.createElement(_reactNative.View, {
@@ -130,8 +130,8 @@ function (_PureComponent) {
 
   return LinearGradient;
 }(_react.PureComponent), _defineProperty(_class, "propTypes", {
-  direction: _propTypes.default.string,
   fromColor: _propTypes.default.string.isRequired,
+  gradientDirection: _propTypes.default.string,
   height: _propTypes.default.number.isRequired,
   toColor: _propTypes.default.string.isRequired,
   width: _propTypes.default.number.isRequired,
