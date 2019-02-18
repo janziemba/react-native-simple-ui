@@ -17,13 +17,13 @@ var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChang
 
 var _Icon = _interopRequireWildcard(require("../Icon"));
 
+var _LinearGradient = _interopRequireWildcard(require("../LinearGradient"));
+
 var _constants = require("./constants");
 
 var _styles = _interopRequireWildcard(require("./styles"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _LinearGradient = require("../LinearGradient");
 
 var _class, _temp;
 
@@ -228,6 +228,7 @@ function (_PureComponent) {
     value: function render() {
       var _this$props2 = this.props,
           disabled = _this$props2.disabled,
+          linearGradient = _this$props2.linearGradient,
           onPress = _this$props2.onPress;
       var styles = this.state.styles;
       return _react.default.createElement(_reactNative.TouchableOpacity, _extends({}, (0, _omit.default)(this.props, ['styles']), {
@@ -239,7 +240,7 @@ function (_PureComponent) {
         onPressIn: this.onPressIn,
         onPressOut: this.onPressOut,
         style: styles.touchable
-      }), _react.default.createElement(_reactNative.View, {
+      }), linearGradient && _react.default.createElement(_LinearGradient.default, linearGradient), _react.default.createElement(_reactNative.View, {
         style: styles.container
       }, this.renderContent()));
     }

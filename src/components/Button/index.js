@@ -11,6 +11,7 @@ import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import Icon from '../Icon';
 import type { Props as IconProps } from '../Icon';
+import LinearGradient from '../LinearGradient';
 import type { Props as LinearGradientProps } from '../LinearGradient';
 import { ICON_POSITIONS, ROUNDING, SIZES, STATES, VARIANTS } from './constants';
 import styles from './styles';
@@ -187,7 +188,7 @@ class Button extends PureComponent<Props, State> {
         );
     }
     render(): Node {
-        const { disabled, onPress } = this.props;
+        const { disabled, linearGradient, onPress } = this.props;
         const { styles } = this.state;
 
         return (
@@ -201,6 +202,11 @@ class Button extends PureComponent<Props, State> {
                 onPressOut={this.onPressOut}
                 style={styles.touchable}
             >
+                {linearGradient && (
+                    <LinearGradient
+                        {...linearGradient}
+                    />
+                )}
                 <View style={styles.container}>
                     {this.renderContent()}
                 </View>

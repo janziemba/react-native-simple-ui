@@ -23,8 +23,13 @@ exports[`renders correctly with icon 1`] = `
         Object {
           "alignItems": "center",
           "borderWidth": 1,
+          "bottom": 0,
           "justifyContent": "center",
+          "left": 0,
           "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         },
         Object {
           "borderRadius": 4,
@@ -93,8 +98,13 @@ exports[`renders correctly with text 1`] = `
         Object {
           "alignItems": "center",
           "borderWidth": 1,
+          "bottom": 0,
           "justifyContent": "center",
+          "left": 0,
           "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         },
         Object {
           "borderRadius": 4,

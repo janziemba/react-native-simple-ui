@@ -62,6 +62,7 @@ export default ({ colors, radiuses, spacing, typography }: ThemeShapeType): Styl
     return {
         base: {
             container: {
+                ...StyleSheet.absoluteFillObject,
                 alignItems: 'center',
                 borderWidth: 1,
                 justifyContent: 'center',
@@ -73,6 +74,7 @@ export default ({ colors, radiuses, spacing, typography }: ThemeShapeType): Styl
             },
             touchable: {
                 alignSelf: 'stretch',
+                position: 'relative',
             },
         },
         colors: colorOptions,
