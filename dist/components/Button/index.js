@@ -17,8 +17,6 @@ var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChang
 
 var _Icon = _interopRequireWildcard(require("../Icon"));
 
-var _LinearGradient = _interopRequireWildcard(require("../LinearGradient"));
-
 var _constants = require("./constants");
 
 var _styles = _interopRequireWildcard(require("./styles"));
@@ -58,7 +56,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var defaultProps = _objectSpread({}, _reactNative.TouchableOpacity.defaultProps, {
   color: 'primary',
   icon: null,
-  linearGradient: null,
   loading: false,
   rounding: _constants.ROUNDING.normal,
   size: _constants.SIZES.medium,
@@ -208,8 +205,8 @@ function (_PureComponent) {
     value: function renderContent() {
       var _this$props = this.props,
           loading = _this$props.loading,
-          styles = _this$props.styles,
           text = _this$props.text;
+      var styles = this.state.styles;
 
       if (loading) {
         return _react.default.createElement(_reactNative.ActivityIndicator, null);
@@ -228,7 +225,6 @@ function (_PureComponent) {
     value: function render() {
       var _this$props2 = this.props,
           disabled = _this$props2.disabled,
-          linearGradient = _this$props2.linearGradient,
           onPress = _this$props2.onPress;
       var styles = this.state.styles;
       return _react.default.createElement(_reactNative.TouchableOpacity, _extends({}, (0, _omit.default)(this.props, ['styles']), {
@@ -240,7 +236,7 @@ function (_PureComponent) {
         onPressIn: this.onPressIn,
         onPressOut: this.onPressOut,
         style: styles.touchable
-      }), linearGradient && _react.default.createElement(_LinearGradient.default, linearGradient), _react.default.createElement(_reactNative.View, {
+      }), _react.default.createElement(_reactNative.View, {
         style: styles.container
       }, this.renderContent()));
     }
@@ -251,9 +247,6 @@ function (_PureComponent) {
   color: _propTypes.default.string,
   icon: function icon() {
     return (typeof _Icon.bpfrpt_proptype_Props === "function" ? _Icon.bpfrpt_proptype_Props : _propTypes.default.shape(_Icon.bpfrpt_proptype_Props)).apply(this, arguments);
-  },
-  linearGradient: function linearGradient() {
-    return (typeof _LinearGradient.bpfrpt_proptype_Props === "function" ? _LinearGradient.bpfrpt_proptype_Props : _propTypes.default.shape(_LinearGradient.bpfrpt_proptype_Props)).apply(this, arguments);
   },
   loading: _propTypes.default.bool,
   rounding: _propTypes.default.string,

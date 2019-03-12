@@ -53,8 +53,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var defaultProps = _objectSpread({}, _reactNative.View.defaultProps, {
   alignment: null,
-  margin: null,
-  padding: null
+  marginSize: null,
+  paddingSize: null
 });
 
 var getStyles = function getStyles(props) {
@@ -92,7 +92,7 @@ function (_PureComponent) {
   _createClass(Container, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['align', 'margin', 'padding', 'style'];
+      var propsOnWhichDependsTheStyle = ['align', 'marginSize', 'paddingSize', 'style'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -105,14 +105,14 @@ function (_PureComponent) {
     value: function render() {
       var _this$props = this.props,
           children = _this$props.children,
-          margin = _this$props.margin,
-          padding = _this$props.padding;
+          marginSize = _this$props.marginSize,
+          paddingSize = _this$props.paddingSize;
       var styles = this.state.styles;
       var content = children;
 
-      if (padding) {
+      if (paddingSize) {
         content = _react.default.createElement(_Padding.default, {
-          size: padding
+          size: paddingSize
         }, children);
       }
 
@@ -120,9 +120,9 @@ function (_PureComponent) {
         style: styles
       }), content);
 
-      if (margin) {
+      if (marginSize) {
         result = _react.default.createElement(_Margin.default, {
-          size: margin
+          size: marginSize
         }, result);
       }
 
@@ -133,8 +133,8 @@ function (_PureComponent) {
   return Container;
 }(_react.PureComponent), _defineProperty(_class, "propTypes", {
   alignment: _propTypes.default.string,
-  margin: _propTypes.default.string,
-  padding: _propTypes.default.string,
+  marginSize: _propTypes.default.string,
+  paddingSize: _propTypes.default.string,
   styles: function styles() {
     return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
   }

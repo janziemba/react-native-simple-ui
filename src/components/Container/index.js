@@ -15,16 +15,16 @@ import type { StylesType } from './styles';
 
 type Props = ViewProps & {
     alignment?: string,
-    margin?: string,
-    padding?: string,
+    marginSize?: string,
+    paddingSize?: string,
     styles: StylesType,
 };
 
 const defaultProps = {
     ...View.defaultProps,
     alignment: null,
-    margin: null,
-    padding: null,
+    marginSize: null,
+    paddingSize: null,
 };
 
 type State = {
@@ -47,21 +47,21 @@ class Container extends PureComponent<Props, State> {
         styles: getStyles(this.props),
     };
     componentWillReceiveProps(nextProps): void {
-        const propsOnWhichDependsTheStyle: Array<string> = ['align', 'margin', 'padding', 'style'];
+        const propsOnWhichDependsTheStyle: Array<string> = ['align', 'marginSize', 'paddingSize', 'style'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
         }
     }
     render(): Node {
-        const { children, margin, padding } = this.props;
+        const { children, marginSize, paddingSize } = this.props;
         const { styles } = this.state;
 
         let content = children;
 
-        if (padding) {
+        if (paddingSize) {
             content = (
-                <Padding size={padding}>
+                <Padding size={paddingSize}>
                     {children}
                 </Padding>
             );
@@ -76,9 +76,9 @@ class Container extends PureComponent<Props, State> {
             </View>
         );
 
-        if (margin) {
+        if (marginSize) {
             result = (
-                <Margin size={margin}>
+                <Margin size={marginSize}>
                     {result}
                 </Margin>
             );

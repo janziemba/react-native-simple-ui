@@ -11,8 +11,6 @@ import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import Icon from '../Icon';
 import type { Props as IconProps } from '../Icon';
-import LinearGradient from '../LinearGradient';
-import type { Props as LinearGradientProps } from '../LinearGradient';
 import { ICON_POSITIONS, ROUNDING, SIZES, STATES, VARIANTS } from './constants';
 import styles from './styles';
 import type { StylesType } from './styles';
@@ -20,7 +18,6 @@ import type { StylesType } from './styles';
 type Props = TouchableWithoutFeedbackProps & {
     color?: string,
     icon?: IconProps,
-    linearGradient?: LinearGradientProps,
     loading?: boolean,
     rounding?: string, // eslint-disable-line react/no-unused-prop-types, max-len
     size?: string, // eslint-disable-line react/no-unused-prop-types
@@ -33,7 +30,6 @@ const defaultProps = {
     ...TouchableOpacity.defaultProps,
     color: 'primary',
     icon: null,
-    linearGradient: null,
     loading: false,
     rounding: ROUNDING.normal,
     size: SIZES.medium,
@@ -165,7 +161,8 @@ class Button extends PureComponent<Props, State> {
         return this.renderIcon();
     }
     renderContent(): Node {
-        const { loading, styles, text } = this.props;
+        const { loading, text } = this.props;
+        const { styles } = this.state;
 
         if (loading) {
             return (
@@ -188,7 +185,7 @@ class Button extends PureComponent<Props, State> {
         );
     }
     render(): Node {
-        const { disabled, linearGradient, onPress } = this.props;
+        const { disabled, onPress } = this.props;
         const { styles } = this.state;
 
         return (
@@ -202,11 +199,6 @@ class Button extends PureComponent<Props, State> {
                 onPressOut={this.onPressOut}
                 style={styles.touchable}
             >
-                {linearGradient && (
-                    <LinearGradient
-                        {...linearGradient}
-                    />
-                )}
                 <View style={styles.container}>
                     {this.renderContent()}
                 </View>

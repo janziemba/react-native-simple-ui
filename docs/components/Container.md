@@ -5,8 +5,8 @@ title: Container
 ## Props
 Extend React Native's [View](https://facebook.github.io/react-native/docs/view#props) props
 - `alignment` (_string_, default null)
-- `margin` (_string_, default null) - one of theme sizes, [base theme spacing](../Theme.md#spacing) by default
-- `padding` (_string_, default null) - one of theme sizes, [base theme spacing](../Theme.md#spacing) by default
+- `marginSize` (_string_, default null) - one of theme sizes, [base theme spacing](../Theme.md#spacing) by default
+- `paddingSize` (_string_, default null) - one of theme sizes, [base theme spacing](../Theme.md#spacing) by default
 
 ## Examples
 

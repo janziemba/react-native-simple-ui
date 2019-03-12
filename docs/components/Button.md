@@ -8,8 +8,6 @@ Extend React Native's [TouchableOpacity](https://facebook.github.io/react-native
 - `icon` (_object_, default null)
     - [`Icon` props](Icon.md#props)
     - `position` (_string_, default left, only matters if a `text` is set)
-- `linearGradient` (_object_, default null)
-    - [`LinearGradient` props](LinearGradient.md#props)
 - `loading` (_boolean_, default false)
 - `rounding` (_string_, default normal)
 - `size` (_string_, default medium) - one of theme spacing, [base theme spacing](../Theme.md#spacing) by default
