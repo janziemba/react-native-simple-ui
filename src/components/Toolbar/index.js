@@ -20,17 +20,27 @@ type Props = {
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types
 };
 
-type State = {
-    styles: Array<StyleSheet.Styles>,
+type MergedStylesType = {
+    centerElement: StyleSheet.Styles,
+    container: Array<StyleSheet.Styles>,
+    leftElement: StyleSheet.Styles,
+    rightElement: StyleSheet.Styles,
 };
 
-const getStyles = (props: Props): Array<StyleSheet.Styles> => {
+type State = {
+    styles: MergedStylesType,
+};
+
+const getStyles = (props: Props): MergedStylesType => {
     const { color, styles } = props;
 
-    return [
-        styles.base.container,
-        styles.colors[color || 'primary'].container,
-    ];
+    return {
+        ...styles.base,
+        container: [
+            styles.base.container,
+            styles.colors[color || 'primary'].container,
+        ],
+    };
 };
 
 class Toolbar extends PureComponent<Props, State> {
@@ -44,7 +54,7 @@ class Toolbar extends PureComponent<Props, State> {
         styles: getStyles(this.props),
     };
     componentWillReceiveProps(nextProps: Props): void {
-        const propsOnWhichDependsTheStyle: Array<string> = ['color'];
+        const propsOnWhichDependsTheStyle: Array<string> = ['color', 'style'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
@@ -55,18 +65,37 @@ class Toolbar extends PureComponent<Props, State> {
         const { styles } = this.state;
 
         return (
-            <Grid style={styles}>
-                <Padding size="small">
-                    <Column>
-                        {leftElement}
-                    </Column>
-                    <Column size={2}>
-                        {centerElement}
-                    </Column>
-                    <Column>
-                        {rightElement}
-                    </Column>
-                </Padding>
+            <Grid style={styles.container}>
+                <Column>
+                    {leftElement && (
+                        <Padding
+                            size="small"
+                            style={styles.leftElement}
+                        >
+                            {leftElement}
+                        </Padding>
+                    )}
+                </Column>
+                <Column size={1.5}>
+                    {centerElement && (
+                        <Padding
+                            size="small"
+                            style={styles.centerElement}
+                        >
+                            {centerElement}
+                        </Padding>
+                    )}
+                </Column>
+                <Column>
+                    {rightElement && (
+                        <Padding
+                            size="small"
+                            style={styles.rightElement}
+                        >
+                            {rightElement}
+                        </Padding>
+                    )}
+                </Column>
             </Grid>
         );
     }

@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _color = _interopRequireDefault(require("color"));
+
 var _react = _interopRequireWildcard(require("react"));
 
 var _reactNative = require("react-native");
@@ -17,6 +19,8 @@ var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChang
 
 var _Icon = _interopRequireWildcard(require("../Icon"));
 
+var _LinearGradient = _interopRequireWildcard(require("../LinearGradient"));
+
 var _constants = require("./constants");
 
 var _styles = _interopRequireWildcard(require("./styles"));
@@ -25,9 +29,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _class, _temp;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -56,6 +60,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var defaultProps = _objectSpread({}, _reactNative.TouchableOpacity.defaultProps, {
   color: 'primary',
   icon: null,
+  linearGradient: null,
   loading: false,
   rounding: _constants.ROUNDING.normal,
   size: _constants.SIZES.medium,
@@ -80,13 +85,29 @@ var getStyles = function getStyles(props, state) {
     colorState = _constants.STATES.active;
   }
 
-  return {
+  var result = {
     container: [styles.base.container, styles.rounding[rounding], styles.sizes[size].container, styles.colors[color][colorState].container, styles.variants[variant].container, icon && text ? styles.iconPositions[icon.position || _constants.ICON_POSITIONS.left].container : {}],
-    iconColor: styles.variants[variant].text && styles.variants[variant].text.color || styles.colors[color][colorState].text.color || styles.base.text.color,
+    gradient: styles.base.gradient,
     iconContainer: icon && text ? styles.iconPositions[icon.position || _constants.ICON_POSITIONS.left].iconContainer : {},
-    text: [styles.base.text, styles.sizes[size].text, styles.colors[color][colorState].text, styles.variants[variant].text],
-    touchable: styles.touchable
+    text: [],
+    touchable: [styles.base.touchable, styles.rounding[rounding]]
   };
+  var textColor = styles.colors[color][colorState].text.color;
+
+  if (variant === _constants.VARIANTS.default && colorState === _constants.STATES.inactive) {
+    if (new _color.default(_reactNative.StyleSheet.flatten(result.container).backgroundColor).lightness() < 75) {
+      textColor = 'white';
+    } else {
+      textColor = 'black';
+    }
+  } else if (styles.variants[variant].text) {
+    textColor = styles.variants[variant].text.color;
+  }
+
+  result.text = [styles.base.text, styles.sizes[size].text, styles.colors[color][colorState].text, textColor ? {
+    color: textColor
+  } : {}];
+  return result;
 };
 
 var Button = (_temp = _class =
@@ -104,9 +125,12 @@ function (_PureComponent) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       active: false,
       // eslint-disable-line react/no-unused-state
-      styles: getStyles(_this.props)
+      height: 0,
+      styles: getStyles(_this.props),
+      width: 0
     });
 
+    _assertThisInitialized(_assertThisInitialized(_this)).onLayout = _this.onLayout.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _assertThisInitialized(_assertThisInitialized(_this)).onPressIn = _this.onPressIn.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _assertThisInitialized(_assertThisInitialized(_this)).onPressOut = _this.onPressOut.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _assertThisInitialized(_assertThisInitialized(_this)).renderIcon = _this.renderIcon.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -128,6 +152,17 @@ function (_PureComponent) {
           };
         });
       }
+    }
+  }, {
+    key: "onLayout",
+    value: function onLayout(event) {
+      var _event$nativeEvent$la = event.nativeEvent.layout,
+          height = _event$nativeEvent$la.height,
+          width = _event$nativeEvent$la.width;
+      this.setState({
+        height: height,
+        width: width
+      });
     }
   }, {
     key: "onPressIn",
@@ -174,7 +209,7 @@ function (_PureComponent) {
       return _react.default.createElement(_reactNative.View, {
         style: styles.iconContainer
       }, _react.default.createElement(_Icon.default, _extends({}, icon, {
-        color: styles.iconColor,
+        color: _reactNative.StyleSheet.flatten(styles.text).color,
         size: icon.size || 16
       })));
     }
@@ -225,18 +260,28 @@ function (_PureComponent) {
     value: function render() {
       var _this$props2 = this.props,
           disabled = _this$props2.disabled,
+          linearGradient = _this$props2.linearGradient,
           onPress = _this$props2.onPress;
-      var styles = this.state.styles;
+      var _this$state = this.state,
+          height = _this$state.height,
+          styles = _this$state.styles,
+          width = _this$state.width;
       return _react.default.createElement(_reactNative.TouchableOpacity, _extends({}, (0, _omit.default)(this.props, ['styles']), {
         accessibilityRole: "button",
         activeOpacity: 1,
         delayPressOut: 50 // to highlight the button even if it's touched quickly
         ,
         disabled: disabled || !onPress,
+        onLayout: this.onLayout,
         onPressIn: this.onPressIn,
         onPressOut: this.onPressOut,
         style: styles.touchable
-      }), _react.default.createElement(_reactNative.View, {
+      }), linearGradient && _react.default.createElement(_reactNative.View, {
+        style: styles.gradient
+      }, _react.default.createElement(_LinearGradient.default, _extends({}, linearGradient, {
+        height: height,
+        width: width
+      }))), _react.default.createElement(_reactNative.View, {
         style: styles.container
       }, this.renderContent()));
     }
@@ -247,6 +292,9 @@ function (_PureComponent) {
   color: _propTypes.default.string,
   icon: function icon() {
     return (typeof _Icon.bpfrpt_proptype_Props === "function" ? _Icon.bpfrpt_proptype_Props : _propTypes.default.shape(_Icon.bpfrpt_proptype_Props)).apply(this, arguments);
+  },
+  linearGradient: function linearGradient() {
+    return (typeof _LinearGradient.bpfrpt_proptype_Props === "function" ? _LinearGradient.bpfrpt_proptype_Props : _propTypes.default.shape(_LinearGradient.bpfrpt_proptype_Props)).apply(this, arguments);
   },
   loading: _propTypes.default.bool,
   rounding: _propTypes.default.string,

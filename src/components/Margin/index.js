@@ -4,12 +4,15 @@ import React, { PureComponent } from 'react';
 import type { Node } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import type { ViewProps } from 'react-native/Libraries/Components/View/ViewPropTypes';
+
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import styles from './styles';
 import type { StylesType } from './styles';
 
-type Props = {
+type Props = ViewProps & {
+    children: Node,
     multiplier?: number, // eslint-disable-line react/no-unused-prop-types
     size?: string, // eslint-disable-line react/no-unused-prop-types
     sizeBottom?: string, // eslint-disable-line react/no-unused-prop-types
@@ -21,6 +24,18 @@ type Props = {
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types
 };
 
+const defaultProps = {
+    ...View.defaultProps,
+    multiplier: 1,
+    size: null,
+    sizeBottom: null,
+    sizeHorizontal: null,
+    sizeLeft: null,
+    sizeRight: null,
+    sizeTop: null,
+    sizeVertical: null,
+};
+
 type State = {
     styles: StyleSheet.Styles,
 };
@@ -28,12 +43,14 @@ type State = {
 const getStyles = (props: Props): StyleSheet.Styles => {
     const {
         multiplier, size, sizeBottom, sizeHorizontal, sizeLeft, sizeRight, sizeTop, sizeVertical,
-        styles,
+        style, styles,
     } = props;
 
-    const result: StyleSheet.Styles = {
-        margin: styles[size || 'medium'].margin * (multiplier || 1),
-    };
+    const result: StyleSheet.Styles = style ? StyleSheet.flatten(style) : {};
+
+    if (size) {
+        result.margin = styles[size].margin * (multiplier || 1);
+    }
 
     if (sizeHorizontal) {
         result.marginHorizontal = styles[sizeHorizontal].margin * (multiplier || 1);
@@ -44,42 +61,33 @@ const getStyles = (props: Props): StyleSheet.Styles => {
     }
 
     if (sizeBottom) {
-        result.paddingBottom = styles[sizeBottom].padding * (multiplier || 1);
+        result.marginBottom = styles[sizeBottom].margin * (multiplier || 1);
     }
 
     if (sizeLeft) {
-        result.paddingLeft = styles[sizeLeft].padding * (multiplier || 1);
+        result.marginLeft = styles[sizeLeft].margin * (multiplier || 1);
     }
 
     if (sizeRight) {
-        result.paddingRight = styles[sizeRight].padding * (multiplier || 1);
+        result.marginRight = styles[sizeRight].margin * (multiplier || 1);
     }
 
     if (sizeTop) {
-        result.paddingTop = styles[sizeTop].padding * (multiplier || 1);
+        result.marginTop = styles[sizeTop].margin * (multiplier || 1);
     }
 
     return result;
 };
 
 class Margin extends PureComponent<Props, State> {
-    static defaultProps = {
-        multiplier: 1,
-        size: 'medium',
-        sizeBottom: null,
-        sizeHorizontal: null,
-        sizeLeft: null,
-        sizeRight: null,
-        sizeTop: null,
-        sizeVertical: null,
-    };
+    static defaultProps = defaultProps;
     state = {
         styles: getStyles(this.props),
     };
     componentWillReceiveProps(nextProps: Props): void {
         const propsOnWhichDependsTheStyle: Array<string> = [
-            'multiplier', 'size', 'paddingBottom', 'sizeHorizontal', 'paddingLeft', 'paddingRight',
-            'paddingTop', 'sizeVertical',
+            'multiplier', 'size', 'sizeBottom', 'sizeHorizontal', 'sizeLeft', 'sizeRight',
+            'sizenTop', 'sizeVertical', 'style',
         ];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
@@ -87,10 +95,16 @@ class Margin extends PureComponent<Props, State> {
         }
     }
     render(): Node {
+        const { children } = this.props;
         const { styles } = this.state;
 
         return (
-            <View style={styles} />
+            <View
+                {...this.props}
+                style={styles}
+            >
+                {children}
+            </View>
         );
     }
 }

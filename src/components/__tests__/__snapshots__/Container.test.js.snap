@@ -21,6 +21,9 @@ exports[`renders correctly 1`] = `
           "alignItems": "center",
           "justifyContent": "center",
         },
+        "right": Object {
+          "alignItems": "flex-end",
+        },
       },
       "base": Object {
         "flex": 1,

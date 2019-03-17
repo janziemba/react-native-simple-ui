@@ -19,7 +19,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var bpfrpt_proptype_StylesType = {
   base: _propTypes.default.shape({
+    centerElement: function centerElement() {
+      return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
+    },
     container: function container() {
+      return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
+    },
+    leftElement: function leftElement() {
+      return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
+    },
+    rightElement: function rightElement() {
       return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
     }
   }).isRequired,
@@ -44,9 +53,20 @@ var _default = function _default(_ref) {
   });
   return {
     base: {
+      centerElement: {
+        flexDirection: 'row',
+        justifyContent: 'center'
+      },
       container: {
         alignItems: 'center',
         height: 56
+      },
+      leftElement: {
+        flexDirection: 'row'
+      },
+      rightElement: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
       }
     },
     colors: colorOptions

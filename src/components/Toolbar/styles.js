@@ -9,7 +9,10 @@ import { COLORS } from './constants';
 
 export type StylesType = {
     base: {
+        centerElement: StyleSheet.Styles,
         container: StyleSheet.Styles,
+        leftElement: StyleSheet.Styles,
+        rightElement: StyleSheet.Styles,
     },
     colors: ObjectOfStyleSheetsType,
 };
@@ -31,9 +34,20 @@ export default ({ colors }: ThemeShapeType): StylesType => {
 
     return {
         base: {
+            centerElement: {
+                flexDirection: 'row',
+                justifyContent: 'center',
+            },
             container: {
                 alignItems: 'center',
                 height: 56,
+            },
+            leftElement: {
+                flexDirection: 'row',
+            },
+            rightElement: {
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
             },
         },
         colors: colorOptions,

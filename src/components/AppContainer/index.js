@@ -48,7 +48,7 @@ class AppContainer extends PureComponent<Props> {
         const topSafeAreaIsLight: boolean = Color(styles.topSafeArea.backgroundColor).isLight();
 
         return (
-            <View style={styles.wrapper}>
+            <>
                 <SafeAreaView style={styles.topSafeArea} />
                 <SafeAreaView style={styles.bottomSafeArea}>
                     <StatusBar
@@ -58,7 +58,7 @@ class AppContainer extends PureComponent<Props> {
                         {this.renderContent()}
                     </View>
                 </SafeAreaView>
-            </View>
+            </>
         );
     }
 }

@@ -52,9 +52,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var bpfrpt_proptype_Props = {
   fromColor: _propTypes.default.string.isRequired,
   gradientDirection: _propTypes.default.string,
-  height: _propTypes.default.number.isRequired,
-  toColor: _propTypes.default.string.isRequired,
-  width: _propTypes.default.number.isRequired
+  toColor: _propTypes.default.string.isRequired
 };
 exports.bpfrpt_proptype_Props = bpfrpt_proptype_Props;
 
@@ -132,12 +130,12 @@ function (_PureComponent) {
 }(_react.PureComponent), _defineProperty(_class, "propTypes", {
   fromColor: _propTypes.default.string.isRequired,
   gradientDirection: _propTypes.default.string,
-  height: _propTypes.default.number.isRequired,
   toColor: _propTypes.default.string.isRequired,
-  width: _propTypes.default.number.isRequired,
+  height: _propTypes.default.number.isRequired,
   styles: function styles() {
     return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
-  }
+  },
+  width: _propTypes.default.number.isRequired
 }), _temp);
 
 _defineProperty(LinearGradient, "defaultProps", defaultProps);

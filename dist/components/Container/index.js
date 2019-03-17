@@ -92,7 +92,7 @@ function (_PureComponent) {
   _createClass(Container, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['align', 'marginSize', 'paddingSize', 'style'];
+      var propsOnWhichDependsTheStyle = ['alignment', 'marginSize', 'paddingSize', 'style'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -112,7 +112,8 @@ function (_PureComponent) {
 
       if (paddingSize) {
         content = _react.default.createElement(_Padding.default, {
-          size: paddingSize
+          size: paddingSize,
+          style: styles
         }, children);
       }
 
@@ -122,7 +123,8 @@ function (_PureComponent) {
 
       if (marginSize) {
         result = _react.default.createElement(_Margin.default, {
-          size: marginSize
+          size: marginSize,
+          style: styles
         }, result);
       }
 

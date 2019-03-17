@@ -30,9 +30,6 @@ var bpfrpt_proptype_StylesType = {
   },
   topSafeArea: function topSafeArea() {
     return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
-  },
-  wrapper: function wrapper() {
-    return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
   }
 };
 exports.bpfrpt_proptype_StylesType = bpfrpt_proptype_StylesType;
@@ -46,6 +43,7 @@ var _default = function _default(_ref) {
       flex: 1
     },
     content: {
+      backgroundColor: colors.layout.backgroundColor,
       flex: 1
     },
     imageBackground: {
@@ -59,10 +57,6 @@ var _default = function _default(_ref) {
     topSafeArea: {
       backgroundColor: colors.palette.primary,
       flex: 0
-    },
-    wrapper: {
-      backgroundColor: colors.layout.backgroundColor,
-      flex: 1
     }
   };
 };

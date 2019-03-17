@@ -51,10 +51,28 @@ Object.defineProperty(exports, "LinearGradient", {
     return _LinearGradient.default;
   }
 });
+Object.defineProperty(exports, "Margin", {
+  enumerable: true,
+  get: function get() {
+    return _Margin.default;
+  }
+});
 Object.defineProperty(exports, "Modal", {
   enumerable: true,
   get: function get() {
     return _Modal.default;
+  }
+});
+Object.defineProperty(exports, "Padding", {
+  enumerable: true,
+  get: function get() {
+    return _Padding.default;
+  }
+});
+Object.defineProperty(exports, "Rating", {
+  enumerable: true,
+  get: function get() {
+    return _Rating.default;
   }
 });
 Object.defineProperty(exports, "Spacer", {
@@ -118,7 +136,13 @@ var _Icon = _interopRequireDefault(require("./components/Icon"));
 
 var _LinearGradient = _interopRequireDefault(require("./components/LinearGradient"));
 
+var _Margin = _interopRequireDefault(require("./components/Margin"));
+
 var _Modal = _interopRequireDefault(require("./components/Modal"));
+
+var _Padding = _interopRequireDefault(require("./components/Padding"));
+
+var _Rating = _interopRequireDefault(require("./components/Rating"));
 
 var _Spacer = _interopRequireDefault(require("./components/Spacer"));
 

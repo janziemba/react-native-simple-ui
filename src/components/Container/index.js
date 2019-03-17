@@ -47,7 +47,7 @@ class Container extends PureComponent<Props, State> {
         styles: getStyles(this.props),
     };
     componentWillReceiveProps(nextProps): void {
-        const propsOnWhichDependsTheStyle: Array<string> = ['align', 'marginSize', 'paddingSize', 'style'];
+        const propsOnWhichDependsTheStyle: Array<string> = ['alignment', 'marginSize', 'paddingSize', 'style'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
@@ -61,7 +61,10 @@ class Container extends PureComponent<Props, State> {
 
         if (paddingSize) {
             content = (
-                <Padding size={paddingSize}>
+                <Padding
+                    size={paddingSize}
+                    style={styles}
+                >
                     {children}
                 </Padding>
             );
@@ -78,7 +81,10 @@ class Container extends PureComponent<Props, State> {
 
         if (marginSize) {
             result = (
-                <Margin size={marginSize}>
+                <Margin
+                    size={marginSize}
+                    style={styles}
+                >
                     {result}
                 </Margin>
             );

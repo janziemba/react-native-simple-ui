@@ -1,5 +1,6 @@
 // @flow
 
+import Color from 'color';
 import React, { Fragment, PureComponent } from 'react';
 import type { Node } from 'react';
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -11,6 +12,8 @@ import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import Icon from '../Icon';
 import type { Props as IconProps } from '../Icon';
+import LinearGradient from '../LinearGradient';
+import type { Props as LinearGradientProps } from '../LinearGradient';
 import { ICON_POSITIONS, ROUNDING, SIZES, STATES, VARIANTS } from './constants';
 import styles from './styles';
 import type { StylesType } from './styles';
@@ -18,6 +21,7 @@ import type { StylesType } from './styles';
 type Props = TouchableWithoutFeedbackProps & {
     color?: string,
     icon?: IconProps,
+    linearGradient?: LinearGradientProps,
     loading?: boolean,
     rounding?: string, // eslint-disable-line react/no-unused-prop-types, max-len
     size?: string, // eslint-disable-line react/no-unused-prop-types
@@ -30,6 +34,7 @@ const defaultProps = {
     ...TouchableOpacity.defaultProps,
     color: 'primary',
     icon: null,
+    linearGradient: null,
     loading: false,
     rounding: ROUNDING.normal,
     size: SIZES.medium,
@@ -39,7 +44,7 @@ const defaultProps = {
 
 type MergedStylesType = {
     container: Array<StyleSheet.Styles>,
-    iconColor: string,
+    gradient: StyleSheet.Styles,
     iconContainer: StyleSheet.Styles,
     text: StyleSheet.Styles,
     touchable: StyleSheet.Styles,
@@ -47,7 +52,9 @@ type MergedStylesType = {
 
 type State = {
     active: boolean,
+    height: number,
     styles: MergedStylesType,
+    width: number,
 };
 
 const getStyles = (props: Props, state?: State): MergedStylesType => {
@@ -60,7 +67,7 @@ const getStyles = (props: Props, state?: State): MergedStylesType => {
         colorState = STATES.active;
     }
 
-    return {
+    const result = {
         container: [
             styles.base.container,
             styles.rounding[rounding],
@@ -70,30 +77,50 @@ const getStyles = (props: Props, state?: State): MergedStylesType => {
             icon && text
                 ? styles.iconPositions[icon.position || ICON_POSITIONS.left].container : {},
         ],
-        iconColor: (styles.variants[variant].text && styles.variants[variant].text.color)
-            || styles.colors[color][colorState].text.color
-            || styles.base.text.color,
+        gradient: styles.base.gradient,
         iconContainer: icon && text
             ? styles.iconPositions[icon.position || ICON_POSITIONS.left].iconContainer : {},
-        text: [
-            styles.base.text,
-            styles.sizes[size].text,
-            styles.colors[color][colorState].text,
-            styles.variants[variant].text,
+        text: [],
+        touchable: [
+            styles.base.touchable,
+            styles.rounding[rounding],
         ],
-        touchable: styles.touchable,
     };
+
+    let textColor: string = styles.colors[color][colorState].text.color;
+
+    if (variant === VARIANTS.default && colorState === STATES.inactive) {
+        if ((new Color(StyleSheet.flatten(result.container).backgroundColor)).lightness() < 75) {
+            textColor = 'white';
+        } else {
+            textColor = 'black';
+        }
+    } else if (styles.variants[variant].text) {
+        textColor = styles.variants[variant].text.color;
+    }
+
+    result.text = [
+        styles.base.text,
+        styles.sizes[size].text,
+        styles.colors[color][colorState].text,
+        textColor ? { color: textColor } : {},
+    ];
+
+    return result;
 };
 
 class Button extends PureComponent<Props, State> {
     static defaultProps = defaultProps;
     state = {
         active: false, // eslint-disable-line react/no-unused-state
+        height: 0,
         styles: getStyles(this.props),
+        width: 0,
     };
     constructor(props: Props): void {
         super(props);
 
+        (this: any).onLayout = this.onLayout.bind(this);
         (this: any).onPressIn = this.onPressIn.bind(this);
         (this: any).onPressOut = this.onPressOut.bind(this);
         (this: any).renderIcon = this.renderIcon.bind(this);
@@ -107,6 +134,11 @@ class Button extends PureComponent<Props, State> {
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState(prevState => ({ styles: getStyles(nextProps, prevState) }));
         }
+    }
+    onLayout(event): void {
+        const { height, width } = event.nativeEvent.layout;
+
+        this.setState({ height, width });
     }
     onPressIn(): void {
         this.setState(
@@ -134,7 +166,7 @@ class Button extends PureComponent<Props, State> {
             <View style={styles.iconContainer}>
                 <Icon
                     {...icon}
-                    color={styles.iconColor}
+                    color={StyleSheet.flatten(styles.text).color}
                     size={icon.size || 16}
                 />
             </View>
@@ -185,8 +217,8 @@ class Button extends PureComponent<Props, State> {
         );
     }
     render(): Node {
-        const { disabled, onPress } = this.props;
-        const { styles } = this.state;
+        const { disabled, linearGradient, onPress } = this.props;
+        const { height, styles, width } = this.state;
 
         return (
             <TouchableOpacity
@@ -195,10 +227,20 @@ class Button extends PureComponent<Props, State> {
                 activeOpacity={1}
                 delayPressOut={50} // to highlight the button even if it's touched quickly
                 disabled={disabled || !onPress}
+                onLayout={this.onLayout}
                 onPressIn={this.onPressIn}
                 onPressOut={this.onPressOut}
                 style={styles.touchable}
             >
+                {linearGradient && (
+                    <View style={styles.gradient}>
+                        <LinearGradient
+                            {...linearGradient}
+                            height={height}
+                            width={width}
+                        />
+                    </View>
+                )}
                 <View style={styles.container}>
                     {this.renderContent()}
                 </View>

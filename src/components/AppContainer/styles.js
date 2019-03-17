@@ -11,7 +11,6 @@ export type StylesType = {
     imageBackground: StyleSheet.Styles,
     imageBackgroundContent: StyleSheet.Styles,
     topSafeArea: StyleSheet.Styles,
-    wrapper: StyleSheet.Styles,
 };
 
 export default ({ colors }: ThemeShapeType): StylesType => {
@@ -24,6 +23,7 @@ export default ({ colors }: ThemeShapeType): StylesType => {
             flex: 1,
         },
         content: {
+            backgroundColor: colors.layout.backgroundColor,
             flex: 1,
         },
         imageBackground: {
@@ -37,10 +37,6 @@ export default ({ colors }: ThemeShapeType): StylesType => {
         topSafeArea: {
             backgroundColor: colors.palette.primary,
             flex: 0,
-        },
-        wrapper: {
-            backgroundColor: colors.layout.backgroundColor,
-            flex: 1,
         },
     };
 };

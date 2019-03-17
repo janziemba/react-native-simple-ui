@@ -15,6 +15,9 @@ var bpfrpt_proptype_StylesType = {
   alignment: _propTypes.default.shape({
     center: function center() {
       return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
+    },
+    right: function right() {
+      return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
     }
   }).isRequired,
   base: function base() {
@@ -29,6 +32,9 @@ var _default = function _default() {
       center: {
         alignItems: 'center',
         justifyContent: 'center'
+      },
+      right: {
+        alignItems: 'flex-end'
       }
     },
     base: {

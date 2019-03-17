@@ -5,6 +5,7 @@ exports[`renders correctly with icon 1`] = `
   accessibilityRole="button"
   accessible={true}
   isTVSelectable={true}
+  onLayout={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -13,7 +14,10 @@ exports[`renders correctly with icon 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
+      "alignSelf": "stretch",
+      "borderRadius": 4,
       "opacity": 1,
+      "overflow": "hidden",
     }
   }
 >
@@ -25,6 +29,7 @@ exports[`renders correctly with icon 1`] = `
           "borderWidth": 1,
           "justifyContent": "center",
           "overflow": "hidden",
+          "zIndex": 2,
         },
         Object {
           "borderRadius": 4,
@@ -75,6 +80,7 @@ exports[`renders correctly with text 1`] = `
   accessibilityRole="button"
   accessible={true}
   isTVSelectable={true}
+  onLayout={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -83,7 +89,10 @@ exports[`renders correctly with text 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
+      "alignSelf": "stretch",
+      "borderRadius": 4,
       "opacity": 1,
+      "overflow": "hidden",
     }
   }
 >
@@ -95,6 +104,7 @@ exports[`renders correctly with text 1`] = `
           "borderWidth": 1,
           "justifyContent": "center",
           "overflow": "hidden",
+          "zIndex": 2,
         },
         Object {
           "borderRadius": 4,

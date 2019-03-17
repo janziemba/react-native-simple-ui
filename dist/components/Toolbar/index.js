@@ -47,12 +47,16 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var getStyles = function getStyles(props) {
   var color = props.color,
       styles = props.styles;
-  return [styles.base.container, styles.colors[color || 'primary'].container];
+  return _objectSpread({}, styles.base, {
+    container: [styles.base.container, styles.colors[color || 'primary'].container]
+  });
 };
 
 var Toolbar = (_temp = _class =
@@ -83,7 +87,7 @@ function (_PureComponent) {
   _createClass(Toolbar, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['color'];
+      var propsOnWhichDependsTheStyle = ['color', 'style'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -100,12 +104,19 @@ function (_PureComponent) {
           rightElement = _this$props.rightElement;
       var styles = this.state.styles;
       return _react.default.createElement(_Grid.default, {
-        style: styles
-      }, _react.default.createElement(_Padding.default, {
-        size: "small"
-      }, _react.default.createElement(_Column.default, null, leftElement), _react.default.createElement(_Column.default, {
-        size: 2
-      }, centerElement), _react.default.createElement(_Column.default, null, rightElement)));
+        style: styles.container
+      }, _react.default.createElement(_Column.default, null, leftElement && _react.default.createElement(_Padding.default, {
+        size: "small",
+        style: styles.leftElement
+      }, leftElement)), _react.default.createElement(_Column.default, {
+        size: 1.5
+      }, centerElement && _react.default.createElement(_Padding.default, {
+        size: "small",
+        style: styles.centerElement
+      }, centerElement)), _react.default.createElement(_Column.default, null, rightElement && _react.default.createElement(_Padding.default, {
+        size: "small",
+        style: styles.rightElement
+      }, rightElement)));
     }
   }]);
 

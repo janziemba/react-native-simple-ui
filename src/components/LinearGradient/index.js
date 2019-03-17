@@ -15,13 +15,13 @@ import type { StylesType } from './styles';
 export type Props = ViewProps & {
     fromColor: string,
     gradientDirection?: string,
-    height: number,
     toColor: string,
-    width: number,
 };
 
 type PrivateProps = Props & {
+    height: number,
     styles: StylesType,
+    width: number,
 };
 
 const defaultProps = {

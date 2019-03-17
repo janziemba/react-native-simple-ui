@@ -82,9 +82,7 @@ function (_PureComponent) {
     value: function render() {
       var styles = this.props.styles;
       var topSafeAreaIsLight = (0, _color.default)(styles.topSafeArea.backgroundColor).isLight();
-      return _react.default.createElement(_reactNative.View, {
-        style: styles.wrapper
-      }, _react.default.createElement(_reactNative.SafeAreaView, {
+      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.SafeAreaView, {
         style: styles.topSafeArea
       }), _react.default.createElement(_reactNative.SafeAreaView, {
         style: styles.bottomSafeArea

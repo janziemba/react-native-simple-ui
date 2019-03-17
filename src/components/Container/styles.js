@@ -5,6 +5,7 @@ import { StyleSheet } from 'react-native';
 export type StylesType = {
     alignment: {
         center: StyleSheet.Styles,
+        right: StyleSheet.Styles,
     },
     base: StyleSheet.Styles,
 };
@@ -14,6 +15,9 @@ export default (): StylesType => ({
         center: {
             alignItems: 'center',
             justifyContent: 'center',
+        },
+        right: {
+            alignItems: 'flex-end',
         },
     },
     base: {

@@ -66,6 +66,12 @@ export default ({ colors, radiuses, spacing, typography }: ThemeShapeType): Styl
                 borderWidth: 1,
                 justifyContent: 'center',
                 overflow: 'hidden',
+                zIndex: 2,
+            },
+            gradient: {
+                ...StyleSheet.absoluteFillObject,
+                flexWrap: 'wrap',
+                zIndex: 1,
             },
             text: {
                 fontWeight: typography.fontWeights.medium,
@@ -73,6 +79,7 @@ export default ({ colors, radiuses, spacing, typography }: ThemeShapeType): Styl
             },
             touchable: {
                 alignSelf: 'stretch',
+                overflow: 'hidden',
             },
         },
         colors: colorOptions,
