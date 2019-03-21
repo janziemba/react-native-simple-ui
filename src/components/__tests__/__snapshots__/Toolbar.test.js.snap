@@ -128,7 +128,7 @@ exports[`renders correctly 1`] = `
   }
 >
   <View
-    size={null}
+    size={1}
     style={
       Array [
         undefined,
@@ -348,7 +348,7 @@ exports[`renders correctly 1`] = `
     }
   />
   <View
-    size={null}
+    size={1}
     style={
       Array [
         undefined,

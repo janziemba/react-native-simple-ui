@@ -14,9 +14,12 @@ import type { StylesType } from './styles';
 
 type Props = {
     centerElement?: Node,
+    centerElementSize?: number, // eslint-disable-line react/no-unused-prop-types
     color?: string, // eslint-disable-line react/no-unused-prop-types
     leftElement?: Node,
+    leftElementSize?: number, // eslint-disable-line react/no-unused-prop-types
     rightElement?: Node,
+    rightElementSize?: number, // eslint-disable-line react/no-unused-prop-types
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types
 };
 
@@ -46,9 +49,12 @@ const getStyles = (props: Props): MergedStylesType => {
 class Toolbar extends PureComponent<Props, State> {
     static defaultProps = {
         centerElement: null,
+        centerElementSize: 1.5,
         color: 'primary',
         leftElement: null,
+        leftElementSize: 1,
         rightElement: null,
+        rightElementSize: 1,
     };
     state = {
         styles: getStyles(this.props),
@@ -61,12 +67,15 @@ class Toolbar extends PureComponent<Props, State> {
         }
     }
     render(): Node {
-        const { centerElement, leftElement, rightElement } = this.props;
+        const {
+            centerElement, centerElementSize, leftElement, leftElementSize, rightElement,
+            rightElementSize,
+        } = this.props;
         const { styles } = this.state;
 
         return (
             <Grid style={styles.container}>
-                <Column>
+                <Column size={leftElementSize}>
                     {leftElement && (
                         <Padding
                             size="small"
@@ -76,7 +85,7 @@ class Toolbar extends PureComponent<Props, State> {
                         </Padding>
                     )}
                 </Column>
-                <Column size={1.5}>
+                <Column size={centerElementSize}>
                     {centerElement && (
                         <Padding
                             size="small"
@@ -86,7 +95,7 @@ class Toolbar extends PureComponent<Props, State> {
                         </Padding>
                     )}
                 </Column>
-                <Column>
+                <Column size={rightElementSize}>
                     {rightElement && (
                         <Padding
                             size="small"

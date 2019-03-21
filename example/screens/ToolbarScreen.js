@@ -76,6 +76,35 @@ class ToolbarScreen extends PureComponent {
                             </>
                         )}
                     />
+                    <Spacer />
+                    <Toolbar
+                        centerElement={
+                            <Text color="white">Very looong title</Text>
+                        }
+                        centerElementSize={3}
+                        leftElement={(
+                            <Button
+                                color="white"
+                                onPress={this.onPress}
+                                text="Pause"
+                                variant="flat"
+                            />
+                        )}
+                        rightElement={(
+                            <>
+                                <Padding sizeRight="medium">
+                                    <Icon
+                                        colorName="white"
+                                        name="favorite"
+                                    />
+                                </Padding>
+                                <Icon
+                                    colorName="white"
+                                    name="star"
+                                />
+                            </>
+                        )}
+                    />
                 </Container>
             </ScreenContainer>
         );
