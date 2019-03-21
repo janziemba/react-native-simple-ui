@@ -244,7 +244,9 @@ function (_PureComponent) {
       var styles = this.state.styles;
 
       if (loading) {
-        return _react.default.createElement(_reactNative.ActivityIndicator, null);
+        return _react.default.createElement(_reactNative.ActivityIndicator, {
+          color: _reactNative.StyleSheet.flatten(styles.text).color
+        });
       }
 
       if (!text) {

@@ -124,14 +124,14 @@ class ButtonScreen extends PureComponent {
                     />
                     <Spacer />
                     <Text size="h2">States</Text>
-                    <Button
-                        onPress={this.onPress}
-                        text="Inactive"
-                    />
                     <Spacer />
                     <Button
                         disabled
                         text="Disabled"
+                    />
+                    <Spacer />
+                    <Button
+                        loading
                     />
                     <Spacer />
                     <Text size="h2">LinearGradient</Text>

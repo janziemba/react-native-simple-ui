@@ -198,7 +198,9 @@ class Button extends PureComponent<Props, State> {
 
         if (loading) {
             return (
-                <ActivityIndicator />
+                <ActivityIndicator
+                    color={StyleSheet.flatten(styles.text).color}
+                />
             );
         }
 
