@@ -8,6 +8,8 @@ Extend React Native's [View](https://facebook.github.io/react-native/docs/view#p
 - `marginSize` (_string_, default null) - one of theme sizes, [base theme spacing](../Theme.md#spacing) by default
 - `paddingSize` (_string_, default null) - one of theme sizes, [base theme spacing](../Theme.md#spacing) by default
 
+<img src="../assets/Container/1.png" alt="Container" width="250x" style="display: inline-block;">
+
 ## Examples
 
 ### Default

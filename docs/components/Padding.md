@@ -12,9 +12,3 @@ Extend React Native's [View](https://facebook.github.io/react-native/docs/view#p
 - `sizeRight` (_string_, default null) - one of theme sizes, [base theme spacing](../Theme.md#spacing) by default
 - `sizeTop` (_string_, default null) - one of theme sizes, [base theme spacing](../Theme.md#spacing) by default
 - `sizeVertical` (_string_, default null) - one of theme sizes, [base theme spacing](../Theme.md#spacing) by default
-
-## Examples
-
-```jsx
-
-```

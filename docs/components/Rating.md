@@ -13,8 +13,4 @@ title: Rating
 - `onPress` (_function_, default null)
 - `rating` (_number_, **required**)
 
-## Examples
-
-```jsx
-
-```
+<img src="../assets/Rating/1.png" alt="Rating" width="250x" style="display: inline-block;">

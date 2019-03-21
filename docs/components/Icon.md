@@ -9,8 +9,4 @@ title: Icon
 - `name` (_string_, **required**)
 - `size` (_number_, default 24)
 
-## Examples
-
-```jsx
-
-```
+<img src="../assets/Icon/1.png" alt="Icon" width="250x" style="display: inline-block;">

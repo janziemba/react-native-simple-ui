@@ -5,17 +5,23 @@ title: Button
 ## Props
 Extend React Native's [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity#props) props
 - `color` (_string_, default primary) - one of theme colors, [base theme colors](../Theme.md#colors) by default
+- `disabled` (_boolean_, default false)
 - `icon` (_object_, default null)
     - [`Icon` props](Icon.md#props)
     - `position` (_string_, default left, only matters if a `text` is set)
 - `linearGradient` (_object_, default null)
-    - [`LinearGradient` props](LinearGradient.md#props) except height and width which are calculated automatically based on a container
+    - [`LinearGradient` props](LinearGradient.md#props) except `height` and `width` which are calculated automatically based on a container
 - `loading` (_boolean_, default false)
 - `rounding` (_string_, default normal)
 - `size` (_string_, default medium) - one of theme spacing, [base theme spacing](../Theme.md#spacing) by default
-- `state` (_string_, default inactive)
 - `text` (_string_, default null)
 - `variant` (_string_, default default)
+
+<img src="../assets/Button/1.png" alt="Button" width="250x" style="display: inline-block;">
+<img src="../assets/Button/2.png" alt="Button" width="250x" style="display: inline-block;">
+<img src="../assets/Button/3.png" alt="Button" width="250x" style="display: inline-block;">
+<img src="../assets/Button/4.png" alt="Button" width="250x" style="display: inline-block;">
+<img src="../assets/Button/5.png" alt="Button" width="250x" style="display: inline-block;">
 
 ## How do styles work
 The styles are merged in this order: base, rounding, size, color, variant and iconPosition. It means basic styles
@@ -72,15 +78,6 @@ which flexDirection and padding should be applied to container and iconContainer
 />
 ```
 
-### Loading
-
-```jsx
-<Button
-    loading
-    text="Loading"
-/>
-```
-
 ### Rounding
 
 ```jsx
@@ -113,22 +110,6 @@ which flexDirection and padding should be applied to container and iconContainer
 />
 ```
 
-### State
-
-```jsx
-<Button
-    state="active"
-    text="Active"
-/>
-```
-
-```jsx
-<Button
-    state="disabled"
-    text="Disabled"
-/>
-```
-
 ### Variant
 
 ```jsx
@@ -142,5 +123,20 @@ which flexDirection and padding should be applied to container and iconContainer
 <Button
     text="Outlined"
     variant="outlined"
+/>
+```
+
+### States
+
+```jsx
+<Button
+    disabled
+    text="Disabled"
+/>
+```
+
+```jsx
+<Button
+    loading
 />
 ```

@@ -11,8 +11,4 @@ title: Toolbar
 - `rightElement` (_node_, default null)
 - `rightElementSize` (_number_, default 1)
 
-## Examples
-
-```jsx
-
-```
+<img src="../assets/Toolbar/1.png" alt="Toolbar" width="250x" style="display: inline-block;">
