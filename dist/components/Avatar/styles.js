@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.bpfrpt_proptype_StylesType = exports.default = void 0;
 
+var _color = _interopRequireDefault(require("color"));
+
 var _reactNative = require("react-native");
 
 var _merge = _interopRequireDefault(require("lodash/merge"));
@@ -19,16 +21,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var bpfrpt_proptype_StylesType = {
   base: _propTypes.default.shape({
-    centerElement: function centerElement() {
-      return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
-    },
     container: function container() {
       return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
     },
-    leftElement: function leftElement() {
-      return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
-    },
-    rightElement: function rightElement() {
+    text: function text() {
       return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
     }
   }).isRequired,
@@ -43,37 +39,26 @@ var _default = function _default(_ref) {
   var allColors = (0, _merge.default)({}, _constants.COLORS, colors.palette);
   var colorOptions = {};
   Object.keys(allColors).forEach(function (colorName) {
-    var color = colors.palette[colorName] || colorName;
+    var color = allColors[colorName];
     colorOptions[colorName] = {
       container: {
-        backgroundColor: color,
-        borderColor: color
+        backgroundColor: color
+      },
+      text: {
+        color: new _color.default(color).lightness() < 75 ? 'white' : 'black'
       }
     };
   });
   return {
     base: {
-      centerElement: {
-        base: {
-          flexDirection: 'row',
-          justifyContent: 'center'
-        }
-      },
       container: {
         alignItems: 'center',
-        height: 56,
-        justifyContent: 'center'
+        borderRadius: 1000,
+        justifyContent: 'center',
+        overflow: 'hidden'
       },
-      leftElement: {
-        base: {
-          flexDirection: 'row'
-        }
-      },
-      rightElement: {
-        base: {
-          flexDirection: 'row',
-          justifyContent: 'flex-end'
-        }
+      text: {
+        color: 'white'
       }
     },
     colors: colorOptions

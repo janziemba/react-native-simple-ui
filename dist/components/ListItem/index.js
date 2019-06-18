@@ -9,9 +9,19 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactNative = require("react-native");
 
+var _omit = _interopRequireDefault(require("lodash/omit"));
+
 var _withTheme = _interopRequireDefault(require("../../themes/withTheme"));
 
 var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChanged"));
+
+var _Divider = _interopRequireDefault(require("../Divider"));
+
+var _Column = _interopRequireDefault(require("../Grid/Column"));
+
+var _Grid = _interopRequireDefault(require("../Grid/Grid"));
+
+var _Padding = _interopRequireDefault(require("../Padding"));
 
 var _styles = _interopRequireWildcard(require("./styles"));
 
@@ -47,89 +57,40 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var defaultProps = _objectSpread({}, _reactNative.View.defaultProps, {
-  multiplier: 1,
-  size: null,
-  sizeBottom: null,
-  sizeHorizontal: null,
-  sizeLeft: null,
-  sizeRight: null,
-  sizeTop: null,
-  sizeVertical: null
-});
-
 var getStyles = function getStyles(props) {
-  var multiplier = props.multiplier,
-      size = props.size,
-      sizeBottom = props.sizeBottom,
-      sizeHorizontal = props.sizeHorizontal,
-      sizeLeft = props.sizeLeft,
-      sizeRight = props.sizeRight,
-      sizeTop = props.sizeTop,
-      sizeVertical = props.sizeVertical,
+  var color = props.color,
       styles = props.styles;
-  var result = styles.base || {};
-
-  if (size) {
-    result.padding = styles[size].padding * (multiplier || 1);
-  }
-
-  if (sizeHorizontal) {
-    result.paddingHorizontal = styles[sizeHorizontal].padding * (multiplier || 1);
-  }
-
-  if (sizeVertical) {
-    result.paddingVertical = styles[sizeVertical].padding * (multiplier || 1);
-  }
-
-  if (sizeBottom) {
-    result.paddingBottom = styles[sizeBottom].padding * (multiplier || 1);
-  }
-
-  if (sizeLeft) {
-    result.paddingLeft = styles[sizeLeft].padding * (multiplier || 1);
-  }
-
-  if (sizeRight) {
-    result.paddingRight = styles[sizeRight].padding * (multiplier || 1);
-  }
-
-  if (sizeTop) {
-    result.paddingTop = styles[sizeTop].padding * (multiplier || 1);
-  }
-
-  return result;
+  return _objectSpread({}, styles.base, {
+    outerContainer: [styles.base.outerContainer, styles.colors[color || 'white'].outerContainer]
+  });
 };
 
-var Padding = (_temp = _class =
+var ListItem = (_temp = _class =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(Padding, _PureComponent);
+  _inherits(ListItem, _PureComponent);
 
-  function Padding() {
-    var _getPrototypeOf2;
-
+  function ListItem(props) {
     var _this;
 
-    _classCallCheck(this, Padding);
+    _classCallCheck(this, ListItem);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Padding)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ListItem).call(this, props));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       styles: getStyles(_this.props)
     });
 
+    _assertThisInitialized(_assertThisInitialized(_this)).renderLeftElement = _this.renderLeftElement.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _assertThisInitialized(_assertThisInitialized(_this)).renderCenterElement = _this.renderCenterElement.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _assertThisInitialized(_assertThisInitialized(_this)).renderRightElement = _this.renderRightElement.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
-  _createClass(Padding, [{
+  _createClass(ListItem, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['multiplier', 'size', 'sizeBottom', 'sizeHorizontal', 'sizeLeft', 'sizeRight', 'sizeTop', 'sizeVertical'];
+      var propsOnWhichDependsTheStyle = ['color'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -138,44 +99,136 @@ function (_PureComponent) {
       }
     }
   }, {
+    key: "renderLeftElement",
+    value: function renderLeftElement() {
+      var _this$props = this.props,
+          leftElement = _this$props.leftElement,
+          loading = _this$props.loading;
+      var styles = this.state.styles;
+
+      if (!leftElement || loading) {
+        return null;
+      }
+
+      return _react.default.createElement(_Padding.default, {
+        size: "small",
+        style: styles.leftElement
+      }, leftElement);
+    }
+  }, {
+    key: "renderCenterElement",
+    value: function renderCenterElement() {
+      var _this$props2 = this.props,
+          centerElement = _this$props2.centerElement,
+          loading = _this$props2.loading;
+      var styles = this.state.styles;
+
+      if (loading) {
+        return _react.default.createElement(_reactNative.ActivityIndicator, null);
+      }
+
+      if (!centerElement) {
+        return null;
+      }
+
+      return _react.default.createElement(_Padding.default, {
+        size: "small",
+        style: styles.centerElement
+      }, centerElement);
+    }
+  }, {
+    key: "renderRightElement",
+    value: function renderRightElement() {
+      var _this$props3 = this.props,
+          loading = _this$props3.loading,
+          rightElement = _this$props3.rightElement;
+      var styles = this.state.styles;
+
+      if (!rightElement || loading) {
+        return null;
+      }
+
+      return _react.default.createElement(_Padding.default, {
+        size: "small",
+        style: styles.rightElement
+      }, rightElement);
+    }
+  }, {
+    key: "renderDivider",
+    value: function renderDivider() {
+      var divider = this.props.divider;
+
+      if (!divider) {
+        return null;
+      }
+
+      return _react.default.createElement(_Divider.default, null);
+    }
+  }, {
     key: "render",
     value: function render() {
-      var children = this.props.children;
+      var _this$props4 = this.props,
+          centerElementSize = _this$props4.centerElementSize,
+          leftElementSize = _this$props4.leftElementSize,
+          onPress = _this$props4.onPress,
+          rightElementSize = _this$props4.rightElementSize;
       var styles = this.state.styles;
-      return _react.default.createElement(_reactNative.View, _extends({}, this.props, {
-        style: styles
-      }), children);
+      return _react.default.createElement(_reactNative.View, {
+        style: styles.outerContainer
+      }, _react.default.createElement(_reactNative.TouchableOpacity, _extends({
+        disabled: !onPress,
+        onPress: onPress
+      }, (0, _omit.default)(this.props, ['styles'])), _react.default.createElement(_Grid.default, {
+        style: styles.innerContainer
+      }, _react.default.createElement(_Column.default, {
+        size: leftElementSize
+      }, this.renderLeftElement()), _react.default.createElement(_Column.default, {
+        size: centerElementSize
+      }, this.renderCenterElement()), _react.default.createElement(_Column.default, {
+        size: rightElementSize
+      }, this.renderRightElement()))), this.renderDivider());
     }
   }]);
 
-  return Padding;
+  return ListItem;
 }(_react.PureComponent), _defineProperty(_class, "propTypes", {
-  children: function children() {
-    return (typeof _propTypes.default.node === "function" ? _propTypes.default.node.isRequired ? _propTypes.default.node.isRequired : _propTypes.default.node : _propTypes.default.shape(_propTypes.default.node).isRequired).apply(this, arguments);
+  centerElement: function centerElement() {
+    return (typeof _propTypes.default.node === "function" ? _propTypes.default.node : _propTypes.default.shape(_propTypes.default.node)).apply(this, arguments);
   },
-  multiplier: _propTypes.default.number,
+  centerElementSize: _propTypes.default.number,
   // eslint-disable-line react/no-unused-prop-types
-  size: _propTypes.default.string,
+  color: _propTypes.default.string,
   // eslint-disable-line react/no-unused-prop-types
-  sizeBottom: _propTypes.default.string,
+  divider: _propTypes.default.bool,
   // eslint-disable-line react/no-unused-prop-types
-  sizeHorizontal: _propTypes.default.string,
+  leftElement: function leftElement() {
+    return (typeof _propTypes.default.node === "function" ? _propTypes.default.node : _propTypes.default.shape(_propTypes.default.node)).apply(this, arguments);
+  },
+  leftElementSize: _propTypes.default.number,
   // eslint-disable-line react/no-unused-prop-types
-  sizeLeft: _propTypes.default.string,
-  // eslint-disable-line react/no-unused-prop-types
-  sizeRight: _propTypes.default.string,
-  // eslint-disable-line react/no-unused-prop-types
-  sizeTop: _propTypes.default.string,
-  // eslint-disable-line react/no-unused-prop-types
-  sizeVertical: _propTypes.default.string,
+  loading: _propTypes.default.bool,
+  rightElement: function rightElement() {
+    return (typeof _propTypes.default.node === "function" ? _propTypes.default.node : _propTypes.default.shape(_propTypes.default.node)).apply(this, arguments);
+  },
+  rightElementSize: _propTypes.default.number,
   // eslint-disable-line react/no-unused-prop-types
   styles: function styles() {
     return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
   }
 }), _temp);
 
-_defineProperty(Padding, "defaultProps", defaultProps);
+_defineProperty(ListItem, "defaultProps", {
+  centerElement: null,
+  centerElementSize: 1.5,
+  color: 'white',
+  divider: true,
+  leftElement: null,
+  leftElementSize: 1,
+  loading: false,
+  rightElement: null,
+  rightElementSize: 1
+});
 
-Padding = (0, _withTheme.default)(_styles.default, 'Padding')(Padding);
-var _default = Padding;
+ListItem = (0, _withTheme.default)(_styles.default, 'ListItem')(ListItem);
+var _default = ListItem;
 exports.default = _default;

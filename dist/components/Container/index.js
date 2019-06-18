@@ -59,9 +59,8 @@ var defaultProps = _objectSpread({}, _reactNative.View.defaultProps, {
 
 var getStyles = function getStyles(props) {
   var alignment = props.alignment,
-      style = props.style,
       styles = props.styles;
-  return [style, styles.base, alignment ? styles.alignment[alignment] : {}];
+  return [styles.base, alignment ? styles.alignment[alignment] : {}];
 };
 
 var Container = (_temp = _class =
@@ -92,7 +91,7 @@ function (_PureComponent) {
   _createClass(Container, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['alignment', 'marginSize', 'paddingSize', 'style'];
+      var propsOnWhichDependsTheStyle = ['alignment', 'marginSize', 'paddingSize'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({

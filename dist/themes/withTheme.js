@@ -7,7 +7,11 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _reactNative = require("react-native");
+
 var _merge = _interopRequireDefault(require("lodash/merge"));
+
+var _omit = _interopRequireDefault(require("lodash/omit"));
 
 var _base = _interopRequireDefault(require("./base"));
 
@@ -83,8 +87,9 @@ var withTheme = function withTheme(customStyles, componentName) {
           return _react.default.createElement(_themeContext.ThemeConsumer, null, function (customTheme) {
             checkErrors(_this.props, componentName);
             var theme = (0, _merge.default)({}, _base.default, customTheme || {});
-            var styles = (0, _merge.default)({}, customStyles ? customStyles(theme) : {}, theme.components[componentName] || {});
-            return _react.default.createElement(Component, _extends({}, _this.props, {
+            var styles = (0, _merge.default)({}, customStyles ? customStyles(theme) : {}, _this.props.style, // eslint-disable-line react/prop-types, react/destructuring-assignment, max-len
+            theme.components[componentName] || {});
+            return _react.default.createElement(Component, _extends({}, (0, _omit.default)(_this.props, ['style']), {
               styles: styles,
               theme: theme
             }));
@@ -93,11 +98,19 @@ var withTheme = function withTheme(customStyles, componentName) {
       }]);
 
       return ComponentWithTheme;
-    }(_react.PureComponent), _defineProperty(_class, "propTypes", {}), _temp);
+    }(_react.PureComponent), _defineProperty(_class, "propTypes", {
+      style: function style() {
+        return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) : _propTypes.default.any).apply(this, arguments);
+      }
+    }), _temp);
 
     _defineProperty(ComponentWithTheme, "originalComponentName", Component.displayName || Component.name);
 
     _defineProperty(ComponentWithTheme, "displayName", "WithTheme(".concat(Component.displayName || Component.name, ")"));
+
+    _defineProperty(ComponentWithTheme, "defaultProps", {
+      style: {}
+    });
 
     return ComponentWithTheme;
   };

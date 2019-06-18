@@ -64,30 +64,27 @@ var Toolbar = (_temp = _class =
 function (_PureComponent) {
   _inherits(Toolbar, _PureComponent);
 
-  function Toolbar() {
-    var _getPrototypeOf2;
-
+  function Toolbar(props) {
     var _this;
 
     _classCallCheck(this, Toolbar);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Toolbar)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Toolbar).call(this, props));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       styles: getStyles(_this.props)
     });
 
+    _assertThisInitialized(_assertThisInitialized(_this)).renderLeftElement = _this.renderLeftElement.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _assertThisInitialized(_assertThisInitialized(_this)).renderCenterElement = _this.renderCenterElement.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _assertThisInitialized(_assertThisInitialized(_this)).renderRightElement = _this.renderRightElement.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
   _createClass(Toolbar, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['color', 'style'];
+      var propsOnWhichDependsTheStyle = ['color'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -96,34 +93,67 @@ function (_PureComponent) {
       }
     }
   }, {
+    key: "renderLeftElement",
+    value: function renderLeftElement() {
+      var leftElement = this.props.leftElement;
+      var styles = this.state.styles;
+
+      if (!leftElement) {
+        return null;
+      }
+
+      return _react.default.createElement(_Padding.default, {
+        size: "small",
+        style: styles.leftElement
+      }, leftElement);
+    }
+  }, {
+    key: "renderCenterElement",
+    value: function renderCenterElement() {
+      var centerElement = this.props.centerElement;
+      var styles = this.state.styles;
+
+      if (!centerElement) {
+        return null;
+      }
+
+      return _react.default.createElement(_Padding.default, {
+        size: "small",
+        style: styles.centerElement
+      }, centerElement);
+    }
+  }, {
+    key: "renderRightElement",
+    value: function renderRightElement() {
+      var rightElement = this.props.rightElement;
+      var styles = this.state.styles;
+
+      if (!rightElement) {
+        return null;
+      }
+
+      return _react.default.createElement(_Padding.default, {
+        size: "small",
+        style: styles.rightElement
+      }, rightElement);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          centerElement = _this$props.centerElement,
           centerElementSize = _this$props.centerElementSize,
-          leftElement = _this$props.leftElement,
           leftElementSize = _this$props.leftElementSize,
-          rightElement = _this$props.rightElement,
           rightElementSize = _this$props.rightElementSize;
       var styles = this.state.styles;
       return _react.default.createElement(_Grid.default, {
         style: styles.container
       }, _react.default.createElement(_Column.default, {
         size: leftElementSize
-      }, leftElement && _react.default.createElement(_Padding.default, {
-        size: "small",
-        style: styles.leftElement
-      }, leftElement)), _react.default.createElement(_Column.default, {
+      }, this.renderLeftElement()), _react.default.createElement(_Column.default, {
         size: centerElementSize
-      }, centerElement && _react.default.createElement(_Padding.default, {
-        size: "small",
-        style: styles.centerElement
-      }, centerElement)), _react.default.createElement(_Column.default, {
+      }, this.renderCenterElement()), _react.default.createElement(_Column.default, {
         size: rightElementSize
-      }, rightElement && _react.default.createElement(_Padding.default, {
-        size: "small",
-        style: styles.rightElement
-      }, rightElement)));
+      }, this.renderRightElement()));
     }
   }]);
 

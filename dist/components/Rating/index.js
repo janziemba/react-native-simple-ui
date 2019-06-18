@@ -123,6 +123,7 @@ function (_PureComponent) {
           onPress = _this$props4.onPress,
           styles = _this$props4.styles;
       return _react.default.createElement(_reactNative.TouchableOpacity, {
+        disabled: !onPress,
         onPress: onPress
       }, _react.default.createElement(_reactNative.View, {
         style: styles

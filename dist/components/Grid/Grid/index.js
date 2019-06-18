@@ -51,13 +51,12 @@ var defaultProps = _objectSpread({}, _reactNative.View.defaultProps);
 
 var getStyles = function getStyles(props) {
   var children = props.children,
-      style = props.style,
       styles = props.styles;
   var components = children.length > 1 ? children : [children];
   var isDirectionRow = components.find(function (child) {
     return child.type.originalComponentName === 'Row';
   }) !== undefined;
-  return [style, styles.base, styles.directions[isDirectionRow ? 'column' : 'row']];
+  return [styles.base, styles.directions[isDirectionRow ? 'column' : 'row']];
 };
 
 var Grid = (_temp = _class =

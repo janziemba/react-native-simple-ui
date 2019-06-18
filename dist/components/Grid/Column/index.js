@@ -53,17 +53,16 @@ var defaultProps = _objectSpread({}, _reactNative.View.defaultProps, {
 
 var getStyles = function getStyles(props) {
   var size = props.size,
-      style = props.style,
       styles = props.styles;
   var flex = 1;
 
   if (size) {
     flex = size;
-  } else if (style && style.width) {
+  } else if (styles.base.width) {
     flex = 0;
   }
 
-  return [style, styles.base, {
+  return [styles.base, {
     flex: flex
   }];
 };
@@ -96,7 +95,7 @@ function (_PureComponent) {
   _createClass(Column, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['size', 'style'];
+      var propsOnWhichDependsTheStyle = ['size'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({

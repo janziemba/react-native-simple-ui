@@ -137,6 +137,7 @@ function (_PureComponent) {
     _assertThisInitialized(_assertThisInitialized(_this)).renderIconAfterText = _this.renderIconAfterText.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _assertThisInitialized(_assertThisInitialized(_this)).renderIconBeforeText = _this.renderIconBeforeText.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _assertThisInitialized(_assertThisInitialized(_this)).renderContent = _this.renderContent.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _assertThisInitialized(_assertThisInitialized(_this)).renderLinearGradient = _this.renderLinearGradient.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -253,21 +254,37 @@ function (_PureComponent) {
         return this.renderIcon();
       }
 
-      return _react.default.createElement(_react.Fragment, null, this.renderIconBeforeText(), _react.default.createElement(_reactNative.Text, {
+      return _react.default.createElement(_react.default.Fragment, null, this.renderIconBeforeText(), _react.default.createElement(_reactNative.Text, {
         style: styles.text
       }, text), this.renderIconAfterText());
+    }
+  }, {
+    key: "renderLinearGradient",
+    value: function renderLinearGradient() {
+      var linearGradient = this.props.linearGradient;
+      var _this$state = this.state,
+          height = _this$state.height,
+          styles = _this$state.styles,
+          width = _this$state.width;
+
+      if (!linearGradient) {
+        return null;
+      }
+
+      return _react.default.createElement(_reactNative.View, {
+        style: styles.gradient
+      }, _react.default.createElement(_LinearGradient.default, _extends({}, linearGradient, {
+        height: height,
+        width: width
+      })));
     }
   }, {
     key: "render",
     value: function render() {
       var _this$props2 = this.props,
           disabled = _this$props2.disabled,
-          linearGradient = _this$props2.linearGradient,
           onPress = _this$props2.onPress;
-      var _this$state = this.state,
-          height = _this$state.height,
-          styles = _this$state.styles,
-          width = _this$state.width;
+      var styles = this.state.styles;
       return _react.default.createElement(_reactNative.TouchableOpacity, _extends({}, (0, _omit.default)(this.props, ['styles']), {
         accessibilityRole: "button",
         activeOpacity: 1,
@@ -278,12 +295,7 @@ function (_PureComponent) {
         onPressIn: this.onPressIn,
         onPressOut: this.onPressOut,
         style: styles.touchable
-      }), linearGradient && _react.default.createElement(_reactNative.View, {
-        style: styles.gradient
-      }, _react.default.createElement(_LinearGradient.default, _extends({}, linearGradient, {
-        height: height,
-        width: width
-      }))), _react.default.createElement(_reactNative.View, {
+      }), this.renderLinearGradient(), _react.default.createElement(_reactNative.View, {
         style: styles.container
       }, this.renderContent()));
     }

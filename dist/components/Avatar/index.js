@@ -3,19 +3,23 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.bpfrpt_proptype_Props = exports.default = exports.defaultProps = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
 var _reactNative = require("react-native");
 
-var _withTheme = _interopRequireDefault(require("../../../themes/withTheme"));
+var _omit = _interopRequireDefault(require("lodash/omit"));
 
-var _hasStyleChanged = _interopRequireDefault(require("../../../utils/hasStyleChanged"));
+var _withTheme = _interopRequireDefault(require("../../themes/withTheme"));
+
+var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChanged"));
 
 var _styles = _interopRequireWildcard(require("./styles"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _types = require("../../types");
 
 var _class, _temp;
 
@@ -47,55 +51,62 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var defaultProps = _objectSpread({}, _reactNative.View.defaultProps, {
-  size: null
-});
+var bpfrpt_proptype_Props = {
+  color: _propTypes.default.string,
+  size: _propTypes.default.number,
+  text: _propTypes.default.string
+};
+exports.bpfrpt_proptype_Props = bpfrpt_proptype_Props;
+var defaultProps = {
+  color: null,
+  size: 64,
+  text: null
+};
+exports.defaultProps = defaultProps;
 
 var getStyles = function getStyles(props) {
-  var size = props.size,
+  var color = props.color,
+      size = props.size,
       styles = props.styles;
-  var flex = 1;
-
-  if (size) {
-    flex = size;
-  } else if (styles.base.width) {
-    flex = 0;
-  }
-
-  return [styles.base, {
-    flex: flex
-  }];
+  var dimensions = {
+    height: size,
+    width: size
+  };
+  return _objectSpread({}, styles.base, {
+    container: [styles.base.container, styles.colors[color || 'primary'].container, dimensions],
+    image: [styles.base.image, dimensions],
+    text: [styles.base.text, {
+      fontSize: size / 3
+    }],
+    touchable: [dimensions]
+  });
 };
 
-var Row = (_temp = _class =
+var Avatar = (_temp = _class =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(Row, _PureComponent);
+  _inherits(Avatar, _PureComponent);
 
-  function Row() {
-    var _getPrototypeOf2;
-
+  function Avatar(props) {
     var _this;
 
-    _classCallCheck(this, Row);
+    _classCallCheck(this, Avatar);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Row)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Avatar).call(this, props));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       styles: getStyles(_this.props)
     });
 
+    _assertThisInitialized(_assertThisInitialized(_this)).renderImage = _this.renderImage.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _assertThisInitialized(_assertThisInitialized(_this)).renderText = _this.renderText.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
-  _createClass(Row, [{
+  _createClass(Avatar, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['size'];
+      var propsOnWhichDependsTheStyle = ['color'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -104,26 +115,62 @@ function (_PureComponent) {
       }
     }
   }, {
+    key: "renderImage",
+    value: function renderImage() {
+      var source = this.props.source;
+      var styles = this.state.styles;
+
+      if (!source) {
+        return null;
+      }
+
+      return _react.default.createElement(_reactNative.Image, {
+        resizeMode: "cover",
+        source: source,
+        style: styles.image
+      });
+    }
+  }, {
+    key: "renderText",
+    value: function renderText() {
+      var text = this.props.text;
+      var styles = this.state.styles;
+
+      if (!text) {
+        return null;
+      }
+
+      return _react.default.createElement(_reactNative.Text, {
+        style: styles.text
+      }, text);
+    }
+  }, {
     key: "render",
     value: function render() {
-      var children = this.props.children;
+      var onPress = this.props.onPress;
       var styles = this.state.styles;
-      return _react.default.createElement(_reactNative.View, _extends({}, this.props, {
-        style: styles
-      }), children);
+      return _react.default.createElement(_reactNative.TouchableOpacity, _extends({
+        disabled: !onPress,
+        onPress: onPress,
+        style: styles.touchable
+      }, (0, _omit.default)(this.props, ['styles'])), _react.default.createElement(_reactNative.View, {
+        style: styles.container
+      }, this.renderImage(), this.renderText()));
     }
   }]);
 
-  return Row;
+  return Avatar;
 }(_react.PureComponent), _defineProperty(_class, "propTypes", {
+  color: _propTypes.default.string,
   size: _propTypes.default.number,
+  text: _propTypes.default.string,
   styles: function styles() {
     return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
   }
 }), _temp);
 
-_defineProperty(Row, "defaultProps", defaultProps);
+_defineProperty(Avatar, "defaultProps", defaultProps);
 
-Row = (0, _withTheme.default)(_styles.default, 'Row')(Row);
-var _default = Row;
+Avatar = (0, _withTheme.default)(_styles.default, 'Avatar')(Avatar);
+var _default = Avatar;
 exports.default = _default;

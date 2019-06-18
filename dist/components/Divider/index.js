@@ -9,9 +9,9 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactNative = require("react-native");
 
-var _withTheme = _interopRequireDefault(require("../../../themes/withTheme"));
+var _withTheme = _interopRequireDefault(require("../../themes/withTheme"));
 
-var _hasStyleChanged = _interopRequireDefault(require("../../../utils/hasStyleChanged"));
+var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChanged"));
 
 var _styles = _interopRequireWildcard(require("./styles"));
 
@@ -48,42 +48,32 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var defaultProps = _objectSpread({}, _reactNative.View.defaultProps, {
-  size: null
+  color: null
 });
 
 var getStyles = function getStyles(props) {
-  var size = props.size,
+  var color = props.color,
       styles = props.styles;
-  var flex = 1;
-
-  if (size) {
-    flex = size;
-  } else if (styles.base.width) {
-    flex = 0;
-  }
-
-  return [styles.base, {
-    flex: flex
-  }];
+  return [styles.base, color ? styles.colors[color] : {}];
 };
 
-var Row = (_temp = _class =
+var Divider = (_temp = _class =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(Row, _PureComponent);
+  _inherits(Divider, _PureComponent);
 
-  function Row() {
+  function Divider() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, Row);
+    _classCallCheck(this, Divider);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Row)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Divider)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       styles: getStyles(_this.props)
@@ -92,10 +82,10 @@ function (_PureComponent) {
     return _this;
   }
 
-  _createClass(Row, [{
+  _createClass(Divider, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['size'];
+      var propsOnWhichDependsTheStyle = ['color'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -106,24 +96,23 @@ function (_PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var children = this.props.children;
       var styles = this.state.styles;
       return _react.default.createElement(_reactNative.View, _extends({}, this.props, {
         style: styles
-      }), children);
+      }));
     }
   }]);
 
-  return Row;
+  return Divider;
 }(_react.PureComponent), _defineProperty(_class, "propTypes", {
-  size: _propTypes.default.number,
+  color: _propTypes.default.string,
   styles: function styles() {
     return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
   }
 }), _temp);
 
-_defineProperty(Row, "defaultProps", defaultProps);
+_defineProperty(Divider, "defaultProps", defaultProps);
 
-Row = (0, _withTheme.default)(_styles.default, 'Row')(Row);
-var _default = Row;
+Divider = (0, _withTheme.default)(_styles.default, 'Divider')(Divider);
+var _default = Divider;
 exports.default = _default;

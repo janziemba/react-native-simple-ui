@@ -67,9 +67,8 @@ var getStyles = function getStyles(props) {
       sizeRight = props.sizeRight,
       sizeTop = props.sizeTop,
       sizeVertical = props.sizeVertical,
-      style = props.style,
       styles = props.styles;
-  var result = style ? _reactNative.StyleSheet.flatten(style) : {};
+  var result = styles.base || {};
 
   if (size) {
     result.margin = styles[size].margin * (multiplier || 1);
@@ -130,7 +129,7 @@ function (_PureComponent) {
   _createClass(Margin, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['multiplier', 'size', 'sizeBottom', 'sizeHorizontal', 'sizeLeft', 'sizeRight', 'sizenTop', 'sizeVertical', 'style'];
+      var propsOnWhichDependsTheStyle = ['multiplier', 'size', 'sizeBottom', 'sizeHorizontal', 'sizeLeft', 'sizeRight', 'sizenTop', 'sizeVertical'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({

@@ -22,7 +22,7 @@ var bpfrpt_proptype_StylesType = {
     centerElement: function centerElement() {
       return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
     },
-    container: function container() {
+    innerContainer: function innerContainer() {
       return (typeof (_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles) === "function" ? _propTypes.default.instanceOf(_reactNative.StyleSheet.Styles == null ? {} : _reactNative.StyleSheet.Styles).isRequired : _propTypes.default.any.isRequired).apply(this, arguments);
     },
     leftElement: function leftElement() {
@@ -45,9 +45,8 @@ var _default = function _default(_ref) {
   Object.keys(allColors).forEach(function (colorName) {
     var color = colors.palette[colorName] || colorName;
     colorOptions[colorName] = {
-      container: {
-        backgroundColor: color,
-        borderColor: color
+      outerContainer: {
+        backgroundColor: color
       }
     };
   });
@@ -59,7 +58,7 @@ var _default = function _default(_ref) {
           justifyContent: 'center'
         }
       },
-      container: {
+      innerContainer: {
         alignItems: 'center',
         height: 56,
         justifyContent: 'center'
