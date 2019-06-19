@@ -2,7 +2,8 @@
     "extends": [
         "airbnb",
         "plugin:flowtype/recommended",
-        "plugin:jest/recommended"
+        "plugin:jest/recommended",
+        "@strv/react-native"
     ],
     "globals": {
         "__DEV__": false
@@ -28,8 +29,10 @@
         "react/jsx-indent-props": [2, 4],
         "react/jsx-max-props-per-line": ["error", { "when": "always" }],
         "react/jsx-sort-props": "error",
+        "react/no-unsafe": 0, // needs refactoring
         "react/prefer-stateless-function": 0,
         "react/require-default-props": [2, { "forbidDefaultForRequired": false }],
+        "react-native/no-raw-text": 0, // because of a TextLink
         "sort-keys": ["error", "asc"]
     }
 }

@@ -86,6 +86,7 @@ class Rating extends PureComponent<Props> {
 
         return (
             <TouchableOpacity
+                accessibilityRole="imagebutton"
                 disabled={!onPress}
                 onPress={onPress}
             >

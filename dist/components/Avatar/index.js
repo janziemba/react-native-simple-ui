@@ -150,6 +150,7 @@ function (_PureComponent) {
       var onPress = this.props.onPress;
       var styles = this.state.styles;
       return _react.default.createElement(_reactNative.TouchableOpacity, _extends({
+        accessibilityRole: "imagebutton",
         disabled: !onPress,
         onPress: onPress,
         style: styles.touchable

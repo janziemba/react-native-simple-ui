@@ -126,6 +126,7 @@ class Avatar extends PureComponent<PrivateProps, State> {
 
         return (
             <TouchableOpacity
+                accessibilityRole="imagebutton"
                 disabled={!onPress}
                 onPress={onPress}
                 style={styles.touchable}

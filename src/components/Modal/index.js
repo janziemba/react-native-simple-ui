@@ -23,7 +23,10 @@ class Modal extends PureComponent<Props> {
         const { children, onOverlayPress, styles } = this.props;
 
         return (
-            <TouchableWithoutFeedback onPress={onOverlayPress}>
+            <TouchableWithoutFeedback
+                accessibilityRole="none"
+                onPress={onOverlayPress}
+            >
                 <View style={styles.overlay}>
                     <View style={styles.container}>
                         <Padding size="huge">

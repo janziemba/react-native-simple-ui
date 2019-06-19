@@ -176,6 +176,7 @@ function (_PureComponent) {
       return _react.default.createElement(_reactNative.View, {
         style: styles.outerContainer
       }, _react.default.createElement(_reactNative.TouchableOpacity, _extends({
+        accessibilityRole: "button",
         disabled: !onPress,
         onPress: onPress
       }, (0, _omit.default)(this.props, ['styles'])), _react.default.createElement(_Grid.default, {

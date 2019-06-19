@@ -155,6 +155,7 @@ class ListItem extends PureComponent<Props, State> {
         return (
             <View style={styles.outerContainer}>
                 <TouchableOpacity
+                    accessibilityRole="button"
                     disabled={!onPress}
                     onPress={onPress}
                     {...omit(this.props, ['styles'])}

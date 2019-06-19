@@ -62,6 +62,7 @@ function (_PureComponent) {
           onOverlayPress = _this$props.onOverlayPress,
           styles = _this$props.styles;
       return _react.default.createElement(_reactNative.TouchableWithoutFeedback, {
+        accessibilityRole: "none",
         onPress: onOverlayPress
       }, _react.default.createElement(_reactNative.View, {
         style: styles.overlay
