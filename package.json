@@ -33,7 +33,6 @@
         "test": "yarn eslint . && yarn flow && yarn jest && yarn codecov"
     },
     "dependencies": {
-        "@strv/eslint-config-react-native": "^1.0.3",
         "color": "^3.1.0",
         "lodash": "^4.17.11",
         "prop-types": "^15.6.2",
@@ -48,6 +47,7 @@
         "@babel/preset-env": "^7.3.1",
         "@babel/preset-flow": "^7.0.0",
         "@babel/preset-react": "^7.0.0",
+        "@strv/eslint-config-react-native": "^1.0.3",
         "babel-eslint": "10.0.2",
         "babel-plugin-flow-react-proptypes": "^25.0.0",
         "codecov": "^3.2.0",
