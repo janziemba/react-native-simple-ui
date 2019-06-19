@@ -23,7 +23,7 @@ For styling consistency, I recommend to follow up these simple rules:
 ### Can I change the default props?
 No. If you want to overwrite the default props you have to create your own component which extends this UI's component. For example if you want your `Button` to always be rounded and outlined, you would create a new component which extends UI's `Button` and passes these props to it.
 
-### Can I change the index dynamically?
+### Can I change the theme dynamically?
 Yes, you can, however the whole app would be re-rendered.
 
 # Showcase
