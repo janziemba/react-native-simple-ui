@@ -17,8 +17,14 @@
       "components/button": {
         "title": "Button"
       },
+      "components/card": {
+        "title": "Card"
+      },
       "components/container": {
         "title": "Container"
+      },
+      "components/divider": {
+        "title": "Divider"
       },
       "components/grid": {
         "title": "Grid"
