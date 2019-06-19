@@ -20,55 +20,55 @@ class GridScreen extends PureComponent {
             <ScreenContainer>
                 <Container paddingSize="medium">
                     <Grid>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
-                        <Column style={styles.bordered}>
-                            <Text>Column</Text>
-                        </Column>
-                    </Grid>
-                    <Spacer />
-                    <Grid>
-                        <Column style={styles.bordered}>
-                            <Text>Column</Text>
-                        </Column>
-                        <Column style={styles.bordered}>
-                            <Text>Column</Text>
-                        </Column>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
                     </Grid>
                     <Spacer />
                     <Grid>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
-                        <Column style={styles.bordered}>
-                            <Text>Column</Text>
-                        </Column>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
                     </Grid>
                     <Spacer />
                     <Grid>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
-                        <Column style={styles.bordered}>
+                    </Grid>
+                    <Spacer />
+                    <Grid>
+                        <Column style={{ base: styles.bordered }}>
+                            <Text>Column</Text>
+                        </Column>
+                        <Column style={{ base: styles.bordered }}>
+                            <Text>Column</Text>
+                        </Column>
+                        <Column style={{ base: styles.bordered }}>
+                            <Text>Column</Text>
+                        </Column>
+                        <Column style={{ base: styles.bordered }}>
+                            <Text>Column</Text>
+                        </Column>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
                     </Grid>
@@ -76,47 +76,47 @@ class GridScreen extends PureComponent {
                     <Grid>
                         <Column
                             size={2}
-                            style={styles.bordered}
+                            style={{ base: styles.bordered }}
                         >
                             <Text>Column</Text>
                         </Column>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
                     </Grid>
                     <Spacer />
                     <Grid>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
                         <Column
                             size={2}
-                            style={styles.bordered}
+                            style={{ base: styles.bordered }}
                         >
                             <Text>Column</Text>
                         </Column>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
                     </Grid>
                     <Spacer />
                     <Grid>
-                        <Column style={styles.bordered}>
+                        <Column style={{ base: styles.bordered }}>
                             <Text>Column</Text>
                         </Column>
                         <Column
                             size={3}
-                            style={styles.bordered}
+                            style={{ base: styles.bordered }}
                         >
                             <Text>Column</Text>
                         </Column>
                     </Grid>
                     <Spacer />
                     <Grid>
-                        <Row style={styles.bordered}>
+                        <Row style={{ base: styles.bordered }}>
                             <Text>Row</Text>
                         </Row>
-                        <Row style={styles.bordered}>
+                        <Row style={{ base: styles.bordered }}>
                             <Text>Row</Text>
                         </Row>
                     </Grid>

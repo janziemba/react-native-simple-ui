@@ -13,7 +13,7 @@ class ToolbarScreen extends PureComponent {
     render() {
         return (
             <ScreenContainer>
-                <Container paddingSize="medium">
+                <Container>
                     <Toolbar
                         centerElement={
                             <Text color="white">Title</Text>
@@ -79,25 +79,11 @@ class ToolbarScreen extends PureComponent {
                     <Spacer />
                     <Toolbar
                         centerElement={
-                            <Text color="white">Very looong title</Text>
+                            <Text color="white">Very looooooooooooooong title</Text>
                         }
-                        centerElementSize={3}
-                        leftElement={(
-                            <Button
-                                color="white"
-                                onPress={this.onPress}
-                                text="Pause"
-                                variant="flat"
-                            />
-                        )}
+                        centerElementSize={5}
                         rightElement={(
                             <>
-                                <Padding sizeRight="medium">
-                                    <Icon
-                                        colorName="white"
-                                        name="favorite"
-                                    />
-                                </Padding>
                                 <Icon
                                     colorName="white"
                                     name="star"

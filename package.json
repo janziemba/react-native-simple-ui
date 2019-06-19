@@ -66,7 +66,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged && yarn codecov && yarn build"
+            "pre-commit": "yarn flow && lint-staged && yarn codecov && yarn build"
         }
     },
     "jest": {
@@ -83,7 +83,6 @@
     "lint-staged": {
         "*.js": [
             "yarn eslint",
-            "yarn flow",
             "yarn jest --findRelatedTests"
         ]
     }

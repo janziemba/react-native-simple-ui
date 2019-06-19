@@ -26,8 +26,10 @@ export default ({ colors }: ThemeShapeType): StylesType => {
 
         colorOptions[colorName] = {
             container: {
-                backgroundColor: color,
-                borderColor: color,
+                base: {
+                    backgroundColor: color,
+                    borderColor: color,
+                },
             },
         };
     });
@@ -39,8 +41,11 @@ export default ({ colors }: ThemeShapeType): StylesType => {
                 justifyContent: 'center',
             },
             container: {
-                alignItems: 'center',
-                height: 56,
+                base: {
+                    alignItems: 'center',
+                    height: 56,
+                    justifyContent: 'center',
+                },
             },
             leftElement: {
                 flexDirection: 'row',

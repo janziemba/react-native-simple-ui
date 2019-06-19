@@ -18,34 +18,34 @@ class ContainerScreen extends PureComponent {
     render() {
         return (
             <ScreenContainer>
-                <Container style={styles.bordered}>
+                <Container style={{ base: styles.bordered }}>
                     <Text>Default</Text>
                 </Container>
                 <Spacer />
                 <Container
                     paddingSize="medium"
-                    style={styles.bordered}
+                    style={{ base: styles.bordered }}
                 >
                     <Text>With padding</Text>
                 </Container>
                 <Spacer />
                 <Container
                     marginSize="medium"
-                    style={styles.bordered}
+                    style={{ base: styles.bordered }}
                 >
                     <Text>With margin</Text>
                 </Container>
                 <Spacer />
                 <Container
                     alignment="center"
-                    style={styles.bordered}
+                    style={{ base: styles.bordered }}
                 >
                     <Text>Center</Text>
                 </Container>
                 <Spacer />
                 <Container
                     alignment="right"
-                    style={styles.bordered}
+                    style={{ base: styles.bordered }}
                 >
                     <Text>Right</Text>
                 </Container>

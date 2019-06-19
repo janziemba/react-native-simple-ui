@@ -9,6 +9,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactNative = require("react-native");
 
+var _merge = _interopRequireDefault(require("lodash/merge"));
+
 var _withTheme = _interopRequireDefault(require("../../themes/withTheme"));
 
 var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChanged"));
@@ -55,7 +57,7 @@ var getStyles = function getStyles(props) {
   var color = props.color,
       styles = props.styles;
   return _objectSpread({}, styles.base, {
-    container: [styles.base.container, styles.colors[color || 'primary'].container]
+    container: (0, _merge.default)(styles.base.container, styles.colors[color || 'primary'].container)
   });
 };
 

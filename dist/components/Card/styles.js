@@ -7,6 +7,8 @@ exports.bpfrpt_proptype_StylesType = exports.default = void 0;
 
 var _reactNative = require("react-native");
 
+var _types = require("../../types");
+
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -18,10 +20,20 @@ var bpfrpt_proptype_StylesType = {
 };
 exports.bpfrpt_proptype_StylesType = bpfrpt_proptype_StylesType;
 
-var _default = function _default() {
+var _default = function _default(_ref) {
+  var colors = _ref.colors,
+      radiuses = _ref.radiuses;
   return {
     base: {
-      flex: 1
+      container: {
+        alignItems: 'center',
+        backgroundColor: 'white',
+        borderColor: colors.palette.dark,
+        borderRadius: radiuses.tiny,
+        borderWidth: _reactNative.StyleSheet.hairlineWidth,
+        flex: 1,
+        justifyContent: 'center'
+      }
     }
   };
 };

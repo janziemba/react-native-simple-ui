@@ -46,34 +46,32 @@ var _default = function _default(_ref) {
     var color = colors.palette[colorName] || colorName;
     colorOptions[colorName] = {
       container: {
-        backgroundColor: color,
-        borderColor: color
+        base: {
+          backgroundColor: color,
+          borderColor: color
+        }
       }
     };
   });
   return {
     base: {
       centerElement: {
+        flexDirection: 'row',
+        justifyContent: 'center'
+      },
+      container: {
         base: {
-          flexDirection: 'row',
+          alignItems: 'center',
+          height: 56,
           justifyContent: 'center'
         }
       },
-      container: {
-        alignItems: 'center',
-        height: 56,
-        justifyContent: 'center'
-      },
       leftElement: {
-        base: {
-          flexDirection: 'row'
-        }
+        flexDirection: 'row'
       },
       rightElement: {
-        base: {
-          flexDirection: 'row',
-          justifyContent: 'flex-end'
-        }
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
       }
     },
     colors: colorOptions

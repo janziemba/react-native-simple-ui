@@ -6,4 +6,4 @@ title: Modal
 - `children` (_node_, **required**)
 - `onOverlayPress` (_function_, default null)
 
-<img src="../assets/Modal/1.png" alt="Modal" width="250x" style="display: inline-block;">
+<img src="../assets/Modal/1.png" alt="Modal" width="250" style="display: inline-block;">

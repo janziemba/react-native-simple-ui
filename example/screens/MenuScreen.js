@@ -21,8 +21,18 @@ class MenuScreen extends PureComponent {
             <ScreenContainer>
                 <Container paddingSize="medium">
                     <Button
+                        onPress={() => navigate('Avatar')}
+                        text="Avatar"
+                    />
+                    <Spacer />
+                    <Button
                         onPress={() => navigate('Button')}
                         text="Button"
+                    />
+                    <Spacer />
+                    <Button
+                        onPress={() => navigate('Card')}
+                        text="Card"
                     />
                     <Spacer />
                     <Button
@@ -43,6 +53,11 @@ class MenuScreen extends PureComponent {
                     <Button
                         onPress={() => navigate('LinearGradient')}
                         text="LinearGradient"
+                    />
+                    <Spacer />
+                    <Button
+                        onPress={() => navigate('ListItem')}
+                        text="ListItem"
                     />
                     <Spacer />
                     <Button

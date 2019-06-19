@@ -43,10 +43,10 @@ type State = {
 const getStyles = (props: Props): StyleSheet.Styles => {
     const {
         multiplier, size, sizeBottom, sizeHorizontal, sizeLeft, sizeRight, sizeTop, sizeVertical,
-        style, styles,
+        styles,
     } = props;
 
-    const result: StyleSheet.Styles = style ? StyleSheet.flatten(style) : {};
+    const result: StyleSheet.Styles = styles || {};
 
     if (size) {
         result.padding = styles[size].padding * (multiplier || 1);
@@ -87,7 +87,7 @@ class Padding extends PureComponent<Props, State> {
     componentWillReceiveProps(nextProps: Props): void {
         const propsOnWhichDependsTheStyle: Array<string> = [
             'multiplier', 'size', 'sizeBottom', 'sizeHorizontal', 'sizeLeft', 'sizeRight',
-            'sizeTop', 'sizeVertical', 'style',
+            'sizeTop', 'sizeVertical',
         ];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {

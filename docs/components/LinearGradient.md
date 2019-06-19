@@ -11,4 +11,4 @@ Extend React Native's [View](https://facebook.github.io/react-native/docs/view#p
 - `toColor` (_string_, **required**)
 - `width` (_number_, **required**)
 
-<img src="../assets/LinearGradient/1.png" alt="LinearGradient" width="250x" style="display: inline-block;">
+<img src="../assets/LinearGradient/1.png" alt="LinearGradient" width="250" style="display: inline-block;">

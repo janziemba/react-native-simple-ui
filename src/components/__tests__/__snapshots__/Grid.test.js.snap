@@ -5,7 +5,6 @@ exports[`Column renders correctly 1`] = `
   size={null}
   style={
     Array [
-      undefined,
       Object {
         "flexDirection": "column",
       },
@@ -117,7 +116,6 @@ exports[`Grid with Column renders correctly 1`] = `
 <View
   style={
     Array [
-      undefined,
       Object {
         "flexShrink": 1,
       },
@@ -235,7 +233,6 @@ exports[`Grid with Column renders correctly 1`] = `
     size={null}
     style={
       Array [
-        undefined,
         Object {
           "flexDirection": "column",
         },
@@ -348,7 +345,6 @@ exports[`Grid with Row renders correctly 1`] = `
 <View
   style={
     Array [
-      undefined,
       Object {
         "flexShrink": 1,
       },
@@ -466,7 +462,6 @@ exports[`Grid with Row renders correctly 1`] = `
     size={null}
     style={
       Array [
-        undefined,
         Object {
           "flexDirection": "row",
         },
@@ -580,7 +575,6 @@ exports[`Row renders correctly 1`] = `
   size={null}
   style={
     Array [
-      undefined,
       Object {
         "flexDirection": "row",
       },

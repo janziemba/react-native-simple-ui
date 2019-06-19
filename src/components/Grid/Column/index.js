@@ -26,18 +26,17 @@ type State = {
 };
 
 const getStyles = (props: Props): Array<StyleSheet.Styles> => {
-    const { size, style, styles } = props;
+    const { size, styles } = props;
 
     let flex = 1;
 
     if (size) {
         flex = size;
-    } else if (style && style.width) {
+    } else if (styles.base.width) {
         flex = 0;
     }
 
     return [
-        style,
         styles.base,
         { flex },
     ];
@@ -49,7 +48,7 @@ class Column extends PureComponent<Props, State> {
         styles: getStyles(this.props),
     };
     componentWillReceiveProps(nextProps): void {
-        const propsOnWhichDependsTheStyle: Array<string> = ['size', 'style'];
+        const propsOnWhichDependsTheStyle: Array<string> = ['size'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });

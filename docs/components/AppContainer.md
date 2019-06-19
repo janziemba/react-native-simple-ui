@@ -6,7 +6,7 @@ title: AppContainer
 - `backgroundImage` ([_React Native Image's source_](https://facebook.github.io/react-native/docs/image#source), default null)
 - `children` (_node_, **required**)
 
-<img src="../assets/AppContainer/1.png" alt="AppContainer" width="250x" style="display: inline-block;">
+<img src="../assets/AppContainer/1.png" alt="AppContainer" width="250" style="display: inline-block;">
 
 ## Examples
 

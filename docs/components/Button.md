@@ -17,11 +17,11 @@ Extend React Native's [TouchableOpacity](https://facebook.github.io/react-native
 - `text` (_string_, default null)
 - `variant` (_string_, default default)
 
-<img src="../assets/Button/1.png" alt="Button" width="250x" style="display: inline-block;">
-<img src="../assets/Button/2.png" alt="Button" width="250x" style="display: inline-block;">
-<img src="../assets/Button/3.png" alt="Button" width="250x" style="display: inline-block;">
-<img src="../assets/Button/4.png" alt="Button" width="250x" style="display: inline-block;">
-<img src="../assets/Button/5.png" alt="Button" width="250x" style="display: inline-block;">
+<img src="../assets/Button/1.png" alt="Button" width="250" style="display: inline-block;">
+<img src="../assets/Button/2.png" alt="Button" width="250" style="display: inline-block;">
+<img src="../assets/Button/3.png" alt="Button" width="250" style="display: inline-block;">
+<img src="../assets/Button/4.png" alt="Button" width="250" style="display: inline-block;">
+<img src="../assets/Button/5.png" alt="Button" width="250" style="display: inline-block;">
 
 ## How do styles work
 The styles are merged in this order: base, rounding, size, color, variant and iconPosition. It means basic styles

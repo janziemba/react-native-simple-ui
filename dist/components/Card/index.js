@@ -9,13 +9,19 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactNative = require("react-native");
 
+var _omit = _interopRequireDefault(require("lodash/omit"));
+
 var _withTheme = _interopRequireDefault(require("../../themes/withTheme"));
 
 var _hasStyleChanged = _interopRequireDefault(require("../../utils/hasStyleChanged"));
 
+var _Padding = _interopRequireDefault(require("../Padding"));
+
 var _styles = _interopRequireWildcard(require("./styles"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _types = require("../../types");
 
 var _class, _temp;
 
@@ -50,9 +56,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var defaultProps = _objectSpread({}, _reactNative.View.defaultProps);
 
 var getStyles = function getStyles(props) {
-  var color = props.color,
+  var disabled = props.disabled,
       styles = props.styles;
-  return [styles.base, color ? styles.colors[color] : {}];
+  return _objectSpread({}, styles.base, {
+    container: _objectSpread({}, styles.base.container, disabled ? styles.disabled.container : {})
+  });
 };
 
 var Card = (_temp = _class =
@@ -83,7 +91,7 @@ function (_PureComponent) {
   _createClass(Card, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      var propsOnWhichDependsTheStyle = ['color'];
+      var propsOnWhichDependsTheStyle = ['disabled'];
 
       if ((0, _hasStyleChanged.default)(propsOnWhichDependsTheStyle, nextProps, this.props)) {
         this.setState({
@@ -96,14 +104,17 @@ function (_PureComponent) {
     value: function render() {
       var children = this.props.children;
       var styles = this.state.styles;
-      return _react.default.createElement(_reactNative.View, _extends({}, this.props, {
-        style: styles
+      return _react.default.createElement(_Padding.default, _extends({}, (0, _omit.default)(this.props, ['styles', 'theme']), {
+        size: "small",
+        style: styles.container
       }), children);
     }
   }]);
 
   return Card;
 }(_react.PureComponent), _defineProperty(_class, "propTypes", {
+  disabled: _propTypes.default.bool,
+  // eslint-disable-line react/require-default-props
   styles: function styles() {
     return (typeof _styles.bpfrpt_proptype_StylesType === "function" ? _styles.bpfrpt_proptype_StylesType.isRequired ? _styles.bpfrpt_proptype_StylesType.isRequired : _styles.bpfrpt_proptype_StylesType : _propTypes.default.shape(_styles.bpfrpt_proptype_StylesType).isRequired).apply(this, arguments);
   }

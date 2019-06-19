@@ -53,26 +53,22 @@ var _default = function _default(_ref) {
   return {
     base: {
       centerElement: {
+        flexDirection: 'row',
+        justifyContent: 'center'
+      },
+      innerContainer: {
         base: {
-          flexDirection: 'row',
+          alignItems: 'center',
+          height: 56,
           justifyContent: 'center'
         }
       },
-      innerContainer: {
-        alignItems: 'center',
-        height: 56,
-        justifyContent: 'center'
-      },
       leftElement: {
-        base: {
-          flexDirection: 'row'
-        }
+        flexDirection: 'row'
       },
       rightElement: {
-        base: {
-          flexDirection: 'row',
-          justifyContent: 'flex-end'
-        }
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
       }
     },
     colors: colorOptions

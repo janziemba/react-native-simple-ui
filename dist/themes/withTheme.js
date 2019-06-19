@@ -87,8 +87,8 @@ var withTheme = function withTheme(customStyles, componentName) {
           return _react.default.createElement(_themeContext.ThemeConsumer, null, function (customTheme) {
             checkErrors(_this.props, componentName);
             var theme = (0, _merge.default)({}, _base.default, customTheme || {});
-            var styles = (0, _merge.default)({}, customStyles ? customStyles(theme) : {}, _this.props.style, // eslint-disable-line react/prop-types, react/destructuring-assignment, max-len
-            theme.components[componentName] || {});
+            var styles = (0, _merge.default)({}, customStyles ? customStyles(theme) : {}, theme.components[componentName] || {}, _this.props.style // eslint-disable-line react/prop-types, react/destructuring-assignment, max-len
+            );
             return _react.default.createElement(Component, _extends({}, (0, _omit.default)(_this.props, ['style']), {
               styles: styles,
               theme: theme

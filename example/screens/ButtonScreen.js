@@ -32,7 +32,10 @@ class ButtonScreen extends PureComponent {
     render() {
         return (
             <ScreenContainer>
-                <Container paddingSize="medium">
+                <Container
+                    alignment="center"
+                    paddingSize="medium"
+                >
                     <Text size="h2">Default variant</Text>
                     {this.renderColoredButtons({ variant: 'default' })}
                     <Spacer />
@@ -72,6 +75,24 @@ class ButtonScreen extends PureComponent {
                         onPress={this.onPress}
                         rounding="rounded"
                         text="Rounded"
+                    />
+                    <Spacer />
+                    <Button
+                        onPress={this.onPress}
+                        rounding="rounded"
+                        style={{
+                            base: {
+                                container: {
+                                    height: 100,
+                                    width: 100,
+                                },
+                                touchable: {
+                                    height: 100,
+                                    width: 100,
+                                },
+                            },
+                        }}
+                        text="Custom"
                     />
                     <Spacer />
                     <Button

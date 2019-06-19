@@ -6,13 +6,9 @@ exports[`renders correctly 1`] = `
   marginSize={null}
   paddingSize={null}
   style={
-    Array [
-      undefined,
-      Object {
-        "flex": 1,
-      },
-      Object {},
-    ]
+    Object {
+      "flex": 1,
+    }
   }
   styles={
     Object {

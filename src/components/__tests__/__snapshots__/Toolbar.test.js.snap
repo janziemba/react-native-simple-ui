@@ -4,18 +4,13 @@ exports[`renders correctly 1`] = `
 <View
   style={
     Array [
-      Array [
-        Object {
-          "alignItems": "center",
-          "height": 56,
-        },
-        Object {
-          "backgroundColor": "#158cba",
-          "borderColor": "#158cba",
-        },
-      ],
       Object {
+        "alignItems": "center",
+        "backgroundColor": "#158cba",
+        "borderColor": "#158cba",
         "flexShrink": 1,
+        "height": 56,
+        "justifyContent": "center",
       },
       Object {
         "flexDirection": "row",
@@ -25,7 +20,12 @@ exports[`renders correctly 1`] = `
   styles={
     Object {
       "base": Object {
+        "alignItems": "center",
+        "backgroundColor": "#158cba",
+        "borderColor": "#158cba",
         "flexShrink": 1,
+        "height": 56,
+        "justifyContent": "center",
       },
       "directions": Object {
         "column": Object {
@@ -131,7 +131,6 @@ exports[`renders correctly 1`] = `
     size={1}
     style={
       Array [
-        undefined,
         Object {
           "flexDirection": "column",
         },
@@ -241,7 +240,6 @@ exports[`renders correctly 1`] = `
     size={1.5}
     style={
       Array [
-        undefined,
         Object {
           "flexDirection": "column",
         },
@@ -351,7 +349,6 @@ exports[`renders correctly 1`] = `
     size={1}
     style={
       Array [
-        undefined,
         Object {
           "flexDirection": "column",
         },

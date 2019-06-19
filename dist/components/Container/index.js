@@ -60,7 +60,7 @@ var defaultProps = _objectSpread({}, _reactNative.View.defaultProps, {
 var getStyles = function getStyles(props) {
   var alignment = props.alignment,
       styles = props.styles;
-  return [styles.base, alignment ? styles.alignment[alignment] : {}];
+  return _objectSpread({}, styles.base, alignment ? styles.alignment[alignment] : {});
 };
 
 var Container = (_temp = _class =

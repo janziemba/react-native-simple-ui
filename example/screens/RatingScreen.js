@@ -7,6 +7,9 @@ class RatingScreen extends PureComponent {
     static navigationOptions = {
         title: 'Rating',
     };
+    onPress() {
+        alert('Pressed'); // eslint-disable-line no-alert, no-undef
+    }
     render() {
         return (
             <ScreenContainer>
@@ -24,6 +27,7 @@ class RatingScreen extends PureComponent {
                             color: '#fec400',
                             name: 'star-half',
                         }}
+                        onPress={this.onPress}
                         rating={3.5}
                     />
                     <Spacer />
@@ -41,6 +45,7 @@ class RatingScreen extends PureComponent {
                             name: 'star-half',
                         }}
                         limit={10}
+                        onPress={this.onPress}
                         rating={6.4}
                     />
                     <Spacer />
@@ -58,6 +63,7 @@ class RatingScreen extends PureComponent {
                             name: 'ac-unit',
                         }}
                         limit={10}
+                        onPress={this.onPress}
                         rating={4.8}
                     />
                 </Container>

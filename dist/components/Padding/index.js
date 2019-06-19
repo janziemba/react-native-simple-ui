@@ -68,7 +68,7 @@ var getStyles = function getStyles(props) {
       sizeTop = props.sizeTop,
       sizeVertical = props.sizeVertical,
       styles = props.styles;
-  var result = styles.base || {};
+  var result = styles || {};
 
   if (size) {
     result.padding = styles[size].padding * (multiplier || 1);

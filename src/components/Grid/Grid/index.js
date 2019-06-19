@@ -25,14 +25,13 @@ type State = {
 };
 
 const getStyles = (props: Props): Array<StyleSheet.Styles> => {
-    const { children, style, styles } = props;
+    const { children, styles } = props;
 
     const components = children.length > 1 ? children : [children];
 
     const isDirectionRow: boolean = components.find(child => child.type.originalComponentName === 'Row') !== undefined;
 
     return [
-        style,
         styles.base,
         styles.directions[isDirectionRow ? 'column' : 'row'],
     ];

@@ -10,7 +10,28 @@ exports[`renders correctly 1`] = `
   sizeRight={null}
   sizeTop={null}
   sizeVertical={null}
-  style={Object {}}
+  style={
+    Object {
+      "gigantic": Object {
+        "margin": 24,
+      },
+      "huge": Object {
+        "margin": 20,
+      },
+      "large": Object {
+        "margin": 16,
+      },
+      "medium": Object {
+        "margin": 12,
+      },
+      "small": Object {
+        "margin": 8,
+      },
+      "tiny": Object {
+        "margin": 4,
+      },
+    }
+  }
   styles={
     Object {
       "gigantic": Object {

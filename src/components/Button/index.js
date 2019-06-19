@@ -1,12 +1,12 @@
 // @flow
 
 import Color from 'color';
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import type { Node } from 'react';
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import omit from 'lodash/omit';
-import type { Props as TouchableWithoutFeedbackProps } from 'react-native/Libraries/Components/Touchable/TouchableWithoutFeedback';
+import type { Props as TouchableOpacityProps } from 'react-native/Libraries/Components/Touchable/TouchableOpacity';
 
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
@@ -18,7 +18,7 @@ import { ICON_POSITIONS, ROUNDING, SIZES, STATES, VARIANTS } from './constants';
 import styles from './styles';
 import type { StylesType } from './styles';
 
-type Props = TouchableWithoutFeedbackProps & {
+type Props = TouchableOpacityProps & {
     color?: string,
     icon?: IconProps,
     linearGradient?: LinearGradientProps,
@@ -127,6 +127,7 @@ class Button extends PureComponent<Props, State> {
         (this: any).renderIconAfterText = this.renderIconAfterText.bind(this);
         (this: any).renderIconBeforeText = this.renderIconBeforeText.bind(this);
         (this: any).renderContent = this.renderContent.bind(this);
+        (this: any).renderLinearGradient = this.renderLinearGradient.bind(this);
     }
     componentWillReceiveProps(nextProps: Props): void {
         const propsOnWhichDependsTheStyle: Array<string> = ['color', 'disabled', 'icon', 'rounding', 'size', 'variant'];
@@ -209,18 +210,36 @@ class Button extends PureComponent<Props, State> {
         }
 
         return (
-            <Fragment>
+            <>
                 {this.renderIconBeforeText()}
                 <Text style={styles.text}>
                     {text}
                 </Text>
                 {this.renderIconAfterText()}
-            </Fragment>
+            </>
+        );
+    }
+    renderLinearGradient(): Node {
+        const { linearGradient } = this.props;
+        const { height, styles, width } = this.state;
+
+        if (!linearGradient) {
+            return null;
+        }
+
+        return (
+            <View style={styles.gradient}>
+                <LinearGradient
+                    {...linearGradient}
+                    height={height}
+                    width={width}
+                />
+            </View>
         );
     }
     render(): Node {
-        const { disabled, linearGradient, onPress } = this.props;
-        const { height, styles, width } = this.state;
+        const { disabled, onPress } = this.props;
+        const { styles } = this.state;
 
         return (
             <TouchableOpacity
@@ -234,15 +253,7 @@ class Button extends PureComponent<Props, State> {
                 onPressOut={this.onPressOut}
                 style={styles.touchable}
             >
-                {linearGradient && (
-                    <View style={styles.gradient}>
-                        <LinearGradient
-                            {...linearGradient}
-                            height={height}
-                            width={width}
-                        />
-                    </View>
-                )}
+                {this.renderLinearGradient()}
                 <View style={styles.container}>
                     {this.renderContent()}
                 </View>

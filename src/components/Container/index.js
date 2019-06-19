@@ -32,13 +32,12 @@ type State = {
 };
 
 const getStyles = (props: Props): Array<StyleSheet.Styles> => {
-    const { alignment, style, styles } = props;
+    const { alignment, styles } = props;
 
-    return [
-        style,
-        styles.base,
-        alignment ? styles.alignment[alignment] : {},
-    ];
+    return {
+        ...styles.base,
+        ...(alignment ? styles.alignment[alignment] : {}),
+    };
 };
 
 class Container extends PureComponent<Props, State> {
@@ -47,7 +46,7 @@ class Container extends PureComponent<Props, State> {
         styles: getStyles(this.props),
     };
     componentWillReceiveProps(nextProps): void {
-        const propsOnWhichDependsTheStyle: Array<string> = ['alignment', 'marginSize', 'paddingSize', 'style'];
+        const propsOnWhichDependsTheStyle: Array<string> = ['alignment', 'marginSize', 'paddingSize'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });

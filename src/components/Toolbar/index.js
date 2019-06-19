@@ -4,6 +4,8 @@ import React, { PureComponent } from 'react';
 import type { Node } from 'react';
 import { StyleSheet } from 'react-native';
 
+import merge from 'lodash/merge';
+
 import withTheme from '../../themes/withTheme';
 import hasStyleChanged from '../../utils/hasStyleChanged';
 import Column from '../Grid/Column';
@@ -39,10 +41,7 @@ const getStyles = (props: Props): MergedStylesType => {
 
     return {
         ...styles.base,
-        container: [
-            styles.base.container,
-            styles.colors[color || 'primary'].container,
-        ],
+        container: merge(styles.base.container, styles.colors[color || 'primary'].container),
     };
 };
 
@@ -59,51 +58,85 @@ class Toolbar extends PureComponent<Props, State> {
     state = {
         styles: getStyles(this.props),
     };
+    constructor(props: Props): void {
+        super(props);
+
+        (this: any).renderLeftElement = this.renderLeftElement.bind(this);
+        (this: any).renderCenterElement = this.renderCenterElement.bind(this);
+        (this: any).renderRightElement = this.renderRightElement.bind(this);
+    }
     componentWillReceiveProps(nextProps: Props): void {
-        const propsOnWhichDependsTheStyle: Array<string> = ['color', 'style'];
+        const propsOnWhichDependsTheStyle: Array<string> = ['color'];
 
         if (hasStyleChanged(propsOnWhichDependsTheStyle, nextProps, this.props)) {
             this.setState({ styles: getStyles(nextProps) });
         }
     }
+    renderLeftElement(): Node {
+        const { leftElement } = this.props;
+        const { styles } = this.state;
+
+        if (!leftElement) {
+            return null;
+        }
+
+        return (
+            <Padding
+                size="small"
+                style={styles.leftElement}
+            >
+                {leftElement}
+            </Padding>
+        );
+    }
+    renderCenterElement(): Node {
+        const { centerElement } = this.props;
+        const { styles } = this.state;
+
+        if (!centerElement) {
+            return null;
+        }
+
+        return (
+            <Padding
+                size="small"
+                style={styles.centerElement}
+            >
+                {centerElement}
+            </Padding>
+        );
+    }
+    renderRightElement(): Node {
+        const { rightElement } = this.props;
+        const { styles } = this.state;
+
+        if (!rightElement) {
+            return null;
+        }
+
+        return (
+            <Padding
+                size="small"
+                style={styles.rightElement}
+            >
+                {rightElement}
+            </Padding>
+        );
+    }
     render(): Node {
-        const {
-            centerElement, centerElementSize, leftElement, leftElementSize, rightElement,
-            rightElementSize,
-        } = this.props;
+        const { centerElementSize, leftElementSize, rightElementSize } = this.props;
         const { styles } = this.state;
 
         return (
             <Grid style={styles.container}>
                 <Column size={leftElementSize}>
-                    {leftElement && (
-                        <Padding
-                            size="small"
-                            style={styles.leftElement}
-                        >
-                            {leftElement}
-                        </Padding>
-                    )}
+                    {this.renderLeftElement()}
                 </Column>
                 <Column size={centerElementSize}>
-                    {centerElement && (
-                        <Padding
-                            size="small"
-                            style={styles.centerElement}
-                        >
-                            {centerElement}
-                        </Padding>
-                    )}
+                    {this.renderCenterElement()}
                 </Column>
                 <Column size={rightElementSize}>
-                    {rightElement && (
-                        <Padding
-                            size="small"
-                            style={styles.rightElement}
-                        >
-                            {rightElement}
-                        </Padding>
-                    )}
+                    {this.renderRightElement()}
                 </Column>
             </Grid>
         );

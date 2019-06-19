@@ -11,6 +11,9 @@
       "components/appcontainer": {
         "title": "AppContainer"
       },
+      "components/avatar": {
+        "title": "Avatar"
+      },
       "components/button": {
         "title": "Button"
       },
@@ -25,6 +28,9 @@
       },
       "components/lineargradient": {
         "title": "LinearGradient"
+      },
+      "components/listitem": {
+        "title": "ListItem"
       },
       "components/margin": {
         "title": "Margin"

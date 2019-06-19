@@ -1,9 +1,13 @@
+export { default as Avatar } from './components/Avatar';
 export { default as AppContainer } from './components/AppContainer';
 export { default as Button } from './components/Button';
+export { default as Card } from './components/Card';
 export { default as Container } from './components/Container';
+export { default as Divider } from './components/Divider';
 export { Column, Grid, Row } from './components/Grid';
 export { default as Icon } from './components/Icon';
 export { default as LinearGradient } from './components/LinearGradient';
+export { default as ListItem } from './components/ListItem';
 export { default as Margin } from './components/Margin';
 export { default as Modal } from './components/Modal';
 export { default as Padding } from './components/Padding';

@@ -86,6 +86,7 @@ class Rating extends PureComponent<Props> {
 
         return (
             <TouchableOpacity
+                disabled={!onPress}
                 onPress={onPress}
             >
                 <View style={styles}>

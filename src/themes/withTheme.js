@@ -2,8 +2,10 @@
 
 import React, { PureComponent } from 'react';
 import type { Node } from 'react';
+import { StyleSheet } from 'react-native';
 
 import merge from 'lodash/merge';
+import omit from 'lodash/omit';
 
 import type { ThemeType } from '../types';
 import baseTheme from './base';
@@ -25,10 +27,18 @@ const checkErrors = (props: any, componentName: string) => {
     }
 };
 
+type Props = {
+    style?: StyleSheet.Styles,
+};
+
 const withTheme = (customStyles: Function, componentName: string) => (Component: any) => {
-    class ComponentWithTheme extends PureComponent<{}> {
+    class ComponentWithTheme extends PureComponent<Props> {
         static originalComponentName: string = Component.displayName || Component.name;
         static displayName: ?string = `WithTheme(${Component.displayName || Component.name})`;
+
+        static defaultProps = {
+            style: {},
+        };
 
         render(): Node {
             return (
@@ -46,11 +56,12 @@ const withTheme = (customStyles: Function, componentName: string) => (Component:
                             {},
                             customStyles ? customStyles(theme) : {},
                             theme.components[componentName] || {},
+                            this.props.style, // eslint-disable-line react/prop-types, react/destructuring-assignment, max-len
                         );
 
                         return (
                             <Component
-                                {...this.props}
+                                {...omit(this.props, ['style'])}
                                 styles={styles}
                                 theme={theme}
                             />

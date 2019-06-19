@@ -1,0 +1,622 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexShrink": 1,
+            "height": 56,
+            "justifyContent": "center",
+          },
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+      styles={
+        Object {
+          "base": Object {
+            "alignItems": "center",
+            "flexShrink": 1,
+            "height": 56,
+            "justifyContent": "center",
+          },
+          "directions": Object {
+            "column": Object {
+              "flexDirection": "column",
+            },
+            "row": Object {
+              "flexDirection": "row",
+            },
+          },
+        }
+      }
+      theme={
+        Object {
+          "colors": Object {
+            "layout": Object {
+              "backgroundColor": "#ffffff",
+            },
+            "palette": Object {
+              "danger": "#ff4136",
+              "dark": "#484848",
+              "disabled": "#999999",
+              "info": "#75caeb",
+              "light": "#f6f6f6",
+              "primary": "#158cba",
+              "success": "#28b62c",
+              "warning": "#ff851b",
+            },
+            "text": Object {
+              "disabled": "#999999",
+              "placeholder": "#e2e4e6",
+              "primary": "#3d3d3d",
+              "secondary": "#9e9e9e",
+            },
+          },
+          "components": Object {},
+          "radiuses": Object {
+            "gigantic": 16,
+            "huge": 12,
+            "large": 8,
+            "medium": 6,
+            "small": 4,
+            "tiny": 2,
+          },
+          "spacing": Object {
+            "gigantic": 24,
+            "huge": 20,
+            "large": 16,
+            "medium": 12,
+            "small": 8,
+            "tiny": 4,
+          },
+          "typography": Object {
+            "fontFamily": "System",
+            "fontSizes": Object {
+              "large": 16,
+              "medium": 14,
+              "small": 12,
+            },
+            "fontWeights": Object {
+              "bold": "900",
+              "medium": "800",
+              "normal": "600",
+            },
+            "iconSet": "MaterialIcons",
+            "sizes": Object {
+              "h1": Object {
+                "fontSize": 31,
+                "fontWeight": "900",
+              },
+              "h2": Object {
+                "fontSize": 25,
+                "fontWeight": "900",
+              },
+              "h3": Object {
+                "fontSize": 19,
+                "fontWeight": "800",
+              },
+              "h4": Object {
+                "fontSize": 17,
+                "fontWeight": "800",
+              },
+              "h5": Object {
+                "fontSize": 16,
+                "fontWeight": "800",
+              },
+              "h6": Object {
+                "fontSize": 15,
+                "fontWeight": "700",
+              },
+              "normal": Object {
+                "fontSize": 14,
+                "fontWeight": "700",
+              },
+              "small": Object {
+                "fontSize": 12,
+              },
+            },
+          },
+        }
+      }
+    >
+      <View
+        size={1}
+        style={
+          Array [
+            Object {
+              "flexDirection": "column",
+            },
+            Object {
+              "flex": 1,
+            },
+          ]
+        }
+        styles={
+          Object {
+            "base": Object {
+              "flexDirection": "column",
+            },
+          }
+        }
+        theme={
+          Object {
+            "colors": Object {
+              "layout": Object {
+                "backgroundColor": "#ffffff",
+              },
+              "palette": Object {
+                "danger": "#ff4136",
+                "dark": "#484848",
+                "disabled": "#999999",
+                "info": "#75caeb",
+                "light": "#f6f6f6",
+                "primary": "#158cba",
+                "success": "#28b62c",
+                "warning": "#ff851b",
+              },
+              "text": Object {
+                "disabled": "#999999",
+                "placeholder": "#e2e4e6",
+                "primary": "#3d3d3d",
+                "secondary": "#9e9e9e",
+              },
+            },
+            "components": Object {},
+            "radiuses": Object {
+              "gigantic": 16,
+              "huge": 12,
+              "large": 8,
+              "medium": 6,
+              "small": 4,
+              "tiny": 2,
+            },
+            "spacing": Object {
+              "gigantic": 24,
+              "huge": 20,
+              "large": 16,
+              "medium": 12,
+              "small": 8,
+              "tiny": 4,
+            },
+            "typography": Object {
+              "fontFamily": "System",
+              "fontSizes": Object {
+                "large": 16,
+                "medium": 14,
+                "small": 12,
+              },
+              "fontWeights": Object {
+                "bold": "900",
+                "medium": "800",
+                "normal": "600",
+              },
+              "iconSet": "MaterialIcons",
+              "sizes": Object {
+                "h1": Object {
+                  "fontSize": 31,
+                  "fontWeight": "900",
+                },
+                "h2": Object {
+                  "fontSize": 25,
+                  "fontWeight": "900",
+                },
+                "h3": Object {
+                  "fontSize": 19,
+                  "fontWeight": "800",
+                },
+                "h4": Object {
+                  "fontSize": 17,
+                  "fontWeight": "800",
+                },
+                "h5": Object {
+                  "fontSize": 16,
+                  "fontWeight": "800",
+                },
+                "h6": Object {
+                  "fontSize": 15,
+                  "fontWeight": "700",
+                },
+                "normal": Object {
+                  "fontSize": 14,
+                  "fontWeight": "700",
+                },
+                "small": Object {
+                  "fontSize": 12,
+                },
+              },
+            },
+          }
+        }
+      />
+      <View
+        size={1.5}
+        style={
+          Array [
+            Object {
+              "flexDirection": "column",
+            },
+            Object {
+              "flex": 1.5,
+            },
+          ]
+        }
+        styles={
+          Object {
+            "base": Object {
+              "flexDirection": "column",
+            },
+          }
+        }
+        theme={
+          Object {
+            "colors": Object {
+              "layout": Object {
+                "backgroundColor": "#ffffff",
+              },
+              "palette": Object {
+                "danger": "#ff4136",
+                "dark": "#484848",
+                "disabled": "#999999",
+                "info": "#75caeb",
+                "light": "#f6f6f6",
+                "primary": "#158cba",
+                "success": "#28b62c",
+                "warning": "#ff851b",
+              },
+              "text": Object {
+                "disabled": "#999999",
+                "placeholder": "#e2e4e6",
+                "primary": "#3d3d3d",
+                "secondary": "#9e9e9e",
+              },
+            },
+            "components": Object {},
+            "radiuses": Object {
+              "gigantic": 16,
+              "huge": 12,
+              "large": 8,
+              "medium": 6,
+              "small": 4,
+              "tiny": 2,
+            },
+            "spacing": Object {
+              "gigantic": 24,
+              "huge": 20,
+              "large": 16,
+              "medium": 12,
+              "small": 8,
+              "tiny": 4,
+            },
+            "typography": Object {
+              "fontFamily": "System",
+              "fontSizes": Object {
+                "large": 16,
+                "medium": 14,
+                "small": 12,
+              },
+              "fontWeights": Object {
+                "bold": "900",
+                "medium": "800",
+                "normal": "600",
+              },
+              "iconSet": "MaterialIcons",
+              "sizes": Object {
+                "h1": Object {
+                  "fontSize": 31,
+                  "fontWeight": "900",
+                },
+                "h2": Object {
+                  "fontSize": 25,
+                  "fontWeight": "900",
+                },
+                "h3": Object {
+                  "fontSize": 19,
+                  "fontWeight": "800",
+                },
+                "h4": Object {
+                  "fontSize": 17,
+                  "fontWeight": "800",
+                },
+                "h5": Object {
+                  "fontSize": 16,
+                  "fontWeight": "800",
+                },
+                "h6": Object {
+                  "fontSize": 15,
+                  "fontWeight": "700",
+                },
+                "normal": Object {
+                  "fontSize": 14,
+                  "fontWeight": "700",
+                },
+                "small": Object {
+                  "fontSize": 12,
+                },
+              },
+            },
+          }
+        }
+      />
+      <View
+        size={1}
+        style={
+          Array [
+            Object {
+              "flexDirection": "column",
+            },
+            Object {
+              "flex": 1,
+            },
+          ]
+        }
+        styles={
+          Object {
+            "base": Object {
+              "flexDirection": "column",
+            },
+          }
+        }
+        theme={
+          Object {
+            "colors": Object {
+              "layout": Object {
+                "backgroundColor": "#ffffff",
+              },
+              "palette": Object {
+                "danger": "#ff4136",
+                "dark": "#484848",
+                "disabled": "#999999",
+                "info": "#75caeb",
+                "light": "#f6f6f6",
+                "primary": "#158cba",
+                "success": "#28b62c",
+                "warning": "#ff851b",
+              },
+              "text": Object {
+                "disabled": "#999999",
+                "placeholder": "#e2e4e6",
+                "primary": "#3d3d3d",
+                "secondary": "#9e9e9e",
+              },
+            },
+            "components": Object {},
+            "radiuses": Object {
+              "gigantic": 16,
+              "huge": 12,
+              "large": 8,
+              "medium": 6,
+              "small": 4,
+              "tiny": 2,
+            },
+            "spacing": Object {
+              "gigantic": 24,
+              "huge": 20,
+              "large": 16,
+              "medium": 12,
+              "small": 8,
+              "tiny": 4,
+            },
+            "typography": Object {
+              "fontFamily": "System",
+              "fontSizes": Object {
+                "large": 16,
+                "medium": 14,
+                "small": 12,
+              },
+              "fontWeights": Object {
+                "bold": "900",
+                "medium": "800",
+                "normal": "600",
+              },
+              "iconSet": "MaterialIcons",
+              "sizes": Object {
+                "h1": Object {
+                  "fontSize": 31,
+                  "fontWeight": "900",
+                },
+                "h2": Object {
+                  "fontSize": 25,
+                  "fontWeight": "900",
+                },
+                "h3": Object {
+                  "fontSize": 19,
+                  "fontWeight": "800",
+                },
+                "h4": Object {
+                  "fontSize": 17,
+                  "fontWeight": "800",
+                },
+                "h5": Object {
+                  "fontSize": 16,
+                  "fontWeight": "800",
+                },
+                "h6": Object {
+                  "fontSize": 15,
+                  "fontWeight": "700",
+                },
+                "normal": Object {
+                  "fontSize": 14,
+                  "fontWeight": "700",
+                },
+                "small": Object {
+                  "fontSize": 12,
+                },
+              },
+            },
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    color={null}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#484848",
+          "height": 0.5,
+        },
+        Object {},
+      ]
+    }
+    styles={
+      Object {
+        "base": Object {
+          "backgroundColor": "#484848",
+          "height": 0.5,
+        },
+        "colors": Object {
+          "black": Object {
+            "backgroundColor": "black",
+          },
+          "danger": Object {
+            "backgroundColor": "#ff4136",
+          },
+          "dark": Object {
+            "backgroundColor": "#484848",
+          },
+          "disabled": Object {
+            "backgroundColor": "#999999",
+          },
+          "info": Object {
+            "backgroundColor": "#75caeb",
+          },
+          "light": Object {
+            "backgroundColor": "#f6f6f6",
+          },
+          "primary": Object {
+            "backgroundColor": "#158cba",
+          },
+          "success": Object {
+            "backgroundColor": "#28b62c",
+          },
+          "warning": Object {
+            "backgroundColor": "#ff851b",
+          },
+          "white": Object {
+            "backgroundColor": "white",
+          },
+        },
+      }
+    }
+    theme={
+      Object {
+        "colors": Object {
+          "layout": Object {
+            "backgroundColor": "#ffffff",
+          },
+          "palette": Object {
+            "danger": "#ff4136",
+            "dark": "#484848",
+            "disabled": "#999999",
+            "info": "#75caeb",
+            "light": "#f6f6f6",
+            "primary": "#158cba",
+            "success": "#28b62c",
+            "warning": "#ff851b",
+          },
+          "text": Object {
+            "disabled": "#999999",
+            "placeholder": "#e2e4e6",
+            "primary": "#3d3d3d",
+            "secondary": "#9e9e9e",
+          },
+        },
+        "components": Object {},
+        "radiuses": Object {
+          "gigantic": 16,
+          "huge": 12,
+          "large": 8,
+          "medium": 6,
+          "small": 4,
+          "tiny": 2,
+        },
+        "spacing": Object {
+          "gigantic": 24,
+          "huge": 20,
+          "large": 16,
+          "medium": 12,
+          "small": 8,
+          "tiny": 4,
+        },
+        "typography": Object {
+          "fontFamily": "System",
+          "fontSizes": Object {
+            "large": 16,
+            "medium": 14,
+            "small": 12,
+          },
+          "fontWeights": Object {
+            "bold": "900",
+            "medium": "800",
+            "normal": "600",
+          },
+          "iconSet": "MaterialIcons",
+          "sizes": Object {
+            "h1": Object {
+              "fontSize": 31,
+              "fontWeight": "900",
+            },
+            "h2": Object {
+              "fontSize": 25,
+              "fontWeight": "900",
+            },
+            "h3": Object {
+              "fontSize": 19,
+              "fontWeight": "800",
+            },
+            "h4": Object {
+              "fontSize": 17,
+              "fontWeight": "800",
+            },
+            "h5": Object {
+              "fontSize": 16,
+              "fontWeight": "800",
+            },
+            "h6": Object {
+              "fontSize": 15,
+              "fontWeight": "700",
+            },
+            "normal": Object {
+              "fontSize": 14,
+              "fontWeight": "700",
+            },
+            "small": Object {
+              "fontSize": 12,
+            },
+          },
+        },
+      }
+    }
+  />
+</View>
+`;

@@ -9,4 +9,4 @@ title: Icon
 - `name` (_string_, **required**)
 - `size` (_number_, default 24)
 
-<img src="../assets/Icon/1.png" alt="Icon" width="250x" style="display: inline-block;">
+<img src="../assets/Icon/1.png" alt="Icon" width="250" style="display: inline-block;">
