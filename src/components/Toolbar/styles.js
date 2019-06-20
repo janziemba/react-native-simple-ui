@@ -37,8 +37,20 @@ export default ({ colors }: ThemeShapeType): StylesType => {
     return {
         base: {
             centerElement: {
-                flexDirection: 'row',
-                justifyContent: 'center',
+                alignment: {
+                    center: {
+                        justifyContent: 'center',
+                    },
+                    left: {
+                        justifyContent: 'flex-start',
+                    },
+                    right: {
+                        justifyContent: 'flex-end',
+                    },
+                },
+                base: {
+                    flexDirection: 'row',
+                },
             },
             container: {
                 base: {
@@ -48,11 +60,36 @@ export default ({ colors }: ThemeShapeType): StylesType => {
                 },
             },
             leftElement: {
-                flexDirection: 'row',
+                alignment: {
+                    center: {
+                        justifyContent: 'center',
+                    },
+                    left: {
+                        justifyContent: 'flex-start',
+                    },
+                    right: {
+                        justifyContent: 'flex-end',
+                    },
+                },
+                base: {
+                    flexDirection: 'row',
+                },
             },
             rightElement: {
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
+                alignment: {
+                    center: {
+                        justifyContent: 'center',
+                    },
+                    left: {
+                        justifyContent: 'flex-start',
+                    },
+                    right: {
+                        justifyContent: 'flex-end',
+                    },
+                },
+                base: {
+                    flexDirection: 'row',
+                },
             },
         },
         colors: colorOptions,

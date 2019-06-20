@@ -54,10 +54,16 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var getStyles = function getStyles(props) {
-  var color = props.color,
+  var centerElementAlignment = props.centerElementAlignment,
+      color = props.color,
+      leftElementAlignment = props.leftElementAlignment,
+      rightElementAlignment = props.rightElementAlignment,
       styles = props.styles;
   return _objectSpread({}, styles.base, {
-    container: (0, _merge.default)(styles.base.container, styles.colors[color || 'primary'].container)
+    centerElement: _objectSpread({}, styles.base.centerElement.base, styles.base.centerElement.alignment[centerElementAlignment]),
+    container: (0, _merge.default)(styles.base.container, styles.colors[color || 'primary'].container),
+    leftElement: _objectSpread({}, styles.base.leftElement.base, styles.base.leftElement.alignment[leftElementAlignment]),
+    rightElement: _objectSpread({}, styles.base.rightElement.base, styles.base.rightElement.alignment[rightElementAlignment])
   });
 };
 
@@ -164,6 +170,8 @@ function (_PureComponent) {
   centerElement: function centerElement() {
     return (typeof _propTypes.default.node === "function" ? _propTypes.default.node : _propTypes.default.shape(_propTypes.default.node)).apply(this, arguments);
   },
+  centerElementAlignment: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
   centerElementSize: _propTypes.default.number,
   // eslint-disable-line react/no-unused-prop-types
   color: _propTypes.default.string,
@@ -171,11 +179,15 @@ function (_PureComponent) {
   leftElement: function leftElement() {
     return (typeof _propTypes.default.node === "function" ? _propTypes.default.node : _propTypes.default.shape(_propTypes.default.node)).apply(this, arguments);
   },
+  leftElementAlignment: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
   leftElementSize: _propTypes.default.number,
   // eslint-disable-line react/no-unused-prop-types
   rightElement: function rightElement() {
     return (typeof _propTypes.default.node === "function" ? _propTypes.default.node : _propTypes.default.shape(_propTypes.default.node)).apply(this, arguments);
   },
+  rightElementAlignment: _propTypes.default.string,
+  // eslint-disable-line react/no-unused-prop-types
   rightElementSize: _propTypes.default.number,
   // eslint-disable-line react/no-unused-prop-types
   styles: function styles() {
@@ -185,12 +197,15 @@ function (_PureComponent) {
 
 _defineProperty(Toolbar, "defaultProps", {
   centerElement: null,
-  centerElementSize: 1.5,
+  centerElementAlignment: 'center',
+  centerElementSize: 1,
   color: 'primary',
   leftElement: null,
-  leftElementSize: 1,
+  leftElementAlignment: 'left',
+  leftElementSize: 0,
   rightElement: null,
-  rightElementSize: 1
+  rightElementAlignment: 'right',
+  rightElementSize: 0
 });
 
 Toolbar = (0, _withTheme.default)(_styles.default, 'Toolbar')(Toolbar);

@@ -56,7 +56,7 @@ var getStyles = function getStyles(props) {
       styles = props.styles;
   var flex = 1;
 
-  if (size) {
+  if (size !== null) {
     flex = size;
   } else if (styles.base.width) {
     flex = 0;

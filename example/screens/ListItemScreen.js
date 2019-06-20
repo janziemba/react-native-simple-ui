@@ -21,15 +21,22 @@ class ListItemScreen extends PureComponent {
             <ScreenContainer>
                 <Container>
                     <ListItem
-                        centerElement={
-                            <Text>Title</Text>
+                        leftElement={
+                            <Text>Left</Text>
                         }
+                        onPress={this.onPress}
+                    />
+                    <ListItem
+                        centerElement={
+                            <Text>Center</Text>
+                        }
+                        centerElementAlignment="center"
                         onPress={this.onPress}
                     />
                     <ListItem
                         onPress={this.onPress}
                         rightElement={
-                            <Text>Title</Text>
+                            <Text>Right</Text>
                         }
                     />
                     <ListItem
@@ -39,7 +46,7 @@ class ListItemScreen extends PureComponent {
                         leftElement={(
                             <Avatar
                                 onPress={this.onAvatarPress}
-                                size={45}
+                                size={40}
                                 text="JZ"
                             />
                         )}
@@ -56,7 +63,6 @@ class ListItemScreen extends PureComponent {
                         centerElement={
                             <Text>Without onPress action</Text>
                         }
-                        centerElementSize={3}
                     />
                     <ListItem
                         loading
@@ -70,6 +76,7 @@ class ListItemScreen extends PureComponent {
                                 variant="flat"
                             />
                         )}
+                        centerElementAlignment="center"
                         leftElement={(
                             <Icon name="star" />
                         )}
@@ -82,6 +89,7 @@ class ListItemScreen extends PureComponent {
                         centerElement={
                             <Text>Help</Text>
                         }
+                        centerElementAlignment="center"
                         leftElement={(
                             <Button
                                 onPress={this.onButtonPress}
@@ -103,8 +111,6 @@ class ListItemScreen extends PureComponent {
                         centerElement={
                             <Text>Very looooooooooooooong title</Text>
                         }
-                        centerElementSize={4}
-                        leftElementSize={0}
                         onPress={this.onPress}
                         rightElement={(
                             <>

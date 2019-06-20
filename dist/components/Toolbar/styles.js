@@ -56,8 +56,20 @@ var _default = function _default(_ref) {
   return {
     base: {
       centerElement: {
-        flexDirection: 'row',
-        justifyContent: 'center'
+        alignment: {
+          center: {
+            justifyContent: 'center'
+          },
+          left: {
+            justifyContent: 'flex-start'
+          },
+          right: {
+            justifyContent: 'flex-end'
+          }
+        },
+        base: {
+          flexDirection: 'row'
+        }
       },
       container: {
         base: {
@@ -67,11 +79,36 @@ var _default = function _default(_ref) {
         }
       },
       leftElement: {
-        flexDirection: 'row'
+        alignment: {
+          center: {
+            justifyContent: 'center'
+          },
+          left: {
+            justifyContent: 'flex-start'
+          },
+          right: {
+            justifyContent: 'flex-end'
+          }
+        },
+        base: {
+          flexDirection: 'row'
+        }
       },
       rightElement: {
-        flexDirection: 'row',
-        justifyContent: 'flex-end'
+        alignment: {
+          center: {
+            justifyContent: 'center'
+          },
+          left: {
+            justifyContent: 'flex-start'
+          },
+          right: {
+            justifyContent: 'flex-end'
+          }
+        },
+        base: {
+          flexDirection: 'row'
+        }
       }
     },
     colors: colorOptions

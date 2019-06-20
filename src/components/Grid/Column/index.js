@@ -30,7 +30,7 @@ const getStyles = (props: Props): Array<StyleSheet.Styles> => {
 
     let flex = 1;
 
-    if (size) {
+    if (size !== null) {
         flex = size;
     } else if (styles.base.width) {
         flex = 0;

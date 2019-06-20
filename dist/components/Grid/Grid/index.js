@@ -53,7 +53,9 @@ var getStyles = function getStyles(props) {
   var children = props.children,
       styles = props.styles;
   var components = children.length > 1 ? children : [children];
-  var isDirectionRow = components.find(function (child) {
+  var isDirectionRow = components.filter(function (child) {
+    return !!child;
+  }).find(function (child) {
     return child.type.originalComponentName === 'Row';
   }) !== undefined;
   return [styles.base, styles.directions[isDirectionRow ? 'column' : 'row']];

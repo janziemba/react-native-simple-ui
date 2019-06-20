@@ -15,14 +15,20 @@ class ToolbarScreen extends PureComponent {
             <ScreenContainer>
                 <Container>
                     <Toolbar
+                        leftElement={
+                            <Text color="white">Left</Text>
+                        }
+                    />
+                    <Spacer />
+                    <Toolbar
                         centerElement={
-                            <Text color="white">Title</Text>
+                            <Text color="white">Center</Text>
                         }
                     />
                     <Spacer />
                     <Toolbar
                         rightElement={
-                            <Text color="white">Title</Text>
+                            <Text color="white">Right</Text>
                         }
                     />
                     <Spacer />
@@ -81,7 +87,6 @@ class ToolbarScreen extends PureComponent {
                         centerElement={
                             <Text color="white">Very looooooooooooooong title</Text>
                         }
-                        centerElementSize={5}
                         rightElement={(
                             <>
                                 <Icon

@@ -16,11 +16,14 @@ import type { StylesType } from './styles';
 
 type Props = {
     centerElement?: Node,
+    centerElementAlignment?: string, // eslint-disable-line react/no-unused-prop-types
     centerElementSize?: number, // eslint-disable-line react/no-unused-prop-types
     color?: string, // eslint-disable-line react/no-unused-prop-types
     leftElement?: Node,
+    leftElementAlignment?: string, // eslint-disable-line react/no-unused-prop-types
     leftElementSize?: number, // eslint-disable-line react/no-unused-prop-types
     rightElement?: Node,
+    rightElementAlignment?: string, // eslint-disable-line react/no-unused-prop-types
     rightElementSize?: number, // eslint-disable-line react/no-unused-prop-types
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types
 };
@@ -37,23 +40,40 @@ type State = {
 };
 
 const getStyles = (props: Props): MergedStylesType => {
-    const { color, styles } = props;
+    const {
+        centerElementAlignment, color, leftElementAlignment, rightElementAlignment, styles,
+    } = props;
 
     return {
         ...styles.base,
+        centerElement: {
+            ...styles.base.centerElement.base,
+            ...styles.base.centerElement.alignment[centerElementAlignment],
+        },
         container: merge(styles.base.container, styles.colors[color || 'primary'].container),
+        leftElement: {
+            ...styles.base.leftElement.base,
+            ...styles.base.leftElement.alignment[leftElementAlignment],
+        },
+        rightElement: {
+            ...styles.base.rightElement.base,
+            ...styles.base.rightElement.alignment[rightElementAlignment],
+        },
     };
 };
 
 class Toolbar extends PureComponent<Props, State> {
     static defaultProps = {
         centerElement: null,
-        centerElementSize: 1.5,
+        centerElementAlignment: 'center',
+        centerElementSize: 1,
         color: 'primary',
         leftElement: null,
-        leftElementSize: 1,
+        leftElementAlignment: 'left',
+        leftElementSize: 0,
         rightElement: null,
-        rightElementSize: 1,
+        rightElementAlignment: 'right',
+        rightElementSize: 0,
     };
     state = {
         styles: getStyles(this.props),

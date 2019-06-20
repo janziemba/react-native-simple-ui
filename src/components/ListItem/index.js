@@ -18,13 +18,16 @@ import type { StylesType } from './styles';
 
 type Props = TouchableOpacityProps & {
     centerElement?: Node,
+    centerElementAlignment?: string, // eslint-disable-line react/no-unused-prop-types
     centerElementSize?: number, // eslint-disable-line react/no-unused-prop-types
     color?: string, // eslint-disable-line react/no-unused-prop-types
     divider?: boolean, // eslint-disable-line react/no-unused-prop-types
     leftElement?: Node,
+    leftElementAlignment?: string, // eslint-disable-line react/no-unused-prop-types
     leftElementSize?: number, // eslint-disable-line react/no-unused-prop-types
     loading?: boolean,
     rightElement?: Node,
+    rightElementAlignment?: string, // eslint-disable-line react/no-unused-prop-types
     rightElementSize?: number, // eslint-disable-line react/no-unused-prop-types
     styles: StylesType, // eslint-disable-line react/no-unused-prop-types
 };
@@ -42,28 +45,45 @@ type State = {
 };
 
 const getStyles = (props: Props): MergedStylesType => {
-    const { color, styles } = props;
+    const {
+        centerElementAlignment, color, leftElementAlignment, rightElementAlignment, styles,
+    } = props;
 
     return {
         ...styles.base,
+        centerElement: {
+            ...styles.base.centerElement.base,
+            ...styles.base.centerElement.alignment[centerElementAlignment],
+        },
+        leftElement: {
+            ...styles.base.leftElement.base,
+            ...styles.base.leftElement.alignment[leftElementAlignment],
+        },
         outerContainer: [
             styles.base.outerContainer,
             styles.colors[color || 'white'].outerContainer,
         ],
+        rightElement: {
+            ...styles.base.rightElement.base,
+            ...styles.base.rightElement.alignment[rightElementAlignment],
+        },
     };
 };
 
 class ListItem extends PureComponent<Props, State> {
     static defaultProps = {
         centerElement: null,
-        centerElementSize: 1.5,
+        centerElementAlignment: 'left',
+        centerElementSize: 1,
         color: 'white',
         divider: true,
         leftElement: null,
-        leftElementSize: 1,
+        leftElementAlignment: 'left',
+        leftElementSize: 0,
         loading: false,
         rightElement: null,
-        rightElementSize: 1,
+        rightElementAlignment: 'right',
+        rightElementSize: 0,
     };
     state = {
         styles: getStyles(this.props),
