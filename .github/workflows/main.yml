@@ -9,5 +9,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: Install packages
+      run: yarn
     - name: Run tests
       run: yarn test
