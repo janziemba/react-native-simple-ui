@@ -50,7 +50,7 @@
         "@strv/eslint-config-react-native": "^1.0.3",
         "babel-eslint": "10.0.2",
         "babel-plugin-flow-react-proptypes": "^25.0.0",
-        "codecov": "^3.2.0",
+        "codecov": "^3.7.1",
         "eslint": "5.16.0",
         "eslint-config-airbnb": "^17.1.0",
         "eslint-plugin-flowtype": "3.10.3",
